@@ -1,0 +1,31 @@
+D:\My Work\allN1\bin\Release\allN1.exe.config
+D:\My Work\allN1\bin\Release\allN1.exe
+D:\My Work\allN1\bin\Release\allN1.pdb
+D:\My Work\allN1\obj\Release\allN1.csprojAssemblyReference.cache
+D:\My Work\allN1\obj\Release\allN1.bill_info.resources
+D:\My Work\allN1\obj\Release\allN1.Form1.resources
+D:\My Work\allN1\obj\Release\allN1.lock.resources
+D:\My Work\allN1\obj\Release\allN1.modify.resources
+D:\My Work\allN1\obj\Release\allN1.printpay.resources
+D:\My Work\allN1\obj\Release\allN1.Properties.Resources.resources
+D:\My Work\allN1\obj\Release\allN1.csproj.GenerateResource.cache
+D:\My Work\allN1\obj\Release\allN1.csproj.CoreCompileInputs.cache
+D:\My Work\allN1\obj\Release\allN1.exe
+D:\My Work\allN1\obj\Release\allN1.pdb
+D:\A.Abousaif\My Work - A.Abousaif\allN1\bin\Release\allN1.exe.config
+D:\A.Abousaif\My Work - A.Abousaif\allN1\bin\Release\allN1.exe
+D:\A.Abousaif\My Work - A.Abousaif\allN1\bin\Release\allN1.pdb
+D:\A.Abousaif\My Work - A.Abousaif\allN1\obj\Release\allN1.bill_info.resources
+D:\A.Abousaif\My Work - A.Abousaif\allN1\obj\Release\allN1.Form1.resources
+D:\A.Abousaif\My Work - A.Abousaif\allN1\obj\Release\allN1.lock.resources
+D:\A.Abousaif\My Work - A.Abousaif\allN1\obj\Release\allN1.modify.resources
+D:\A.Abousaif\My Work - A.Abousaif\allN1\obj\Release\allN1.typeSrch.resources
+D:\A.Abousaif\My Work - A.Abousaif\allN1\obj\Release\allN1.v_order.resources
+D:\A.Abousaif\My Work - A.Abousaif\allN1\obj\Release\allN1.order.resources
+D:\A.Abousaif\My Work - A.Abousaif\allN1\obj\Release\allN1.printpay.resources
+D:\A.Abousaif\My Work - A.Abousaif\allN1\obj\Release\allN1.Properties.Resources.resources
+D:\A.Abousaif\My Work - A.Abousaif\allN1\obj\Release\allN1.vendor_bill.resources
+D:\A.Abousaif\My Work - A.Abousaif\allN1\obj\Release\allN1.csproj.GenerateResource.cache
+D:\A.Abousaif\My Work - A.Abousaif\allN1\obj\Release\allN1.csproj.CoreCompileInputs.cache
+D:\A.Abousaif\My Work - A.Abousaif\allN1\obj\Release\allN1.exe
+D:\A.Abousaif\My Work - A.Abousaif\allN1\obj\Release\allN1.pdb

@@ -1,0 +1,336 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{00D9E163-6B7A-4A08-BDE3-215C8046F601}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>allN1</RootNamespace>
+    <AssemblyName>allN1</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>003-windows.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Office.Interop.Word, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\Google Drive\App\packages\Microsoft.Office.Interop.Word.15.0.4797.1003\lib\net20\Microsoft.Office.Interop.Word.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="bill_info.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="bill_info.Designer.cs">
+      <DependentUpon>bill_info.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CSVUtlity.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="lock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="lock.Designer.cs">
+      <DependentUpon>lock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="modify.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="modify.Designer.cs">
+      <DependentUpon>modify.cs</DependentUpon>
+    </Compile>
+    <Compile Include="typeSrch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="typeSrch.Designer.cs">
+      <DependentUpon>typeSrch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="v_order.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="v_order.Designer.cs">
+      <DependentUpon>v_order.cs</DependentUpon>
+    </Compile>
+    <Compile Include="user_order.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="user_order.Designer.cs">
+      <DependentUpon>user_order.cs</DependentUpon>
+    </Compile>
+    <Compile Include="printpay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="printpay.Designer.cs">
+      <DependentUpon>printpay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="vendor_bill.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vendor_bill.Designer.cs">
+      <DependentUpon>vendor_bill.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="bill_info.resx">
+      <DependentUpon>bill_info.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="lock.resx">
+      <DependentUpon>lock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="modify.resx">
+      <DependentUpon>modify.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="typeSrch.resx">
+      <DependentUpon>typeSrch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="v_order.resx">
+      <DependentUpon>v_order.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="user_order.resx">
+      <DependentUpon>user_order.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="printpay.resx">
+      <DependentUpon>printpay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="vendor_bill.resx">
+      <DependentUpon>vendor_bill.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\add_new_50px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\add_50px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\menu_squared_50px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\playlist_30px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\print_30px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\shutdown_30px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\lock_30px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\deposit_30px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\checklist_30px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\pricing_30px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\minimize_window_30px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\sell_30px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\delete_bin_30px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\edit_file_30px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\add_new_30px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\playlist_50px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\unlock_30px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\pay_30px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\print_30px2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\unlock_private_60px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\google_web_search_60px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\increase_60px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\combo_chart_30px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\graph_30px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\send_to_printer_60px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\return_purchase_60px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\return_purchase_50px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\undo_30px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\return_purchase_30px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search_64px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\google_web_search_30px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\search_30px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\search_60px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\search_property_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\google_web_search_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\google_web_search_64px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\google_web_search_50px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\google_web_search_52px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\add_60px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\add_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\cancel_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\search_in_list_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\update_30px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\administrative_tools_50px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Blurred-Background-23.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\male_user_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\lock_64px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wallpaperflare.com_wallpaper.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\login_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\login_64px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="003-windows.ico" />
+    <None Include="img\menu1_64px.png" />
+    <None Include="img\customer_128px.png" />
+    <None Include="img\refund_30px.png" />
+    <None Include="img\cheap_2_30px.png" />
+    <None Include="img\new_copy_30px.png" />
+    <None Include="img\delete_bin_60px2.png" />
+    <None Include="img\buy_60px.png" />
+    <None Include="img\add_new_52px.png" />
+    <None Include="img\delete_bin_48px.png" />
+    <None Include="img\delete_bin_30px2.png" />
+    <None Include="img\delete_bin_60px.png" />
+    <None Include="img\search_folder_48px.png" />
+    <None Include="img\maintenance_24px.png" />
+    <None Include="img\male_user_200px.png" />
+    <None Include="img\browse_folder_40px.png" />
+    <None Include="img\browse_folder_30px.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
