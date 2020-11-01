@@ -73,9 +73,7 @@ namespace allN1
             @lock lck = new @lock();
             lck.ShowDialog(this);
             var d = today.ToString("dd/MM/yyyy");
-            dd_c.SelectedItem = d.Split('/')[0];
-            mm_c.SelectedItem = d.Split('/')[1];
-            yyyy_c.SelectedItem = d.Split('/')[2];
+
             //groupBox28.Text = "إجمالى دخل يوم" + " " + today.ToString("dd/MM/yyyy");
             update_info();
             Viewgoods();
@@ -136,16 +134,7 @@ namespace allN1
         }
         private void PictureBox1_Click(object sender, EventArgs e)
         {
-            try
-            {
-                string selected_date = dd_c.SelectedItem.ToString() + "/" + mm_c.SelectedItem.ToString() + "/" + yyyy_c.SelectedItem.ToString();
-                var parsedDate = DateTime.Parse(selected_date);
-                paymnts(parsedDate);
-            }
-            catch
-            {
-                _ = errAsync();
-            }
+            
         }
         private void paymnts(DateTime date)
         {
@@ -168,6 +157,8 @@ namespace allN1
         }
         private void totalToday(DateTime date)
         {
+            int mm = 0; int m = 0;
+
             var d = today.ToString("dd/MM/yyyy");
             string sql = "select sum(payment) as t from logs_info  where (CONVERT(VARCHAR(10),date , 103) like @date)";
             sql = @"
@@ -175,50 +166,76 @@ namespace allN1
                     (select sum(payment) as s 
                         from logs_info
                         where month(date) like @mounth and YEAR(date) like @year) as mounth,
-(select sum(v_payment) as s  from v_logs where month(v_date) like 09 and YEAR(v_date) like 2020) as mm,
+(select sum(v_payment) as s  from v_logs where month(v_date) like @mounth and YEAR(v_date) like @year) as mm,
                     (select sum(payment) as t 
                         from logs_info  
                         where (CONVERT(VARCHAR(10),date , 103) like @date)) as day";
 
-            using (connection = new SqlConnection(connectionString))
-            using (SqlCommand command = new SqlCommand(sql, connection))
-            using (SqlDataAdapter adapter = new SqlDataAdapter(command))
-            {
-                // CONVERT (varchar(10), date, 103) as [الوقت ]
-                command.Parameters.AddWithValue("@date", date.ToString("dd/MM/yyyy"));
-                command.Parameters.AddWithValue("@year", d.Split('/')[2]);
-                command.Parameters.AddWithValue("@mounth", d.Split('/')[1]);
-                DataTable goods_info = new DataTable();
-                adapter.Fill(goods_info);
-                DataRow[] rows = goods_info.Select();
-                if (rows[0]["day"].ToString() == "")
+                using (connection = new SqlConnection(connectionString))
+                using (SqlCommand command = new SqlCommand(sql, connection))
+                using (SqlDataAdapter adapter = new SqlDataAdapter(command))
                 {
-                    txttotal_today.Text = "صفر جنية ";
+                    // CONVERT (varchar(10), date, 103) as [الوقت ]
+                    command.Parameters.AddWithValue("@date", date.ToString("dd/MM/yyyy"));
+                    command.Parameters.AddWithValue("@year", d.Split('/')[2]);
+                    command.Parameters.AddWithValue("@mounth", d.Split('/')[1]);
+                    DataTable goods_info = new DataTable();
+                    adapter.Fill(goods_info);
+                    DataRow[] rows = goods_info.Select();
+                    if (rows[0]["day"].ToString() == "")
+                    {
+                        txttotal_today.Text = "صفر جنية ";
+                    }
+                    else
+                    {
+                        txttotal_today.Text = rows[0]["day"].ToString() + " " + "جنية ";
+                        inc = int.Parse(rows[0]["day"].ToString());
+                    }
+                    ////////////////////////////////////////////
+                    if (rows[0]["mounth"].ToString() == "")
+                    {
+                        txttotal_mounth.Text = "صفر جنية ";
+                        mm = 0;
+                    }
+                    else
+                    {
+                        txttotal_mounth.Text = rows[0]["mounth"].ToString() + " " + "جنية ";
+                        mm = int.Parse(rows[0]["mounth"].ToString());
+
+
+                    }
+                    //////////////////////////////////////////
+                    if (rows[0]["mm"].ToString() == "")
+                    {
+                        txttotal_mm.Text = "صفر جنية ";
+                        m = 0;
+                    }
+                    else
+                    {
+                        txttotal_mm.Text = rows[0]["mm"].ToString() + " " + "جنية ";
+                        m = int.Parse(rows[0]["mm"].ToString());
+
+                    }
+                    int tot = mm - m;
+                    if (tot >= 0)
+                    {
+                        earn_total.Text = tot.ToString() + " " + "جنية "; ;
+                        earn_total.ForeColor = Color.ForestGreen;
+                    }
+                    else
+                    {
+                        earn_total.Text = (tot * -1).ToString() + " " + "جنية "; ;
+                        earn_total.ForeColor = Color.Firebrick;
+                    }
                 }
-                else
-                {
-                    txttotal_today.Text = rows[0]["day"].ToString() + " " + "جنية ";
-                    inc = int.Parse(rows[0]["day"].ToString());
-                }
-                txttotal_mounth.Text =rows[0]["mounth"].ToString() + " " + "جنية ";
-                txttotal_mm.Text =rows[0]["mm"].ToString() + " " + "جنية ";
-                int tot = int.Parse(rows[0]["mounth"].ToString()) - int.Parse(rows[0]["mm"].ToString());
-                if(tot >= 0)
-                {
-                    earn_total.Text = tot.ToString() + " " + "جنية "; ;
-                    earn_total.ForeColor = Color.ForestGreen;
-                }
-                else
-                {
-                    earn_total.Text = (tot*-1).ToString() + " " + "جنية "; ;
-                    earn_total.ForeColor = Color.Firebrick;
-                }
-            }
             income(today);
+          
+          
         }
         private void income(DateTime date)
         {
             var d = today.ToString("dd/MM/yyyy");
+            int temp = 0;
             string sql = "select cast(sum(payment)/30 as int) as t from logs_info where month(date) like @mounth and YEAR(date) like @year";
 
             using (connection = new SqlConnection(connectionString))
@@ -233,13 +250,15 @@ namespace allN1
                 if (rows[0]["t"].ToString() == "")
                 {
                     income_day.Text = "صفر جنية ";
+                    temp = 0;
                 }
                 else
                 {
                     income_day.Text = rows[0]["t"].ToString() + " " + "جنية ";
+                    temp = int.Parse(rows[0]["t"].ToString());
                 }
                 
-                if (int.Parse(rows[0]["t"].ToString()) <= inc)
+                if (temp <= inc)
                 {
                     txttotal_today.ForeColor = Color.ForestGreen;
                 }
@@ -252,6 +271,7 @@ namespace allN1
         private void income0(DateTime date)
         {
             var d = today.ToString("dd/MM/yyyy");
+           
             string sql = "select cast(sum(payment)/30 as int) as t from logs_info where month(date) like @mounth and YEAR(date) like @year";
 
             using (connection = new SqlConnection(connectionString))
@@ -266,6 +286,7 @@ namespace allN1
                 if (rows[0]["t"].ToString() == "")
                 {
                     income_day_0.Text = "صفر جنية ";
+                    
                 }
                 else
                 {
@@ -284,7 +305,7 @@ namespace allN1
                     (select sum(payment) as s 
                         from logs_info
                         where month(date) like @mounth and YEAR(date) like @year) as mounth,
-(select sum(v_payment) as s  from v_logs where month(v_date) like 09 and YEAR(v_date) like 2020) as mm";
+(select sum(v_payment) as s  from v_logs where month(v_date) like @mounthLast and YEAR(v_date) like @year) as mm";
 
             using (connection = new SqlConnection(connectionString))
             using (SqlCommand command = new SqlCommand(sql, connection))
@@ -293,6 +314,7 @@ namespace allN1
                 // CONVERT (varchar(10), date, 103) as [الوقت ]
                 command.Parameters.AddWithValue("@year", d.Split('/')[2]);
                 command.Parameters.AddWithValue("@mounth", int.Parse(d.Split('/')[1])-1);
+                command.Parameters.AddWithValue("@mounthLast", int.Parse(d.Split('/')[1]) - 2);
                 DataTable goods_info = new DataTable();
                 adapter.Fill(goods_info);
                 DataRow[] rows = goods_info.Select();
@@ -818,11 +840,10 @@ namespace allN1
         }
 
 
-        bool cpy = false;
+
         private void TextBox17_Enter(object sender, EventArgs e)
         {
-            Clipboard.SetText(txtuser_id.Text);
-            cpy = true;
+
 
         }
 
@@ -897,7 +918,7 @@ namespace allN1
             save_users_data();
             save_vendors_data();
             _ = BackupdatabaseAsync();
-            this.Close();
+            
         }
 
         private void تصغيرToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -1030,7 +1051,7 @@ namespace allN1
                         ref matchDiactitics, ref matchAlefHamza,
                         ref matchControl);
         }
-        private void printmotalba(object filename, object savaAs)
+        private void printmotalba(object filename, object savaAs , string user , string payout , string remain)
         {
             foreach (var process in Process.GetProcessesByName("WINWORD"))
             {
@@ -1054,10 +1075,11 @@ namespace allN1
                                         ref missing, ref missing, ref missing,
                                         ref missing, ref missing, ref missing, ref missing);
                 FindAndReplace(wordApp, "<date>", today.ToString("dd/MM/yyyy"));
-                FindAndReplace(wordApp, "<pay>", txtuer_payout.Text);
-                FindAndReplace(wordApp, "<name>", txtuser.Text);
-                FindAndReplace(wordApp, "<mony>", remain.ToString());
-
+                FindAndReplace(wordApp, "<pay>", payout);
+                FindAndReplace(wordApp, "<name>", user);
+                FindAndReplace(wordApp, "<mony>", remain);
+                MessageBox.Show(user + " : "+ payout + " : " + remain);
+                    
 
 
                 aDoc.PageSetup.Orientation = Word.WdOrientation.wdOrientPortrait;
@@ -1066,7 +1088,7 @@ namespace allN1
                 //Find and replace:
 
                 object copies = "1";
-                object pages = "";
+                object pages = "1";
                 object range = Word.WdPrintOutRange.wdPrintAllDocument;
                 object items = Word.WdPrintOutItem.wdPrintDocumentContent;
                 object pageType = Word.WdPrintOutPages.wdPrintAllPages;
@@ -1091,6 +1113,7 @@ namespace allN1
                 return;
             }
 
+
         }
         private async Task do_pay_u_Async()
         {
@@ -1110,7 +1133,7 @@ namespace allN1
             }
             time_now.ForeColor = Color.Green;
             time_now.Text = " تم دفع القسط بنجاح ";
-            lastpay();
+           
 
             if (MessageBox.Show("هل تريد طباعة إيصال الدفع؟", "طباعة", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
@@ -1131,8 +1154,9 @@ namespace allN1
                     time_now.ForeColor = Color.FromArgb(240,240,51);
                     time_now.Text = e.ToString();
                 }
-                printmotalba(Application.StartupPath + "/payment.docx", Application.StartupPath + name_of_payment);
+                printmotalba(Application.StartupPath + "/payment.docx", Application.StartupPath + name_of_payment, txtuser.Text, txtuer_payout.Text, remain.ToString());
             }
+            lastpay();
             int s = userslist.SelectedIndex;
            // Viewusers();
             userslist.SetSelected(s, true);
@@ -1965,6 +1989,7 @@ namespace allN1
                     command.Parameters.AddWithValue("@dir", file);
                     command.ExecuteNonQuery();
                 }
+                this.Close();
             }
             catch (Exception e)
             {
@@ -1997,7 +2022,9 @@ namespace allN1
                     time_now.ForeColor = Color.FromArgb(240,240,51);
                     time_now.Text = "حدث خطأ : يجب التواصل مع المهندس فورا";
                     await Task.Delay(milliseconds);
+                    this.Close();
                 }
+                
             }
         }
 
@@ -2094,6 +2121,18 @@ namespace allN1
         {
             typeSrch typeSrch = new typeSrch();
             typeSrch.ShowDialog(this);
+        }
+
+        private void DateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                paymnts(dateTimePicker1.Value);
+            }
+            catch
+            {
+                _ = errAsync();
+            }
         }
     }
 }

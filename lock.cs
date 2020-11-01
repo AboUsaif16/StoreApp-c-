@@ -120,5 +120,15 @@ namespace allN1
         {
 
         }
+
+        private void PictureBox1_Click_1(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

@@ -44,8 +44,3 @@ D:\A.Abousaif\My Work - A.Abousaif\allN1\obj\Debug\allN1.vendor_bill.resources
 D:\A.Abousaif\My Work - A.Abousaif\allN1\obj\Debug\allN1.order.resources
 D:\A.Abousaif\My Work - A.Abousaif\allN1\obj\Debug\allN1.v_order.resources
 D:\A.Abousaif\My Work - A.Abousaif\allN1\obj\Debug\allN1.typeSrch.resources
-D:\A.Abousaif\My Work - A.Abousaif\allN1\bin\Debug\RestSharp.dll
-D:\A.Abousaif\My Work - A.Abousaif\allN1\bin\Debug\TextmagicRest.dll
-D:\A.Abousaif\My Work - A.Abousaif\allN1\bin\Debug\WhatsAppApi.dll
-D:\A.Abousaif\My Work - A.Abousaif\allN1\bin\Debug\RestSharp.xml
-D:\A.Abousaif\My Work - A.Abousaif\allN1\obj\Debug\allN1.csproj.CopyComplete
