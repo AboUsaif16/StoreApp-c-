@@ -9,17 +9,28 @@ using System.IO;
 using System.Diagnostics;
 using System.Text.RegularExpressions;
 using System.Drawing;
+using System.Text;
 
 namespace allN1
 {
     public partial class bill_info : Form
 
     {
+        public static string Cd ;
+        public static string billN = "";
+        public static string gName = "";
+        public static string gID = "";
+        public static string sDate = "";
+        public static string price = "";
+        public static string tot = "";
+        public static string sAmount = "";
+        public static string uid = "";
         readonly string connectionString;
         SqlConnection connection;
         public bill_info()
         {
             InitializeComponent();
+            //connectionString = "Server=DESKTOP-O9G3AES;Data Source = CORTEX; Initial Catalog = AppDB; Persist Security Info = True; User ID = sa; Password = 12345";
             connectionString = ConfigurationManager.ConnectionStrings["allN1.Properties.Settings.DBConnectionString"].ConnectionString;
         }
 
@@ -39,32 +50,40 @@ namespace allN1
             txtuser.Text = Form1.usernameSelected;
             this.Text = "سجل فواتير  : " + txtuser.Text;
             ViewOrdersIds();
-
-
         }
 
         private void BillList_SelectedIndexChanged(object sender, EventArgs e)
         {
-            String quary = "select total_price  , (CONVERT(VARCHAR(10),date , 103)) as date from orders where order_id = " + billList.SelectedValue;
-            using (connection = new SqlConnection(connectionString))
-            using (SqlCommand command = new SqlCommand(quary, connection))
-            using (SqlDataAdapter adapter = new SqlDataAdapter(command))
+            try
             {
-                DataTable bill_info = new DataTable();
-                adapter.Fill(bill_info);
-                DataRow[] rows = bill_info.Select();
-                txttotal.Text = rows[0]["total_price"].ToString();
-                txtdate.Text = rows[0]["date"].ToString();
-            }
+                StringBuilder Quary = new StringBuilder();
+                Quary.Append("select total_price  , (CONVERT(VARCHAR(10),date , 103)) as date from orders where order_id = ");
+                Quary.Append(billList.SelectedValue);
+                
+                using (connection = new SqlConnection(connectionString))
+                using (SqlCommand command = new SqlCommand(Quary.ToString(), connection))
+                using (SqlDataAdapter adapter = new SqlDataAdapter(command))
+                {
+                    DataTable bill_info = new DataTable();
+                    adapter.Fill(bill_info);
+                    DataRow[] rows = bill_info.Select();
+                    txttotal.Text = rows[0]["total_price"].ToString();
+                    txtdate.Text = rows[0]["date"].ToString();
+                }
 
-            ViewOrderInfo();
+                ViewOrderInfo();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
 
 
         }
 
         private void ViewOrderInfo()
         {
-            String quary = "select goods.name as [إسم الصنف] , Sells.amount as [الكمية] , Sells.sell_price as [سعر الوحده] , total_price as [السعر الكلى]  from  Sells join goods on Sells.good_id = goods.Id  where order_id = @order_id ";
+            String quary = "select Sells.Id as [#],goods.name as [إسم الصنف] , Sells.amount as [الكمية] , Sells.sell_price as [سعر الوحده] , total_price as [السعر الكلى] , goods.Id from  Sells join goods on Sells.good_id = goods.Id  where order_id = @order_id ";
             using (connection = new SqlConnection(connectionString))
             using (SqlCommand command = new SqlCommand(quary, connection))
             using (SqlDataAdapter adapter = new SqlDataAdapter(command))
@@ -74,6 +93,8 @@ namespace allN1
                 adapter.Fill(goods_info);
                 dataGridView1.DataSource = goods_info;
             }
+            this.dataGridView1.Columns[0].Visible = false;
+            this.dataGridView1.Columns[5].Visible = false;
 
 
         }
@@ -144,7 +165,32 @@ namespace allN1
 
         private void Button2_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("إنتظر النسخه القادمة");
+            
+            if (MessageBox.Show(this,"هل تريد إسترداد الصنف؟", "تحذير", MessageBoxButtons.OKCancel,MessageBoxIcon.Warning) == DialogResult.OK)
+
+            {
+                    try
+                    {
+                    int x  = dataGridView1.CurrentCell.RowIndex;
+                    Cd = dataGridView1[0, x].Value.ToString();
+                    gName =  dataGridView1[1, x].Value.ToString();
+                    sAmount = dataGridView1[2, x].Value.ToString();
+                    price = dataGridView1[3, x].Value.ToString();
+                    tot = dataGridView1[4, x].Value.ToString();
+                    gID = dataGridView1[5, x].Value.ToString();
+                    sDate = txtdate.Text;
+                    billN = billList.SelectedValue.ToString();
+                    uid = txtid.Text;
+                    goodReturn gRet = new goodReturn();
+                    gRet.ShowDialog(this);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+            }
+            clean();
+            ViewOrdersIds();
         }
 
         private void Button1_Click(object sender, EventArgs e)

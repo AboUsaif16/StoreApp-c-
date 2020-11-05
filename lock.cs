@@ -71,7 +71,7 @@ namespace allN1
                     command.ExecuteNonQuery();
                 }
             }
-            catch (Exception ex)
+            catch 
             {
 
 

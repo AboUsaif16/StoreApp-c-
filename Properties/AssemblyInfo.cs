@@ -1,17 +1,18 @@
-﻿using System.Reflection;
+﻿using System.Resources;
+using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("allN1")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("معرض أبوسيف للأدوات المنزلية والأجهزة الكهربائية")]
+[assembly: AssemblyDescription("معرض أبوسيف للأدوات المنزلية والأجهزة الكهربائية")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("allN1")]
-[assembly: AssemblyCopyright("Copyright ©  2020")]
-[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCompany("AboUsaif")]
+[assembly: AssemblyProduct("Alln1")]
+[assembly: AssemblyCopyright("Eng.Ahmed Abou Saif  ©  2020")]
+[assembly: AssemblyTrademark("C0rteX")]
 [assembly: AssemblyCulture("")]
 
 // Setting ComVisible to false makes the types in this assembly not visible
@@ -32,5 +33,7 @@ using System.Runtime.InteropServices;
 // You can specify all the values or you can default the Build and Revision Numbers
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.0.0.0")]
-[assembly: AssemblyFileVersion("1.0.0.0")]
+[assembly: AssemblyVersion("2.0.1.0")]
+[assembly: AssemblyFileVersion("2.0.1.1")]
+[assembly: NeutralResourcesLanguage("ar-EG")]
+

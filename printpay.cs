@@ -166,7 +166,7 @@ namespace allN1
                     DirectoryInfo di = Directory.CreateDirectory(path);
                 }
             }
-            catch (Exception ex)
+            catch
             {
                 time_now.ForeColor = Color.Red;
                 time_now.Text = e.ToString();

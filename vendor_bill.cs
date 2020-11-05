@@ -10,6 +10,16 @@ namespace allN1
 {
     public partial class vendor_bill : Form
     {
+        public static string v_Cd;
+        public static string v_billN = "";
+        public static string v_gName = "";
+        public static string v_gID = "";
+        public static string v_sDate = "";
+        public static string v_price = "";
+        public static string v_tot = "";
+        public static string v_sAmount = "";
+        public static string vid = "";
+
         readonly string connectionString;
         SqlConnection connection;
         //bool f = false;
@@ -43,7 +53,7 @@ namespace allN1
 
         private void ViewOrderInfo()
         {
-            String quary = "select goods.name as [إسم الصنف] ,b_amount as [الكمية] , b_price as [سعر الوحده] , b_total as [السعر الكلى]  from Buy join v_goods on b_good_id = v_goods_id join goods on Id = good_id where b_order_id = @order_id and vendor_id = @userId ";
+            String quary = "select b_id as [#],goods.name as [إسم الصنف] ,b_amount as [الكمية] , b_price as [سعر الوحده] , b_total as [السعر الكلى] ,  goods.Id from Buy join v_goods on b_good_id = v_goods_id join goods on Id = good_id where b_order_id = @order_id and vendor_id = @userId ";
             using (connection = new SqlConnection(connectionString))
             using (SqlCommand command = new SqlCommand(quary, connection))
             using (SqlDataAdapter adapter = new SqlDataAdapter(command))
@@ -54,7 +64,8 @@ namespace allN1
                 adapter.Fill(goods_info);
                 dataGridView1.DataSource = goods_info;
             }
-
+            this.dataGridView1.Columns[0].Visible = false;
+            this.dataGridView1.Columns[5].Visible = false;
 
         }
 
@@ -89,7 +100,31 @@ namespace allN1
 
         private void Btn_backinfo_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("إنتظر النسخه القادمة");
+            if (MessageBox.Show(this, "هل تريد إسترداد الصنف؟", "تحذير", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
+            {
+                try
+                {
+                    int x = dataGridView1.CurrentCell.RowIndex;
+                    v_Cd = dataGridView1[0, x].Value.ToString();
+                    v_gName = dataGridView1[1, x].Value.ToString();
+                    v_sAmount = dataGridView1[2, x].Value.ToString();
+                    v_price = dataGridView1[3, x].Value.ToString();
+                    v_tot = dataGridView1[4, x].Value.ToString();
+                    v_gID = dataGridView1[5, x].Value.ToString();
+                    v_sDate = txtdate.Text;
+                    v_billN = billList.SelectedValue.ToString();
+                    vid = txtid.Text;
+                    venGoodRet gRet = new venGoodRet();
+                    gRet.ShowDialog(this);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+            clean_v();
+            ViewOrdersIds();
+
         }
 
         private void Btn_del_Click(object sender, EventArgs e)

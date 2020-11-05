@@ -44,6 +44,7 @@ namespace allN1
         {
             if (flag)
             {
+
                 String quary = String.Concat("select name as [إسم الصنف] , sell_price as [سعر البيع] , buy_price as [سعر الشراء] , amount as [الكمية] from goods where type = N'", typeList.SelectedValue.ToString(), "'", "and kind = N'", kindList.SelectedValue.ToString(), "'");
                 using (connection = new SqlConnection(connectionString))
                 using (SqlCommand command = new SqlCommand(quary, connection))

@@ -33,5 +33,16 @@ namespace allN1.Properties {
                 return ((string)(this["AppDBConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.;Initial Catalog=AppDB;Persist Security Info=True;User ID=sa;Passwor" +
+            "d=12345")]
+        public string DBConnectionString {
+            get {
+                return ((string)(this["DBConnectionString"]));
+            }
+        }
     }
 }

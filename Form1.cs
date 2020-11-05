@@ -16,10 +16,14 @@ using System.Reflection;
 using System.IO;
 using System.Diagnostics;
 
+
+using System.Drawing.Printing;
+
 namespace allN1
 {
     public partial class Form1 : Form
     {
+
         bool sell_info = false;
         float remain;
         float remain_v;
@@ -28,6 +32,7 @@ namespace allN1
         public static string useridSelected = "";
         public static string vendornameSelected = "";
         public static string vendoridSelected = "";
+        string filename;
         readonly DateTime today = DateTime.Now;
         readonly string connectionString;
         SqlConnection connection;
@@ -37,6 +42,16 @@ namespace allN1
         public Form1()
         {
             InitializeComponent();
+            String thisprocessname = Process.GetCurrentProcess().ProcessName;
+
+            if (Process.GetProcesses().Count(p => p.ProcessName == thisprocessname) > 1)
+            {
+                MessageBox.Show(this, "البرنامج يعمل بالفعل", "تحذير", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                this.Close();
+            }
+                
+
+
             time_now.ForeColor = Color.FromArgb(240,240,51);
             time_now.Text = "يتم تحميل الأن بيانات البرنامج";
             connectionString = ConfigurationManager.ConnectionStrings["allN1.Properties.Settings.DBConnectionString"].ConnectionString;
@@ -421,7 +436,7 @@ namespace allN1
                     command.ExecuteNonQuery();
                 }
 
-                time_now.ForeColor = Color.Green;
+                time_now.ForeColor = Color.Black;
                 time_now.Text = "تم حذف  " + txtproduct.Text + " من قاعدة البيانات";
                 int ss = goodslist.SelectedIndex;
                 Viewgoods();
@@ -642,7 +657,7 @@ namespace allN1
                     }
                     else
                     {
-                        time_now.ForeColor = Color.Green;
+                        time_now.ForeColor = Color.Black;
                         time_now.Text = "عملية ناجحه : تم إضافة " + txtproduct_new.Text + " إلى قاعدة البيانات ";
                         txtproduct_new.Text = "";
                         txtType.Text = "";
@@ -696,7 +711,7 @@ namespace allN1
                     command.Parameters.AddWithValue("@kind", txtType.Text);
                     command.ExecuteNonQuery();
                 }
-                time_now.ForeColor = Color.Green;
+                time_now.ForeColor = Color.Black;
                 time_now.Text = "  تم تعديل بيانات " + txtproduct.Text;
                 int s = goodslist.SelectedIndex;
                 Viewgoods();
@@ -1078,7 +1093,7 @@ namespace allN1
                 FindAndReplace(wordApp, "<pay>", payout);
                 FindAndReplace(wordApp, "<name>", user);
                 FindAndReplace(wordApp, "<mony>", remain);
-                MessageBox.Show(user + " : "+ payout + " : " + remain);
+                
                     
 
 
@@ -1088,7 +1103,7 @@ namespace allN1
                 //Find and replace:
 
                 object copies = "1";
-                object pages = "1";
+                object pages = "";
                 object range = Word.WdPrintOutRange.wdPrintAllDocument;
                 object items = Word.WdPrintOutItem.wdPrintDocumentContent;
                 object pageType = Word.WdPrintOutPages.wdPrintAllPages;
@@ -1097,9 +1112,12 @@ namespace allN1
                 object oMissing = Missing.Value;
                 time_now.Text = "جارى طباعة الإيصال";
                 aDoc.PrintOut(ref oTrue, ref oFalse, ref range, ref oMissing, ref oMissing, ref oMissing, ref items, ref copies, ref pages, ref pageType, ref oFalse, ref oTrue, ref oMissing, ref oFalse, ref oMissing, ref oMissing, ref oMissing, ref oMissing);
+                //
+
                 //Close Document:
                 time_now.Text = "تمت الطباعة";
                 aDoc.SaveAs2(savaAs);
+                aDoc.SaveAs2(Application.StartupPath + "/temp.docx");
                 aDoc.Close(ref missing, ref missing, ref missing);
                 foreach (var process in Process.GetProcessesByName("WINWORD"))
                 {
@@ -1131,7 +1149,7 @@ namespace allN1
 
                 command.ExecuteNonQuery();
             }
-            time_now.ForeColor = Color.Green;
+            time_now.ForeColor = Color.Black;
             time_now.Text = " تم دفع القسط بنجاح ";
            
 
@@ -1139,6 +1157,7 @@ namespace allN1
             {
                 time_now.Text = "جارى إنشاء الإيصال";
                 string name_of_payment = "/payments/" + today.ToString("dd-MM-yyyy") + "/" + txtuser.Text + ".docx";
+                filename =Application.StartupPath + "/payments/" + today.ToString("dd-MM-yyyy");
                 // Specify the directory you want to manipulate.
                 string path = Application.StartupPath + "/payments/" + today.ToString("dd-MM-yyyy");
                 try
@@ -1155,6 +1174,24 @@ namespace allN1
                     time_now.Text = e.ToString();
                 }
                 printmotalba(Application.StartupPath + "/payment.docx", Application.StartupPath + name_of_payment, txtuser.Text, txtuer_payout.Text, remain.ToString());
+
+                if (File.Exists(Application.StartupPath+"\\123.txt"))
+                {
+                    if (MessageBox.Show("هل تريد الطباعه بطريقة اخرى؟؟", "طباعة", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    {
+                        using (PrintDialog pd = new PrintDialog())
+                        {
+                            pd.ShowDialog();
+                            ProcessStartInfo info = new ProcessStartInfo(Application.StartupPath + "\\temp.docx");
+                            info.Verb = "PrintTo";
+                            info.Arguments = pd.PrinterSettings.PrinterName;
+                            info.CreateNoWindow = true;
+                            info.WindowStyle = ProcessWindowStyle.Hidden;
+                            Process.Start(info);
+                        }
+                    }
+                }
+                
             }
             lastpay();
             int s = userslist.SelectedIndex;
@@ -1192,7 +1229,7 @@ namespace allN1
 
             vendorlist.SetSelected(s, true); ;
 
-            time_now.ForeColor = Color.Green;
+            time_now.ForeColor = Color.Black;
             time_now.Text = " تم دفع القسط بنجاح ";
 
             txtvendor_payout.Text = "";
@@ -1244,7 +1281,7 @@ namespace allN1
                     command.Parameters.AddWithValue("@mony", int.Parse(txtuser_mony.Text));
                     command.ExecuteNonQuery();
                 }
-                time_now.ForeColor = Color.Green;
+                time_now.ForeColor = Color.Black;
                 time_now.Text = " تم تعديل بيانات " + txtuser.Text;
                 int s = userslist.SelectedIndex;
                 Viewusers();
@@ -1272,7 +1309,7 @@ namespace allN1
 
                         command.ExecuteNonQuery();
                     }
-                    time_now.ForeColor = Color.Green;
+                    time_now.ForeColor = Color.Black;
                     time_now.Text = " تم حذف العميل " + txtuser.Text;
                     int s = userslist.SelectedIndex;
                     Viewusers();
@@ -1327,7 +1364,7 @@ namespace allN1
                     }
                     else
                     {
-                        time_now.ForeColor = Color.Green;
+                        time_now.ForeColor = Color.Black;
                         time_now.Text = "عملية ناجحه : تم إضافة " + txtuser_new.Text + " إلى قاعدة البيانات ";
                         Viewusers();
                         txtuser_new.Text = "";
@@ -1529,6 +1566,8 @@ namespace allN1
 
             totalToday(today);
             paymnts(today);
+
+            
 
         }
 
@@ -1779,7 +1818,7 @@ namespace allN1
                     command.Parameters.AddWithValue("@phone", txtvendor_phone.Text);
                     command.Parameters.AddWithValue("@mony", int.Parse(txtvendor_mony.Text));
                     command.ExecuteNonQuery();
-                    time_now.ForeColor = Color.Green;
+                    time_now.ForeColor = Color.Black;
                     time_now.Text = "  تم تعديل بيانات " + txtvendor_name.Text;
                     int s = vendorlist.SelectedIndex;
                     Viewvendors();
@@ -1813,7 +1852,7 @@ namespace allN1
 
                         command.ExecuteNonQuery();
                     }
-                    time_now.ForeColor = Color.Green;
+                    time_now.ForeColor = Color.Black;
                     time_now.Text = "  تم حذف " + txtvendor_name.Text;
                     int ss = goodslist.SelectedIndex;
                     Viewgoods();
@@ -1900,7 +1939,7 @@ namespace allN1
                     }
                     else
                     {
-                        time_now.ForeColor = Color.Green;
+                        time_now.ForeColor = Color.Black;
                         time_now.Text = "عملية ناجحه : تم إضافة " + txtvendor_name_new.Text + " إلى قاعدة البيانات ";
                         Viewvendors();
                         txtvendor_name_new.Text = "";
@@ -1973,9 +2012,9 @@ namespace allN1
             // Check if file already exists. If yes, delete it.     
             if (File.Exists(file))
             {
-                time_now.ForeColor = Color.Green;
+                time_now.ForeColor = Color.Black;
                 time_now.Text = "تم تحديث قاعدة البيانات";
-                int milliseconds = 1000;
+                int milliseconds = 200;
                 await Task.Delay(milliseconds);
                 File.Delete(file);
             }
@@ -2110,6 +2149,7 @@ namespace allN1
 
             v_order v_Order = new v_order();
             v_Order.ShowDialog(this);
+            
             //clean_v();
             int s = vendorlist.SelectedIndex;
             Viewvendors();
@@ -2132,6 +2172,68 @@ namespace allN1
             catch
             {
                 _ = errAsync();
+            }
+        }
+
+        private void ToolStripDropDownButton1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ToolStripSplitButton1_ButtonClick(object sender, EventArgs e)
+        {
+
+        }
+
+        private void إيصالاتاليومToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Process.Start(Application.StartupPath+ "\\payments\\"+ today.ToString("dd-MM-yyyy"));
+            }
+            catch 
+            {
+                //The system cannot find the file specified...
+                MessageBox.Show(this, "لا توجد إيصالات اليوم", "خطأ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void فواتيرToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Process.Start(Application.StartupPath + "\\bills");
+            }
+            catch (Exception ex)
+            {
+                //The system cannot find the file specified...
+                MessageBox.Show(this, "حدث خطأ برجاء التواصل مع المبرمج\n"+ex.Message, "خطأ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void إيصالاتاليومToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Process.Start(Application.StartupPath + "\\payments\\" + today.ToString("dd-MM-yyyy"));
+            }
+            catch
+            {
+                //The system cannot find the file specified...
+                MessageBox.Show(this, "لا توجد إيصالات اليوم", "خطأ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void فواتيرToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Process.Start(Application.StartupPath + "\\bills");
+            }
+            catch (Exception ex)
+            {
+                //The system cannot find the file specified...
+                MessageBox.Show(this, "حدث خطأ برجاء التواصل مع المبرمج\n" + ex.Message, "خطأ", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

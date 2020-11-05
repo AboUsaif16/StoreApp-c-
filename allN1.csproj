@@ -7,11 +7,26 @@
     <ProjectGuid>{00D9E163-6B7A-4A08-BDE3-215C8046F601}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>allN1</RootNamespace>
-    <AssemblyName>allN1</AssemblyName>
+    <AssemblyName>معرض أبوسيف</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -25,15 +40,19 @@
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
-    <DebugType>pdbonly</DebugType>
+    <DebugType>none</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <FileAlignment>8192</FileAlignment>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>003-windows.ico</ApplicationIcon>
+    <ApplicationIcon>database_data_20916 %281%29.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>allN1.Program</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.Office.Interop.Word, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
@@ -68,6 +87,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="goodReturn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="goodReturn.Designer.cs">
+      <DependentUpon>goodReturn.cs</DependentUpon>
+    </Compile>
     <Compile Include="lock.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -85,6 +110,12 @@
     </Compile>
     <Compile Include="typeSrch.Designer.cs">
       <DependentUpon>typeSrch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="venGoodRet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="venGoodRet.Designer.cs">
+      <DependentUpon>venGoodRet.cs</DependentUpon>
     </Compile>
     <Compile Include="v_order.cs">
       <SubType>Form</SubType>
@@ -118,6 +149,9 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="goodReturn.resx">
+      <DependentUpon>goodReturn.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="lock.resx">
       <DependentUpon>lock.cs</DependentUpon>
     </EmbeddedResource>
@@ -126,6 +160,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="typeSrch.resx">
       <DependentUpon>typeSrch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="venGoodRet.resx">
+      <DependentUpon>venGoodRet.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="v_order.resx">
       <DependentUpon>v_order.cs</DependentUpon>
@@ -315,6 +352,20 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="003-windows.ico" />
+    <Content Include="database_data_20916 %281%29.ico" />
+    <None Include="img\shutdown_40px.png" />
+    <None Include="img\application_shield_120px.png" />
+    <None Include="img\administrator_male_90px.png" />
+    <None Include="img\toolbox_30px.png" />
+    <None Include="img\2shutdown_30px.png" />
+    <None Include="img\2minimize_window_30px.png" />
+    <None Include="img\secure_30px.png" />
+    <None Include="img\print_address_label_30px.png" />
+    <None Include="img\synchronize_30px.png" />
+    <None Include="img\support_30px.png" />
+    <None Include="img\automatic_30px.png" />
+    <None Include="img\send_to_printer_30px.png" />
+    <None Include="img\documents_folder_30px.png" />
     <None Include="img\menu1_64px.png" />
     <None Include="img\customer_128px.png" />
     <None Include="img\refund_30px.png" />
@@ -331,6 +382,18 @@
     <None Include="img\male_user_200px.png" />
     <None Include="img\browse_folder_40px.png" />
     <None Include="img\browse_folder_30px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
