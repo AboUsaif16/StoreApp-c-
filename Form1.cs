@@ -2114,11 +2114,7 @@ namespace allN1
             userslist.SetSelected(s, true);
         }
 
-        private void الفواتيرToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            clean();
-            clean_v();
-        }
+
         private void clean_v()
         {
             String quary = "alter table Buy nocheck constraint all ;delete from  v_orders where total_buy IS NULL ;alter table Buy check constraint all ";
@@ -2175,30 +2171,24 @@ namespace allN1
             }
         }
 
+
+
+        private void Gb_sell_info_Enter(object sender, EventArgs e)
+        {
+
+        }
+
         private void ToolStripDropDownButton1_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void ToolStripSplitButton1_ButtonClick(object sender, EventArgs e)
+        private void الفواتيرToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void إيصالاتاليومToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                Process.Start(Application.StartupPath+ "\\payments\\"+ today.ToString("dd-MM-yyyy"));
-            }
-            catch 
-            {
-                //The system cannot find the file specified...
-                MessageBox.Show(this, "لا توجد إيصالات اليوم", "خطأ", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        private void فواتيرToolStripMenuItem_Click(object sender, EventArgs e)
+        private void فواتيرToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             try
             {
@@ -2207,7 +2197,7 @@ namespace allN1
             catch (Exception ex)
             {
                 //The system cannot find the file specified...
-                MessageBox.Show(this, "حدث خطأ برجاء التواصل مع المبرمج\n"+ex.Message, "خطأ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(this, "حدث خطأ برجاء التواصل مع المبرمج\n" + ex.Message, "خطأ", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -2224,17 +2214,43 @@ namespace allN1
             }
         }
 
-        private void فواتيرToolStripMenuItem1_Click(object sender, EventArgs e)
+        private void Panel12_Paint(object sender, PaintEventArgs e)
         {
-            try
-            {
-                Process.Start(Application.StartupPath + "\\bills");
-            }
-            catch (Exception ex)
-            {
-                //The system cannot find the file specified...
-                MessageBox.Show(this, "حدث خطأ برجاء التواصل مع المبرمج\n" + ex.Message, "خطأ", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+
+        }
+
+        private void PictureBox3_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void PictureBox1_Click_1(object sender, EventArgs e)
+        {
+            save_users_data();
+            save_vendors_data();
+            _ = BackupdatabaseAsync();
+        }
+
+        private void PictureBox4_Click(object sender, EventArgs e)
+        {
+            printpay printpay = new printpay();
+            printpay.ShowDialog(this);
+        }
+
+        private void PictureBox5_Click(object sender, EventArgs e)
+        {
+            @lock lck = new @lock();
+            lck.ShowDialog(this);
+        }
+
+        private void StatusStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void ToolStripDropDownButton2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

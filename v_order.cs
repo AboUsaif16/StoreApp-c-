@@ -19,8 +19,7 @@ namespace allN1
     public partial class v_order : Form
     {
         #region variabls
-        bool new_prd = false;
-        string txtType_new = "";
+        string kk = "%%";
         readonly string connectionString;
         SqlConnection connection;
         bool flag = false;
@@ -182,80 +181,54 @@ namespace allN1
                 rslt.DataSource = goods_info;
             }
         }
+        private void findalpha(string type, ListBox rslt)
+        {
+            String quary = String.Concat("SELECT SUBSTRING(name, 1, 1) As a from goods where kind like N'", type, "' group by SUBSTRING(name, 1, 1)");
+            using (connection = new SqlConnection(connectionString))
+            using (SqlCommand command = new SqlCommand(quary, connection))
+            using (SqlDataAdapter adapter = new SqlDataAdapter(command))
+            {
+                DataTable goods_info = new DataTable();
+                adapter.Fill(goods_info);
+                rslt.DisplayMember = "a";
+                rslt.ValueMember = "a";
+                rslt.DataSource = goods_info;
+            }
+        }
+
         private void typeChecked(object sender, EventArgs e)
         {
             if (r0.Checked)
             {
                 findtypes("%%", typeList);
-                //typeGbox.Text = "الكل";
-                txtType_new = "الكل";
+                kk = "%%";
+                findalpha("%%", alpha);
                 r1.ForeColor = r2.ForeColor = r3.ForeColor = Color.Black;
                 r0.ForeColor = Color.Red;
             }
             if (r1.Checked)
             {
+                kk = "أجهزة كهربائية";
                 findtypes("أجهزة كهربائية", typeList);
-                //typeGbox.Text = "أجهزة كهربائية";
-                txtType_new = "أجهزة كهربائية";
+                findalpha("أجهزة كهربائية", alpha);
                 r0.ForeColor = r2.ForeColor = r3.ForeColor = Color.Black;
                 r1.ForeColor = Color.Red;
             }
             if (r2.Checked)
             {
+                kk = "أدوات منزلية";
                 findtypes("أدوات منزلية", typeList);
-                //typeGbox.Text = "أدوات منزلية";
-                txtType_new = "أدوات منزلية";
+                findalpha("أدوات منزلية", alpha);
                 r0.ForeColor = r1.ForeColor = r3.ForeColor = Color.Black;
                 r2.ForeColor = Color.Red;
             }
             if (r3.Checked)
             {
+                kk = "بلاستيك";
                 findtypes("بلاستيك", typeList);
-                //typeGbox.Text = "بلاستيك";
-                txtType_new = "بلاستيك";
+                findalpha("بلاستيك", alpha);
                 r0.ForeColor = r1.ForeColor = r2.ForeColor = Color.Black;
                 r3.ForeColor = Color.Red;
-            }
-        }
-
-        private void addNewprd()
-        {
-            if (txtType_new == "الكل")
-            {
-                MessageBox.Show("برجاء تحديد النوع");
-            }
-            else
-            {
-                int numberOfRecords = 0;
-                String quary = "if not exists  (Select name from goods where name = @name) begin insert into goods VALUES (@name , @type , @sell , @buy , @amount , @kind)  insert into v_goods (vendor_id , good_id,v_price,v_amount) select  TOP 1 1,Id,buy_price,amount from goods ORDER BY id DESC  end";
-                using (connection = new SqlConnection(connectionString))
-                using (SqlCommand command = new SqlCommand(quary, connection))
-                {
-                    connection.Open();
-                    command.Parameters.AddWithValue("@name", prdname.Text);
-                    command.Parameters.AddWithValue("@type", prdname.Text.Split(' ')[0]);
-                    command.Parameters.AddWithValue("@sell", "0");
-                    command.Parameters.AddWithValue("@buy", "0");
-                    command.Parameters.AddWithValue("@amount", "0");
-                    command.Parameters.AddWithValue("@kind", txtType_new);
-                    numberOfRecords = command.ExecuteNonQuery();
-                }
-                if (numberOfRecords == -1)
-                {
-                    MessageBox.Show("هذا الصنف موجود من قبل ولا يمكن إضافته");
-                    prdname.SelectAll();
-                    prdname.Focus();
-                }
-                else
-                {
-                    MessageBox.Show("تمت الإضافة بنجاح");
-                    prdname.Text = "";
-                    new_prd = false;
-                    btnnew_prd.Text = "صنف جديد";
-                    btnnew_prd.Visible = true;
-                    prdname.Visible = false;
-                    prdname.ForeColor = Color.DarkGray;
-                }
             }
         }
         #endregion
@@ -266,6 +239,7 @@ namespace allN1
             idLabel.Text = Form1.vendoridSelected;
             newOrder();
             findtypes("%%", typeList);
+            findalpha("%%", alpha);
 
         }
         private void NumericUpDown1_ValueChanged(object sender, EventArgs e)
@@ -464,7 +438,7 @@ namespace allN1
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString());
+                MessageBox.Show(ex.Message);
             }
         }
         private void PrdList_SelectedIndexChanged(object sender, EventArgs e)
@@ -483,16 +457,20 @@ namespace allN1
 
         private void Btnnew_prd_Click(object sender, EventArgs e)
         {
-            if (new_prd == false)
+            
+            addproduct addproduct = new addproduct();
+            var x = addproduct.ShowDialog(this);
+            if (x.ToString() == "OK")
             {
-                btnnew_prd.Visible = false;
-                prdname.Visible = true;
-                new_prd = true;
+               
+                r0.Checked = true;
             }
             else
             {
-                addNewprd();
+
             }
+
+            
         }
 
         private void TypeGbox_Enter(object sender, EventArgs e)
@@ -559,25 +537,25 @@ namespace allN1
             selltxt.SelectAll();
         }
 
-        private void Prdname_Enter(object sender, EventArgs e)
+        private void Alpha_SelectedIndexChanged(object sender, EventArgs e)
         {
-            prdname.Clear();
-            prdname.ForeColor = Color.Black;
-
-        }
-
-        private void Prdname_TextChanged(object sender, EventArgs e)
-        {
-            if (prdname.Text == "" || prdname.Text == "ادخل إسم الصنف هنا")
+            try
             {
-                btnnew_prd.Visible = false;
-
+                String quary = String.Concat("select type  from goods where type like N'", alpha.SelectedValue, "%' and kind like N'",kk, "' group by type");
+                using (connection = new SqlConnection(connectionString))
+                using (SqlCommand command = new SqlCommand(quary, connection))
+                using (SqlDataAdapter adapter = new SqlDataAdapter(command))
+                {
+                    DataTable goods_info = new DataTable();
+                    adapter.Fill(goods_info);
+                    typeList.DisplayMember = "type";
+                    typeList.ValueMember = "type";
+                    typeList.DataSource = goods_info;
+                }
             }
-            else
+            catch (Exception ex)
             {
-                btnnew_prd.Visible = true;
-                btnnew_prd.Text = "إضافة";
-
+                MessageBox.Show(ex.Message);
             }
         }
     }

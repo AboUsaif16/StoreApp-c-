@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pricetxt = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.amount = new System.Windows.Forms.NumericUpDown();
@@ -65,7 +65,7 @@
             this.prdList = new System.Windows.Forms.ListBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.prdname = new System.Windows.Forms.TextBox();
+            this.alpha = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.amount)).BeginInit();
             this.panel2.SuspendLayout();
@@ -92,7 +92,7 @@
             this.pricetxt.ForeColor = System.Drawing.Color.Black;
             this.pricetxt.Location = new System.Drawing.Point(10, 35);
             this.pricetxt.Name = "pricetxt";
-            this.pricetxt.Size = new System.Drawing.Size(137, 39);
+            this.pricetxt.Size = new System.Drawing.Size(131, 39);
             this.pricetxt.TabIndex = 8;
             this.pricetxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.pricetxt.Click += new System.EventHandler(this.Pricetxt_Click);
@@ -106,23 +106,23 @@
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ControlLight;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.ControlLight;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.GridColor = System.Drawing.Color.Black;
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
@@ -131,7 +131,7 @@
             this.dataGridView1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(944, 521);
+            this.dataGridView1.Size = new System.Drawing.Size(864, 521);
             this.dataGridView1.TabIndex = 12;
             this.dataGridView1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.DataGridView1_KeyDown);
             // 
@@ -252,7 +252,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 163);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(944, 521);
+            this.panel1.Size = new System.Drawing.Size(864, 521);
             this.panel1.TabIndex = 42;
             // 
             // typeGbox
@@ -270,7 +270,7 @@
             this.typeGbox.Name = "typeGbox";
             this.typeGbox.Padding = new System.Windows.Forms.Padding(0);
             this.typeGbox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.typeGbox.Size = new System.Drawing.Size(151, 251);
+            this.typeGbox.Size = new System.Drawing.Size(231, 251);
             this.typeGbox.TabIndex = 13;
             this.typeGbox.TabStop = false;
             this.typeGbox.Enter += new System.EventHandler(this.TypeGbox_Enter);
@@ -279,7 +279,7 @@
             // 
             this.btnnew_prd.Location = new System.Drawing.Point(6, 191);
             this.btnnew_prd.Name = "btnnew_prd";
-            this.btnnew_prd.Size = new System.Drawing.Size(139, 35);
+            this.btnnew_prd.Size = new System.Drawing.Size(213, 35);
             this.btnnew_prd.TabIndex = 4;
             this.btnnew_prd.Text = "صنف جديد";
             this.btnnew_prd.UseVisualStyleBackColor = true;
@@ -291,7 +291,7 @@
             this.r3.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.r3.Location = new System.Drawing.Point(6, 150);
             this.r3.Name = "r3";
-            this.r3.Size = new System.Drawing.Size(139, 35);
+            this.r3.Size = new System.Drawing.Size(213, 35);
             this.r3.TabIndex = 3;
             this.r3.Text = "بلاستيك";
             this.r3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -304,7 +304,7 @@
             this.r2.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.r2.Location = new System.Drawing.Point(6, 109);
             this.r2.Name = "r2";
-            this.r2.Size = new System.Drawing.Size(139, 35);
+            this.r2.Size = new System.Drawing.Size(213, 35);
             this.r2.TabIndex = 2;
             this.r2.Text = "أدوات منزلية";
             this.r2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -317,7 +317,7 @@
             this.r1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.r1.Location = new System.Drawing.Point(6, 68);
             this.r1.Name = "r1";
-            this.r1.Size = new System.Drawing.Size(139, 35);
+            this.r1.Size = new System.Drawing.Size(213, 35);
             this.r1.TabIndex = 1;
             this.r1.Text = "أجهزة كهربائية";
             this.r1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -332,7 +332,7 @@
             this.r0.ForeColor = System.Drawing.Color.Red;
             this.r0.Location = new System.Drawing.Point(6, 28);
             this.r0.Name = "r0";
-            this.r0.Size = new System.Drawing.Size(139, 35);
+            this.r0.Size = new System.Drawing.Size(213, 35);
             this.r0.TabIndex = 0;
             this.r0.TabStop = true;
             this.r0.Text = "الكل";
@@ -344,14 +344,14 @@
             // 
             this.typeList.BackColor = System.Drawing.SystemColors.Control;
             this.typeList.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.typeList.Dock = System.Windows.Forms.DockStyle.Right;
+            this.typeList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.typeList.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold);
             this.typeList.FormattingEnabled = true;
             this.typeList.ItemHeight = 24;
             this.typeList.Location = new System.Drawing.Point(275, 251);
             this.typeList.Name = "typeList";
             this.typeList.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.typeList.Size = new System.Drawing.Size(151, 433);
+            this.typeList.Size = new System.Drawing.Size(173, 433);
             this.typeList.TabIndex = 4;
             this.typeList.SelectedIndexChanged += new System.EventHandler(this.TypeList_SelectedIndexChanged);
             // 
@@ -368,7 +368,7 @@
             this.panel5.Location = new System.Drawing.Point(0, 0);
             this.panel5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(944, 163);
+            this.panel5.Size = new System.Drawing.Size(864, 163);
             this.panel5.TabIndex = 43;
             // 
             // panel4
@@ -382,7 +382,7 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel4.Location = new System.Drawing.Point(0, 73);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(940, 86);
+            this.panel4.Size = new System.Drawing.Size(860, 86);
             this.panel4.TabIndex = 47;
             // 
             // groupBox5
@@ -390,11 +390,11 @@
             this.groupBox5.Controls.Add(this.totaltxt);
             this.groupBox5.Dock = System.Windows.Forms.DockStyle.Right;
             this.groupBox5.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold);
-            this.groupBox5.Location = new System.Drawing.Point(119, 0);
+            this.groupBox5.Location = new System.Drawing.Point(62, 0);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Padding = new System.Windows.Forms.Padding(10);
             this.groupBox5.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.groupBox5.Size = new System.Drawing.Size(194, 86);
+            this.groupBox5.Size = new System.Drawing.Size(183, 86);
             this.groupBox5.TabIndex = 51;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "الإجمـــــــالى";
@@ -408,7 +408,7 @@
             this.totaltxt.Location = new System.Drawing.Point(10, 35);
             this.totaltxt.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.totaltxt.Name = "totaltxt";
-            this.totaltxt.Size = new System.Drawing.Size(174, 41);
+            this.totaltxt.Size = new System.Drawing.Size(163, 41);
             this.totaltxt.TabIndex = 42;
             this.totaltxt.Text = "الإجمالى";
             this.totaltxt.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -418,11 +418,11 @@
             this.groupBox4.Controls.Add(this.selltxt);
             this.groupBox4.Dock = System.Windows.Forms.DockStyle.Right;
             this.groupBox4.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold);
-            this.groupBox4.Location = new System.Drawing.Point(313, 0);
+            this.groupBox4.Location = new System.Drawing.Point(245, 0);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Padding = new System.Windows.Forms.Padding(10);
             this.groupBox4.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.groupBox4.Size = new System.Drawing.Size(194, 86);
+            this.groupBox4.Size = new System.Drawing.Size(188, 86);
             this.groupBox4.TabIndex = 50;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "سعر البيع";
@@ -436,7 +436,7 @@
             this.selltxt.ForeColor = System.Drawing.Color.Black;
             this.selltxt.Location = new System.Drawing.Point(10, 35);
             this.selltxt.Name = "selltxt";
-            this.selltxt.Size = new System.Drawing.Size(174, 39);
+            this.selltxt.Size = new System.Drawing.Size(168, 39);
             this.selltxt.TabIndex = 9;
             this.selltxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.selltxt.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Selltxt_MouseClick);
@@ -447,11 +447,11 @@
             this.groupBox3.Controls.Add(this.pricetxt);
             this.groupBox3.Dock = System.Windows.Forms.DockStyle.Right;
             this.groupBox3.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold);
-            this.groupBox3.Location = new System.Drawing.Point(507, 0);
+            this.groupBox3.Location = new System.Drawing.Point(433, 0);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Padding = new System.Windows.Forms.Padding(10);
             this.groupBox3.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.groupBox3.Size = new System.Drawing.Size(157, 86);
+            this.groupBox3.Size = new System.Drawing.Size(151, 86);
             this.groupBox3.TabIndex = 49;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "سعر الشراء";
@@ -461,7 +461,7 @@
             this.groupBox2.Controls.Add(this.amount);
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Right;
             this.groupBox2.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold);
-            this.groupBox2.Location = new System.Drawing.Point(664, 0);
+            this.groupBox2.Location = new System.Drawing.Point(584, 0);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(10);
             this.groupBox2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -475,7 +475,7 @@
             this.groupBox1.Controls.Add(this.avtxt);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Right;
             this.groupBox1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold);
-            this.groupBox1.Location = new System.Drawing.Point(795, 0);
+            this.groupBox1.Location = new System.Drawing.Point(715, 0);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(10);
             this.groupBox1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -503,7 +503,7 @@
             this.add.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.add.Enabled = false;
             this.add.Image = global::allN1.Properties.Resources.add_new_52px;
-            this.add.Location = new System.Drawing.Point(56, 17);
+            this.add.Location = new System.Drawing.Point(4, 22);
             this.add.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.add.Name = "add";
             this.add.Size = new System.Drawing.Size(52, 52);
@@ -531,7 +531,7 @@
             this.idLabel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.idLabel.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold);
             this.idLabel.ForeColor = System.Drawing.Color.Firebrick;
-            this.idLabel.Location = new System.Drawing.Point(828, 7);
+            this.idLabel.Location = new System.Drawing.Point(748, 7);
             this.idLabel.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.idLabel.Name = "idLabel";
             this.idLabel.Size = new System.Drawing.Size(103, 40);
@@ -545,10 +545,10 @@
             this.userLabe.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.userLabe.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold);
             this.userLabe.ForeColor = System.Drawing.Color.Firebrick;
-            this.userLabe.Location = new System.Drawing.Point(403, 7);
+            this.userLabe.Location = new System.Drawing.Point(333, 7);
             this.userLabe.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.userLabe.Name = "userLabe";
-            this.userLabe.Size = new System.Drawing.Size(425, 40);
+            this.userLabe.Size = new System.Drawing.Size(415, 40);
             this.userLabe.TabIndex = 44;
             this.userLabe.Text = "username";
             this.userLabe.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -575,48 +575,48 @@
             this.prdList.ForeColor = System.Drawing.Color.Black;
             this.prdList.FormattingEnabled = true;
             this.prdList.ItemHeight = 24;
-            this.prdList.Location = new System.Drawing.Point(0, 32);
+            this.prdList.Location = new System.Drawing.Point(0, 0);
             this.prdList.Name = "prdList";
             this.prdList.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.prdList.Size = new System.Drawing.Size(275, 652);
+            this.prdList.Size = new System.Drawing.Size(275, 684);
             this.prdList.TabIndex = 21;
             this.prdList.SelectedIndexChanged += new System.EventHandler(this.PrdList_SelectedIndexChanged);
             // 
             // panel3
             // 
             this.panel3.Controls.Add(this.typeList);
+            this.panel3.Controls.Add(this.alpha);
             this.panel3.Controls.Add(this.typeGbox);
             this.panel3.Controls.Add(this.panel6);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel3.Location = new System.Drawing.Point(944, 0);
+            this.panel3.Location = new System.Drawing.Point(864, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(426, 684);
+            this.panel3.Size = new System.Drawing.Size(506, 684);
             this.panel3.TabIndex = 44;
             // 
             // panel6
             // 
             this.panel6.Controls.Add(this.prdList);
-            this.panel6.Controls.Add(this.prdname);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel6.Location = new System.Drawing.Point(0, 0);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(275, 684);
             this.panel6.TabIndex = 22;
             // 
-            // prdname
+            // alpha
             // 
-            this.prdname.Dock = System.Windows.Forms.DockStyle.Top;
-            this.prdname.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold);
-            this.prdname.ForeColor = System.Drawing.Color.DarkGray;
-            this.prdname.Location = new System.Drawing.Point(0, 0);
-            this.prdname.Name = "prdname";
-            this.prdname.Size = new System.Drawing.Size(275, 32);
-            this.prdname.TabIndex = 22;
-            this.prdname.Text = "ادخل إسم الصنف هنا";
-            this.prdname.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.prdname.Visible = false;
-            this.prdname.TextChanged += new System.EventHandler(this.Prdname_TextChanged);
-            this.prdname.Enter += new System.EventHandler(this.Prdname_Enter);
+            this.alpha.BackColor = System.Drawing.SystemColors.Control;
+            this.alpha.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.alpha.Dock = System.Windows.Forms.DockStyle.Right;
+            this.alpha.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold);
+            this.alpha.FormattingEnabled = true;
+            this.alpha.ItemHeight = 24;
+            this.alpha.Location = new System.Drawing.Point(448, 251);
+            this.alpha.Name = "alpha";
+            this.alpha.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.alpha.Size = new System.Drawing.Size(58, 433);
+            this.alpha.TabIndex = 23;
+            this.alpha.SelectedIndexChanged += new System.EventHandler(this.Alpha_SelectedIndexChanged);
             // 
             // v_order
             // 
@@ -657,7 +657,6 @@
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel6.ResumeLayout(false);
-            this.panel6.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -695,9 +694,9 @@
         private System.Windows.Forms.Label counter;
         private System.Windows.Forms.Button btnnew_prd;
         private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.TextBox prdname;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.Label totaltxt;
         private System.Windows.Forms.TextBox selltxt;
+        private System.Windows.Forms.ListBox alpha;
     }
 }

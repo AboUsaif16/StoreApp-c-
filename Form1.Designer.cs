@@ -37,8 +37,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.time_now = new System.Windows.Forms.ToolStripStatusLabel();
             this.vendors = new System.Windows.Forms.TabPage();
             this.new_v_gb = new System.Windows.Forms.GroupBox();
             this.btnVen_save = new System.Windows.Forms.Button();
@@ -52,8 +50,14 @@
             this.txtvendor_remain = new System.Windows.Forms.TextBox();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.txtvendor_payout = new System.Windows.Forms.TextBox();
+            this.btnVen_pay = new System.Windows.Forms.Button();
             this.gbven_info = new System.Windows.Forms.GroupBox();
             this.panel11 = new System.Windows.Forms.Panel();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
+            this.btnVen_billsInfo = new System.Windows.Forms.Button();
+            this.btnVen_del = new System.Windows.Forms.Button();
+            this.btnVen_edit = new System.Windows.Forms.Button();
             this.groupBox14 = new System.Windows.Forms.GroupBox();
             this.label19 = new System.Windows.Forms.Label();
             this.txtvendor_phone = new System.Windows.Forms.TextBox();
@@ -72,11 +76,13 @@
             this.vendorlist = new System.Windows.Forms.ListBox();
             this.panel9 = new System.Windows.Forms.Panel();
             this.txtvendor_search = new System.Windows.Forms.TextBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.users = new System.Windows.Forms.TabPage();
             this.groupBox20 = new System.Windows.Forms.GroupBox();
             this.txtuer_remain = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.txtuer_payout = new System.Windows.Forms.TextBox();
+            this.btn_pay = new System.Windows.Forms.Button();
             this.pay_info_gb = new System.Windows.Forms.GroupBox();
             this.panel17 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -92,6 +98,11 @@
             this.txtuser_mony_new = new System.Windows.Forms.TextBox();
             this.gbuser_info = new System.Windows.Forms.GroupBox();
             this.panel10 = new System.Windows.Forms.Panel();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.btnuser_bills = new System.Windows.Forms.Button();
+            this.btnuser_del = new System.Windows.Forms.Button();
+            this.btnuser_edit = new System.Windows.Forms.Button();
             this.groupBox9 = new System.Windows.Forms.GroupBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -109,6 +120,7 @@
             this.userslist = new System.Windows.Forms.ListBox();
             this.panel7 = new System.Windows.Forms.Panel();
             this.txtuer_search = new System.Windows.Forms.TextBox();
+            this.new_u = new System.Windows.Forms.PictureBox();
             this.products = new System.Windows.Forms.TabPage();
             this.button9 = new System.Windows.Forms.Button();
             this.gb_sell_info = new System.Windows.Forms.GroupBox();
@@ -117,6 +129,8 @@
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btn_sell_info = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label16 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
@@ -147,6 +161,7 @@
             this.goodslist = new System.Windows.Forms.ListBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.txt_search = new System.Windows.Forms.TextBox();
+            this.new_p = new System.Windows.Forms.PictureBox();
             this.home = new System.Windows.Forms.TabPage();
             this.groupBox21 = new System.Windows.Forms.GroupBox();
             this.usersWanted = new System.Windows.Forms.DataGridView();
@@ -195,23 +210,8 @@
             this.label24 = new System.Windows.Forms.Label();
             this.prd_av = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.new_p = new System.Windows.Forms.PictureBox();
-            this.btn_pay = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.btnuser_bills = new System.Windows.Forms.Button();
-            this.btnuser_del = new System.Windows.Forms.Button();
-            this.btnuser_edit = new System.Windows.Forms.Button();
-            this.new_u = new System.Windows.Forms.PictureBox();
-            this.btnVen_pay = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.btnVen_billsInfo = new System.Windows.Forms.Button();
-            this.btnVen_del = new System.Windows.Forms.Button();
-            this.btnVen_edit = new System.Windows.Forms.Button();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.panel12 = new System.Windows.Forms.Panel();
+            this.time_now = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.الفواتيرToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -220,12 +220,13 @@
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.طباعةإيصالToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.قفلالشاشةToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.تصغيرToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.إغلاقToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripDropDownButton2 = new System.Windows.Forms.ToolStripDropDownButton();
             this.فواتيرToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.إيصالاتاليومToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.statusStrip1.SuspendLayout();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.vendors.SuspendLayout();
             this.new_v_gb.SuspendLayout();
             this.groupBox22.SuspendLayout();
@@ -242,6 +243,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgv_vendor)).BeginInit();
             this.panel8.SuspendLayout();
             this.panel9.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.users.SuspendLayout();
             this.groupBox20.SuspendLayout();
             this.pay_info_gb.SuspendLayout();
@@ -259,6 +261,7 @@
             this.groupBox11.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.new_u)).BeginInit();
             this.products.SuspendLayout();
             this.gb_sell_info.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -275,6 +278,7 @@
             this.groupBox8.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.new_p)).BeginInit();
             this.home.SuspendLayout();
             this.groupBox21.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.usersWanted)).BeginInit();
@@ -291,37 +295,12 @@
             this.groupBox13.SuspendLayout();
             this.groupBox12.SuspendLayout();
             this.groupBox29.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.new_p)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.new_u)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.panel12.SuspendLayout();
+            this.statusStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.SuspendLayout();
-            // 
-            // statusStrip1
-            // 
-            this.statusStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.statusStrip1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.time_now,
-            this.toolStripDropDownButton1,
-            this.toolStripDropDownButton2});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 736);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.statusStrip1.Size = new System.Drawing.Size(1370, 36);
-            this.statusStrip1.TabIndex = 3;
-            this.statusStrip1.Text = "statusStrip1";
-            // 
-            // time_now
-            // 
-            this.time_now.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.time_now.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.time_now.ForeColor = System.Drawing.Color.White;
-            this.time_now.Margin = new System.Windows.Forms.Padding(0, 3, 20, 2);
-            this.time_now.Name = "time_now";
-            this.time_now.Size = new System.Drawing.Size(1267, 31);
-            this.time_now.Spring = true;
-            this.time_now.Text = "الحاله : متصل";
-            this.time_now.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // vendors
             // 
@@ -336,7 +315,7 @@
             this.vendors.Margin = new System.Windows.Forms.Padding(5, 8, 5, 8);
             this.vendors.Name = "vendors";
             this.vendors.Padding = new System.Windows.Forms.Padding(5, 8, 5, 8);
-            this.vendors.Size = new System.Drawing.Size(1362, 699);
+            this.vendors.Size = new System.Drawing.Size(1362, 705);
             this.vendors.TabIndex = 2;
             this.vendors.Text = "سجــــل المـــورديــــن";
             // 
@@ -485,6 +464,23 @@
             this.txtvendor_payout.TabIndex = 7;
             this.txtvendor_payout.TextChanged += new System.EventHandler(this.TextBox8_TextChanged);
             // 
+            // btnVen_pay
+            // 
+            this.btnVen_pay.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(154)))));
+            this.btnVen_pay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVen_pay.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold);
+            this.btnVen_pay.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnVen_pay.Image = global::allN1.Properties.Resources.pay_30px;
+            this.btnVen_pay.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnVen_pay.Location = new System.Drawing.Point(178, 44);
+            this.btnVen_pay.Name = "btnVen_pay";
+            this.btnVen_pay.Size = new System.Drawing.Size(97, 47);
+            this.btnVen_pay.TabIndex = 9;
+            this.btnVen_pay.Text = "دفع";
+            this.btnVen_pay.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnVen_pay.UseVisualStyleBackColor = false;
+            this.btnVen_pay.Click += new System.EventHandler(this.BtnVen_pay_Click);
+            // 
             // gbven_info
             // 
             this.gbven_info.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -511,6 +507,91 @@
             this.panel11.Name = "panel11";
             this.panel11.Size = new System.Drawing.Size(446, 456);
             this.panel11.TabIndex = 3;
+            // 
+            // button5
+            // 
+            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(154)))));
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button5.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button5.ForeColor = System.Drawing.SystemColors.Control;
+            this.button5.Image = global::allN1.Properties.Resources.refund_30px;
+            this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button5.Location = new System.Drawing.Point(302, 324);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(141, 51);
+            this.button5.TabIndex = 10;
+            this.button5.Text = " دفع قسط";
+            this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.Button5_Click);
+            // 
+            // button7
+            // 
+            this.button7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(154)))));
+            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button7.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button7.ForeColor = System.Drawing.SystemColors.Control;
+            this.button7.Image = global::allN1.Properties.Resources.new_copy_30px;
+            this.button7.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button7.Location = new System.Drawing.Point(235, 391);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(208, 51);
+            this.button7.TabIndex = 9;
+            this.button7.Text = "إنشاء فاتورة";
+            this.button7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button7.UseVisualStyleBackColor = false;
+            this.button7.Click += new System.EventHandler(this.Button7_Click);
+            // 
+            // btnVen_billsInfo
+            // 
+            this.btnVen_billsInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(154)))));
+            this.btnVen_billsInfo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVen_billsInfo.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVen_billsInfo.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnVen_billsInfo.Image = global::allN1.Properties.Resources.sell_30px;
+            this.btnVen_billsInfo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnVen_billsInfo.Location = new System.Drawing.Point(21, 391);
+            this.btnVen_billsInfo.Name = "btnVen_billsInfo";
+            this.btnVen_billsInfo.Size = new System.Drawing.Size(208, 51);
+            this.btnVen_billsInfo.TabIndex = 6;
+            this.btnVen_billsInfo.Text = "الفواتير";
+            this.btnVen_billsInfo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnVen_billsInfo.UseVisualStyleBackColor = false;
+            this.btnVen_billsInfo.Click += new System.EventHandler(this.BtnVen_billsInfo_Click);
+            // 
+            // btnVen_del
+            // 
+            this.btnVen_del.BackColor = System.Drawing.Color.Firebrick;
+            this.btnVen_del.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVen_del.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVen_del.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnVen_del.Image = global::allN1.Properties.Resources.delete_bin_30px;
+            this.btnVen_del.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnVen_del.Location = new System.Drawing.Point(21, 324);
+            this.btnVen_del.Name = "btnVen_del";
+            this.btnVen_del.Size = new System.Drawing.Size(119, 51);
+            this.btnVen_del.TabIndex = 5;
+            this.btnVen_del.Text = "حذف";
+            this.btnVen_del.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnVen_del.UseVisualStyleBackColor = false;
+            this.btnVen_del.Click += new System.EventHandler(this.BtnVen_del_Click);
+            // 
+            // btnVen_edit
+            // 
+            this.btnVen_edit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(154)))));
+            this.btnVen_edit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVen_edit.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVen_edit.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnVen_edit.Image = global::allN1.Properties.Resources.edit_file_30px;
+            this.btnVen_edit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnVen_edit.Location = new System.Drawing.Point(146, 324);
+            this.btnVen_edit.Name = "btnVen_edit";
+            this.btnVen_edit.Size = new System.Drawing.Size(150, 51);
+            this.btnVen_edit.TabIndex = 4;
+            this.btnVen_edit.Text = "تعديل";
+            this.btnVen_edit.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnVen_edit.UseVisualStyleBackColor = false;
+            this.btnVen_edit.Click += new System.EventHandler(this.BtnVen_edit_Click);
             // 
             // groupBox14
             // 
@@ -688,7 +769,7 @@
             this.panel8.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel8.Location = new System.Drawing.Point(1039, 8);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(318, 683);
+            this.panel8.Size = new System.Drawing.Size(318, 689);
             this.panel8.TabIndex = 3;
             // 
             // vendorlist
@@ -698,7 +779,7 @@
             this.vendorlist.ItemHeight = 24;
             this.vendorlist.Location = new System.Drawing.Point(0, 49);
             this.vendorlist.Name = "vendorlist";
-            this.vendorlist.Size = new System.Drawing.Size(318, 634);
+            this.vendorlist.Size = new System.Drawing.Size(318, 640);
             this.vendorlist.TabIndex = 0;
             this.vendorlist.SelectedIndexChanged += new System.EventHandler(this.Vendorlist_SelectedIndexChanged);
             this.vendorlist.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.Vendorlist_MouseDoubleClick);
@@ -727,6 +808,18 @@
             this.txtvendor_search.TextChanged += new System.EventHandler(this.Txtvendor_search_TextChanged);
             this.txtvendor_search.Enter += new System.EventHandler(this.TextBox14_Enter);
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pictureBox2.Image = global::allN1.Properties.Resources.add_48px;
+            this.pictureBox2.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(48, 49);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox2.TabIndex = 1;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.PictureBox2_Click);
+            // 
             // users
             // 
             this.users.BackColor = System.Drawing.SystemColors.Control;
@@ -739,7 +832,7 @@
             this.users.Margin = new System.Windows.Forms.Padding(5, 8, 5, 8);
             this.users.Name = "users";
             this.users.Padding = new System.Windows.Forms.Padding(5, 8, 5, 8);
-            this.users.Size = new System.Drawing.Size(1362, 699);
+            this.users.Size = new System.Drawing.Size(1362, 705);
             this.users.TabIndex = 1;
             this.users.Text = "سجــــل العمـــــــلاء";
             // 
@@ -795,6 +888,23 @@
             this.txtuer_payout.Size = new System.Drawing.Size(154, 32);
             this.txtuer_payout.TabIndex = 7;
             this.txtuer_payout.TextChanged += new System.EventHandler(this.Txtuer_payout_TextChanged);
+            // 
+            // btn_pay
+            // 
+            this.btn_pay.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(154)))));
+            this.btn_pay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_pay.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold);
+            this.btn_pay.ForeColor = System.Drawing.SystemColors.Control;
+            this.btn_pay.Image = global::allN1.Properties.Resources.pay_30px;
+            this.btn_pay.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_pay.Location = new System.Drawing.Point(178, 44);
+            this.btn_pay.Name = "btn_pay";
+            this.btn_pay.Size = new System.Drawing.Size(97, 47);
+            this.btn_pay.TabIndex = 9;
+            this.btn_pay.Text = "دفع";
+            this.btn_pay.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_pay.UseVisualStyleBackColor = false;
+            this.btn_pay.Click += new System.EventHandler(this.Btn_pay_Click);
             // 
             // pay_info_gb
             // 
@@ -1009,6 +1119,91 @@
             this.panel10.Size = new System.Drawing.Size(446, 508);
             this.panel10.TabIndex = 3;
             // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(154)))));
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.ForeColor = System.Drawing.SystemColors.Control;
+            this.button4.Image = global::allN1.Properties.Resources.refund_30px;
+            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button4.Location = new System.Drawing.Point(293, 375);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(141, 51);
+            this.button4.TabIndex = 8;
+            this.button4.Text = " دفع قسط";
+            this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.Button4_Click);
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(154)))));
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.ForeColor = System.Drawing.SystemColors.Control;
+            this.button3.Image = global::allN1.Properties.Resources.new_copy_30px;
+            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button3.Location = new System.Drawing.Point(226, 433);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(208, 51);
+            this.button3.TabIndex = 7;
+            this.button3.Text = "إنشاء فاتورة";
+            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.Button3_Click);
+            // 
+            // btnuser_bills
+            // 
+            this.btnuser_bills.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(154)))));
+            this.btnuser_bills.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnuser_bills.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnuser_bills.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnuser_bills.Image = global::allN1.Properties.Resources.sell_30px;
+            this.btnuser_bills.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnuser_bills.Location = new System.Drawing.Point(21, 433);
+            this.btnuser_bills.Name = "btnuser_bills";
+            this.btnuser_bills.Size = new System.Drawing.Size(199, 51);
+            this.btnuser_bills.TabIndex = 6;
+            this.btnuser_bills.Text = "سجل الفواتير";
+            this.btnuser_bills.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnuser_bills.UseVisualStyleBackColor = false;
+            this.btnuser_bills.Click += new System.EventHandler(this.Button3_Click_1);
+            // 
+            // btnuser_del
+            // 
+            this.btnuser_del.BackColor = System.Drawing.Color.Firebrick;
+            this.btnuser_del.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnuser_del.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnuser_del.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnuser_del.Image = global::allN1.Properties.Resources.delete_bin_30px;
+            this.btnuser_del.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnuser_del.Location = new System.Drawing.Point(21, 376);
+            this.btnuser_del.Name = "btnuser_del";
+            this.btnuser_del.Size = new System.Drawing.Size(119, 51);
+            this.btnuser_del.TabIndex = 5;
+            this.btnuser_del.Text = "حذف";
+            this.btnuser_del.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnuser_del.UseVisualStyleBackColor = false;
+            this.btnuser_del.Click += new System.EventHandler(this.Btnuser_del_Click);
+            // 
+            // btnuser_edit
+            // 
+            this.btnuser_edit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(154)))));
+            this.btnuser_edit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnuser_edit.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnuser_edit.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnuser_edit.Image = global::allN1.Properties.Resources.edit_file_30px;
+            this.btnuser_edit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnuser_edit.Location = new System.Drawing.Point(147, 375);
+            this.btnuser_edit.Name = "btnuser_edit";
+            this.btnuser_edit.Size = new System.Drawing.Size(140, 51);
+            this.btnuser_edit.TabIndex = 4;
+            this.btnuser_edit.Text = "تعديل";
+            this.btnuser_edit.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnuser_edit.UseVisualStyleBackColor = false;
+            this.btnuser_edit.Click += new System.EventHandler(this.Button6_Click);
+            // 
             // groupBox9
             // 
             this.groupBox9.AutoSize = true;
@@ -1159,7 +1354,7 @@
             this.panel6.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel6.Location = new System.Drawing.Point(1039, 8);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(318, 683);
+            this.panel6.Size = new System.Drawing.Size(318, 689);
             this.panel6.TabIndex = 3;
             // 
             // userslist
@@ -1170,7 +1365,7 @@
             this.userslist.ItemHeight = 24;
             this.userslist.Location = new System.Drawing.Point(0, 49);
             this.userslist.Name = "userslist";
-            this.userslist.Size = new System.Drawing.Size(318, 634);
+            this.userslist.Size = new System.Drawing.Size(318, 640);
             this.userslist.TabIndex = 0;
             this.userslist.SelectedIndexChanged += new System.EventHandler(this.Userslist_SelectedIndexChanged);
             this.userslist.DoubleClick += new System.EventHandler(this.Userslist_DoubleClick);
@@ -1199,6 +1394,18 @@
             this.txtuer_search.TextChanged += new System.EventHandler(this.Txtuer_search_TextChanged);
             this.txtuer_search.Enter += new System.EventHandler(this.Txtuer_search_Enter);
             // 
+            // new_u
+            // 
+            this.new_u.Dock = System.Windows.Forms.DockStyle.Left;
+            this.new_u.Image = global::allN1.Properties.Resources.add_48px;
+            this.new_u.Location = new System.Drawing.Point(0, 0);
+            this.new_u.Name = "new_u";
+            this.new_u.Size = new System.Drawing.Size(48, 49);
+            this.new_u.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.new_u.TabIndex = 1;
+            this.new_u.TabStop = false;
+            this.new_u.Click += new System.EventHandler(this.New_u_Click);
+            // 
             // products
             // 
             this.products.BackColor = System.Drawing.SystemColors.Control;
@@ -1212,7 +1419,7 @@
             this.products.Margin = new System.Windows.Forms.Padding(5, 8, 5, 8);
             this.products.Name = "products";
             this.products.Padding = new System.Windows.Forms.Padding(5, 8, 5, 8);
-            this.products.Size = new System.Drawing.Size(1362, 699);
+            this.products.Size = new System.Drawing.Size(1362, 705);
             this.products.TabIndex = 0;
             this.products.Text = "سجــــل الأصنــــاف";
             // 
@@ -1239,11 +1446,12 @@
             this.gb_sell_info.Dock = System.Windows.Forms.DockStyle.Left;
             this.gb_sell_info.Location = new System.Drawing.Point(5, 8);
             this.gb_sell_info.Name = "gb_sell_info";
-            this.gb_sell_info.Size = new System.Drawing.Size(601, 683);
+            this.gb_sell_info.Size = new System.Drawing.Size(601, 689);
             this.gb_sell_info.TabIndex = 6;
             this.gb_sell_info.TabStop = false;
             this.gb_sell_info.Text = "سجل شراء: ";
             this.gb_sell_info.Visible = false;
+            this.gb_sell_info.Enter += new System.EventHandler(this.Gb_sell_info_Enter);
             // 
             // panel5
             // 
@@ -1251,7 +1459,7 @@
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel5.Location = new System.Drawing.Point(3, 28);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(595, 652);
+            this.panel5.Size = new System.Drawing.Size(595, 658);
             this.panel5.TabIndex = 3;
             // 
             // dgv_sell_info
@@ -1290,7 +1498,7 @@
             this.dgv_sell_info.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgv_sell_info.RowHeadersVisible = false;
             this.dgv_sell_info.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_sell_info.Size = new System.Drawing.Size(595, 652);
+            this.dgv_sell_info.Size = new System.Drawing.Size(595, 658);
             this.dgv_sell_info.TabIndex = 18;
             // 
             // groupBox4
@@ -1334,6 +1542,42 @@
             this.btn_sell_info.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_sell_info.UseVisualStyleBackColor = false;
             this.btn_sell_info.Click += new System.EventHandler(this.Btn_sell_info_Click);
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.DarkRed;
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.SystemColors.Control;
+            this.button2.Image = global::allN1.Properties.Resources.delete_bin_30px;
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button2.Location = new System.Drawing.Point(128, 457);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(93, 51);
+            this.button2.TabIndex = 5;
+            this.button2.Text = "حذف";
+            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.Button2_Click);
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(154)))));
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.SystemColors.Control;
+            this.button1.Image = global::allN1.Properties.Resources.edit_file_30px;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(227, 457);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(111, 51);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "تعديل";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
             // groupBox3
             // 
@@ -1638,7 +1882,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel1.Location = new System.Drawing.Point(968, 8);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(389, 683);
+            this.panel1.Size = new System.Drawing.Size(389, 689);
             this.panel1.TabIndex = 2;
             // 
             // goodslist
@@ -1651,7 +1895,7 @@
             this.goodslist.ItemHeight = 24;
             this.goodslist.Location = new System.Drawing.Point(0, 49);
             this.goodslist.Name = "goodslist";
-            this.goodslist.Size = new System.Drawing.Size(389, 634);
+            this.goodslist.Size = new System.Drawing.Size(389, 640);
             this.goodslist.TabIndex = 0;
             this.goodslist.SelectedIndexChanged += new System.EventHandler(this.Goodslist_SelectedIndexChanged);
             // 
@@ -1680,6 +1924,18 @@
             this.txt_search.Enter += new System.EventHandler(this.Txt_search_Enter);
             this.txt_search.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.Txt_search_MouseDoubleClick);
             // 
+            // new_p
+            // 
+            this.new_p.Dock = System.Windows.Forms.DockStyle.Left;
+            this.new_p.Image = global::allN1.Properties.Resources.add_48px;
+            this.new_p.Location = new System.Drawing.Point(0, 0);
+            this.new_p.Name = "new_p";
+            this.new_p.Size = new System.Drawing.Size(48, 49);
+            this.new_p.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.new_p.TabIndex = 1;
+            this.new_p.TabStop = false;
+            this.new_p.Click += new System.EventHandler(this.New_p_Click);
+            // 
             // home
             // 
             this.home.BackColor = System.Drawing.SystemColors.Control;
@@ -1690,7 +1946,7 @@
             this.home.Location = new System.Drawing.Point(4, 33);
             this.home.Margin = new System.Windows.Forms.Padding(5, 8, 5, 8);
             this.home.Name = "home";
-            this.home.Size = new System.Drawing.Size(1362, 699);
+            this.home.Size = new System.Drawing.Size(1362, 335);
             this.home.TabIndex = 3;
             this.home.Text = "الرئيسية";
             // 
@@ -1703,7 +1959,7 @@
             this.groupBox21.Margin = new System.Windows.Forms.Padding(8);
             this.groupBox21.Name = "groupBox21";
             this.groupBox21.Padding = new System.Windows.Forms.Padding(5);
-            this.groupBox21.Size = new System.Drawing.Size(480, 699);
+            this.groupBox21.Size = new System.Drawing.Size(480, 335);
             this.groupBox21.TabIndex = 2;
             this.groupBox21.TabStop = false;
             this.groupBox21.Text = "العملاء المطلوبين";
@@ -1731,7 +1987,7 @@
             this.usersWanted.Name = "usersWanted";
             this.usersWanted.ReadOnly = true;
             this.usersWanted.RowHeadersVisible = false;
-            this.usersWanted.Size = new System.Drawing.Size(470, 664);
+            this.usersWanted.Size = new System.Drawing.Size(470, 300);
             this.usersWanted.TabIndex = 2;
             // 
             // groupBox26
@@ -1743,7 +1999,7 @@
             this.groupBox26.Margin = new System.Windows.Forms.Padding(8);
             this.groupBox26.Name = "groupBox26";
             this.groupBox26.Padding = new System.Windows.Forms.Padding(5);
-            this.groupBox26.Size = new System.Drawing.Size(386, 699);
+            this.groupBox26.Size = new System.Drawing.Size(386, 335);
             this.groupBox26.TabIndex = 1;
             this.groupBox26.TabStop = false;
             this.groupBox26.Text = "النواقص";
@@ -1772,7 +2028,7 @@
             this.needsTable.Name = "needsTable";
             this.needsTable.ReadOnly = true;
             this.needsTable.RowHeadersVisible = false;
-            this.needsTable.Size = new System.Drawing.Size(376, 664);
+            this.needsTable.Size = new System.Drawing.Size(376, 300);
             this.needsTable.TabIndex = 2;
             // 
             // groupBox25
@@ -1784,7 +2040,7 @@
             this.groupBox25.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.groupBox25.Location = new System.Drawing.Point(866, 0);
             this.groupBox25.Name = "groupBox25";
-            this.groupBox25.Size = new System.Drawing.Size(496, 699);
+            this.groupBox25.Size = new System.Drawing.Size(496, 335);
             this.groupBox25.TabIndex = 0;
             this.groupBox25.TabStop = false;
             this.groupBox25.Text = "دفتر المدفوعات";
@@ -1810,7 +2066,7 @@
             this.paymentsTable.Name = "paymentsTable";
             this.paymentsTable.ReadOnly = true;
             this.paymentsTable.RowHeadersVisible = false;
-            this.paymentsTable.Size = new System.Drawing.Size(490, 609);
+            this.paymentsTable.Size = new System.Drawing.Size(490, 245);
             this.paymentsTable.TabIndex = 2;
             // 
             // txtselected_date
@@ -1861,7 +2117,7 @@
             this.new_v.Name = "new_v";
             this.new_v.RightToLeftLayout = true;
             this.new_v.SelectedIndex = 0;
-            this.new_v.Size = new System.Drawing.Size(1370, 736);
+            this.new_v.Size = new System.Drawing.Size(1370, 372);
             this.new_v.TabIndex = 0;
             this.new_v.SelectedIndexChanged += new System.EventHandler(this.New_v_SelectedIndexChanged);
             // 
@@ -1874,7 +2130,7 @@
             this.report.Controls.Add(this.groupBox29);
             this.report.Location = new System.Drawing.Point(4, 33);
             this.report.Name = "report";
-            this.report.Size = new System.Drawing.Size(1362, 699);
+            this.report.Size = new System.Drawing.Size(1362, 705);
             this.report.TabIndex = 4;
             this.report.Text = "التقــــــــرير";
             // 
@@ -2392,281 +2648,32 @@
             this.label14.Text = "عدد الأصناف المتاحة";
             this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // button2
+            // panel12
             // 
-            this.button2.BackColor = System.Drawing.Color.DarkRed;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.SystemColors.Control;
-            this.button2.Image = global::allN1.Properties.Resources.delete_bin_30px;
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(128, 457);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(93, 51);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "حذف";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.Button2_Click);
+            this.panel12.AutoSize = true;
+            this.panel12.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.panel12.Controls.Add(this.pictureBox5);
+            this.panel12.Controls.Add(this.pictureBox3);
+            this.panel12.Controls.Add(this.pictureBox1);
+            this.panel12.Controls.Add(this.statusStrip1);
+            this.panel12.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel12.Location = new System.Drawing.Point(0, 372);
+            this.panel12.Name = "panel12";
+            this.panel12.Size = new System.Drawing.Size(1370, 34);
+            this.panel12.TabIndex = 4;
+            this.panel12.Paint += new System.Windows.Forms.PaintEventHandler(this.Panel12_Paint);
             // 
-            // button1
+            // time_now
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(154)))));
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.SystemColors.Control;
-            this.button1.Image = global::allN1.Properties.Resources.edit_file_30px;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(227, 457);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(111, 51);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "تعديل";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.Button1_Click);
-            // 
-            // new_p
-            // 
-            this.new_p.Dock = System.Windows.Forms.DockStyle.Left;
-            this.new_p.Image = global::allN1.Properties.Resources.add_48px;
-            this.new_p.Location = new System.Drawing.Point(0, 0);
-            this.new_p.Name = "new_p";
-            this.new_p.Size = new System.Drawing.Size(48, 49);
-            this.new_p.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.new_p.TabIndex = 1;
-            this.new_p.TabStop = false;
-            this.new_p.Click += new System.EventHandler(this.New_p_Click);
-            // 
-            // btn_pay
-            // 
-            this.btn_pay.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(154)))));
-            this.btn_pay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_pay.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold);
-            this.btn_pay.ForeColor = System.Drawing.SystemColors.Control;
-            this.btn_pay.Image = global::allN1.Properties.Resources.pay_30px;
-            this.btn_pay.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_pay.Location = new System.Drawing.Point(178, 44);
-            this.btn_pay.Name = "btn_pay";
-            this.btn_pay.Size = new System.Drawing.Size(97, 47);
-            this.btn_pay.TabIndex = 9;
-            this.btn_pay.Text = "دفع";
-            this.btn_pay.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_pay.UseVisualStyleBackColor = false;
-            this.btn_pay.Click += new System.EventHandler(this.Btn_pay_Click);
-            // 
-            // button4
-            // 
-            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(154)))));
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.SystemColors.Control;
-            this.button4.Image = global::allN1.Properties.Resources.refund_30px;
-            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.Location = new System.Drawing.Point(293, 375);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(141, 51);
-            this.button4.TabIndex = 8;
-            this.button4.Text = " دفع قسط";
-            this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button4.UseVisualStyleBackColor = false;
-            this.button4.Click += new System.EventHandler(this.Button4_Click);
-            // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(154)))));
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.SystemColors.Control;
-            this.button3.Image = global::allN1.Properties.Resources.new_copy_30px;
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(226, 433);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(208, 51);
-            this.button3.TabIndex = 7;
-            this.button3.Text = "إنشاء فاتورة";
-            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.Button3_Click);
-            // 
-            // btnuser_bills
-            // 
-            this.btnuser_bills.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(154)))));
-            this.btnuser_bills.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnuser_bills.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnuser_bills.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnuser_bills.Image = global::allN1.Properties.Resources.sell_30px;
-            this.btnuser_bills.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnuser_bills.Location = new System.Drawing.Point(21, 433);
-            this.btnuser_bills.Name = "btnuser_bills";
-            this.btnuser_bills.Size = new System.Drawing.Size(199, 51);
-            this.btnuser_bills.TabIndex = 6;
-            this.btnuser_bills.Text = "سجل الفواتير";
-            this.btnuser_bills.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnuser_bills.UseVisualStyleBackColor = false;
-            this.btnuser_bills.Click += new System.EventHandler(this.Button3_Click_1);
-            // 
-            // btnuser_del
-            // 
-            this.btnuser_del.BackColor = System.Drawing.Color.Firebrick;
-            this.btnuser_del.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnuser_del.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnuser_del.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnuser_del.Image = global::allN1.Properties.Resources.delete_bin_30px;
-            this.btnuser_del.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnuser_del.Location = new System.Drawing.Point(21, 376);
-            this.btnuser_del.Name = "btnuser_del";
-            this.btnuser_del.Size = new System.Drawing.Size(119, 51);
-            this.btnuser_del.TabIndex = 5;
-            this.btnuser_del.Text = "حذف";
-            this.btnuser_del.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnuser_del.UseVisualStyleBackColor = false;
-            this.btnuser_del.Click += new System.EventHandler(this.Btnuser_del_Click);
-            // 
-            // btnuser_edit
-            // 
-            this.btnuser_edit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(154)))));
-            this.btnuser_edit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnuser_edit.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnuser_edit.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnuser_edit.Image = global::allN1.Properties.Resources.edit_file_30px;
-            this.btnuser_edit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnuser_edit.Location = new System.Drawing.Point(147, 375);
-            this.btnuser_edit.Name = "btnuser_edit";
-            this.btnuser_edit.Size = new System.Drawing.Size(140, 51);
-            this.btnuser_edit.TabIndex = 4;
-            this.btnuser_edit.Text = "تعديل";
-            this.btnuser_edit.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnuser_edit.UseVisualStyleBackColor = false;
-            this.btnuser_edit.Click += new System.EventHandler(this.Button6_Click);
-            // 
-            // new_u
-            // 
-            this.new_u.Dock = System.Windows.Forms.DockStyle.Left;
-            this.new_u.Image = global::allN1.Properties.Resources.add_48px;
-            this.new_u.Location = new System.Drawing.Point(0, 0);
-            this.new_u.Name = "new_u";
-            this.new_u.Size = new System.Drawing.Size(48, 49);
-            this.new_u.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.new_u.TabIndex = 1;
-            this.new_u.TabStop = false;
-            this.new_u.Click += new System.EventHandler(this.New_u_Click);
-            // 
-            // btnVen_pay
-            // 
-            this.btnVen_pay.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(154)))));
-            this.btnVen_pay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVen_pay.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold);
-            this.btnVen_pay.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnVen_pay.Image = global::allN1.Properties.Resources.pay_30px;
-            this.btnVen_pay.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnVen_pay.Location = new System.Drawing.Point(178, 44);
-            this.btnVen_pay.Name = "btnVen_pay";
-            this.btnVen_pay.Size = new System.Drawing.Size(97, 47);
-            this.btnVen_pay.TabIndex = 9;
-            this.btnVen_pay.Text = "دفع";
-            this.btnVen_pay.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnVen_pay.UseVisualStyleBackColor = false;
-            this.btnVen_pay.Click += new System.EventHandler(this.BtnVen_pay_Click);
-            // 
-            // button5
-            // 
-            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(154)))));
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.ForeColor = System.Drawing.SystemColors.Control;
-            this.button5.Image = global::allN1.Properties.Resources.refund_30px;
-            this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button5.Location = new System.Drawing.Point(302, 324);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(141, 51);
-            this.button5.TabIndex = 10;
-            this.button5.Text = " دفع قسط";
-            this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button5.UseVisualStyleBackColor = false;
-            this.button5.Click += new System.EventHandler(this.Button5_Click);
-            // 
-            // button7
-            // 
-            this.button7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(154)))));
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.ForeColor = System.Drawing.SystemColors.Control;
-            this.button7.Image = global::allN1.Properties.Resources.new_copy_30px;
-            this.button7.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button7.Location = new System.Drawing.Point(235, 391);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(208, 51);
-            this.button7.TabIndex = 9;
-            this.button7.Text = "إنشاء فاتورة";
-            this.button7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button7.UseVisualStyleBackColor = false;
-            this.button7.Click += new System.EventHandler(this.Button7_Click);
-            // 
-            // btnVen_billsInfo
-            // 
-            this.btnVen_billsInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(154)))));
-            this.btnVen_billsInfo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVen_billsInfo.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVen_billsInfo.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnVen_billsInfo.Image = global::allN1.Properties.Resources.sell_30px;
-            this.btnVen_billsInfo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnVen_billsInfo.Location = new System.Drawing.Point(21, 391);
-            this.btnVen_billsInfo.Name = "btnVen_billsInfo";
-            this.btnVen_billsInfo.Size = new System.Drawing.Size(208, 51);
-            this.btnVen_billsInfo.TabIndex = 6;
-            this.btnVen_billsInfo.Text = "الفواتير";
-            this.btnVen_billsInfo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnVen_billsInfo.UseVisualStyleBackColor = false;
-            this.btnVen_billsInfo.Click += new System.EventHandler(this.BtnVen_billsInfo_Click);
-            // 
-            // btnVen_del
-            // 
-            this.btnVen_del.BackColor = System.Drawing.Color.Firebrick;
-            this.btnVen_del.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVen_del.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVen_del.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnVen_del.Image = global::allN1.Properties.Resources.delete_bin_30px;
-            this.btnVen_del.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnVen_del.Location = new System.Drawing.Point(21, 324);
-            this.btnVen_del.Name = "btnVen_del";
-            this.btnVen_del.Size = new System.Drawing.Size(119, 51);
-            this.btnVen_del.TabIndex = 5;
-            this.btnVen_del.Text = "حذف";
-            this.btnVen_del.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnVen_del.UseVisualStyleBackColor = false;
-            this.btnVen_del.Click += new System.EventHandler(this.BtnVen_del_Click);
-            // 
-            // btnVen_edit
-            // 
-            this.btnVen_edit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(154)))));
-            this.btnVen_edit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVen_edit.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVen_edit.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnVen_edit.Image = global::allN1.Properties.Resources.edit_file_30px;
-            this.btnVen_edit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnVen_edit.Location = new System.Drawing.Point(146, 324);
-            this.btnVen_edit.Name = "btnVen_edit";
-            this.btnVen_edit.Size = new System.Drawing.Size(150, 51);
-            this.btnVen_edit.TabIndex = 4;
-            this.btnVen_edit.Text = "تعديل";
-            this.btnVen_edit.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnVen_edit.UseVisualStyleBackColor = false;
-            this.btnVen_edit.Click += new System.EventHandler(this.BtnVen_edit_Click);
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pictureBox2.Image = global::allN1.Properties.Resources.add_48px;
-            this.pictureBox2.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(48, 49);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox2.TabIndex = 1;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.PictureBox2_Click);
+            this.time_now.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.time_now.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.time_now.ForeColor = System.Drawing.Color.White;
+            this.time_now.Margin = new System.Windows.Forms.Padding(0, 3, 20, 2);
+            this.time_now.Name = "time_now";
+            this.time_now.Size = new System.Drawing.Size(1236, 29);
+            this.time_now.Spring = true;
+            this.time_now.Text = "الحاله : متصل";
+            this.time_now.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // toolStripDropDownButton1
             // 
@@ -2677,13 +2684,13 @@
             this.toolStripMenuItem2,
             this.toolStripMenuItem1,
             this.طباعةإيصالToolStripMenuItem,
-            this.قفلالشاشةToolStripMenuItem,
-            this.تصغيرToolStripMenuItem1,
-            this.إغلاقToolStripMenuItem});
+            this.قفلالشاشةToolStripMenuItem});
             this.toolStripDropDownButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
             this.toolStripDropDownButton1.Image = global::allN1.Properties.Resources.toolbox_30px;
             this.toolStripDropDownButton1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripDropDownButton1.Margin = new System.Windows.Forms.Padding(0);
+            this.toolStripDropDownButton1.MergeAction = System.Windows.Forms.MergeAction.Replace;
             this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
             this.toolStripDropDownButton1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.toolStripDropDownButton1.ShowDropDownArrow = false;
@@ -2701,27 +2708,27 @@
             this.toolStripMenuItem2.Image = global::allN1.Properties.Resources.support_30px;
             this.toolStripMenuItem2.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(191, 36);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(194, 36);
             this.toolStripMenuItem2.Text = "إصلاح الأخطاء";
             // 
             // الفواتيرToolStripMenuItem
             // 
             this.الفواتيرToolStripMenuItem.Name = "الفواتيرToolStripMenuItem";
-            this.الفواتيرToolStripMenuItem.Size = new System.Drawing.Size(133, 24);
+            this.الفواتيرToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
             this.الفواتيرToolStripMenuItem.Text = "الفواتير";
             this.الفواتيرToolStripMenuItem.Click += new System.EventHandler(this.الفواتيرToolStripMenuItem_Click);
             // 
             // المدفوعاتToolStripMenuItem
             // 
             this.المدفوعاتToolStripMenuItem.Name = "المدفوعاتToolStripMenuItem";
-            this.المدفوعاتToolStripMenuItem.Size = new System.Drawing.Size(133, 24);
+            this.المدفوعاتToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
             this.المدفوعاتToolStripMenuItem.Text = "المدفوعات";
             this.المدفوعاتToolStripMenuItem.Click += new System.EventHandler(this.المدفوعاتToolStripMenuItem_Click);
             // 
             // testToolStripMenuItem
             // 
             this.testToolStripMenuItem.Name = "testToolStripMenuItem";
-            this.testToolStripMenuItem.Size = new System.Drawing.Size(133, 24);
+            this.testToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
             this.testToolStripMenuItem.Text = "test";
             this.testToolStripMenuItem.Click += new System.EventHandler(this.TestToolStripMenuItem_Click);
             // 
@@ -2732,7 +2739,7 @@
             this.toolStripMenuItem1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
             this.toolStripMenuItem1.ShortcutKeys = System.Windows.Forms.Keys.F5;
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(191, 36);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(194, 36);
             this.toolStripMenuItem1.Text = "تحديث التقرير";
             this.toolStripMenuItem1.Click += new System.EventHandler(this.ToolStripMenuItem1_Click);
             // 
@@ -2743,7 +2750,7 @@
             this.طباعةإيصالToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.طباعةإيصالToolStripMenuItem.Name = "طباعةإيصالToolStripMenuItem";
             this.طباعةإيصالToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F6;
-            this.طباعةإيصالToolStripMenuItem.Size = new System.Drawing.Size(191, 36);
+            this.طباعةإيصالToolStripMenuItem.Size = new System.Drawing.Size(194, 36);
             this.طباعةإيصالToolStripMenuItem.Text = "طباعة إيصال";
             this.طباعةإيصالToolStripMenuItem.Click += new System.EventHandler(this.طباعةإيصالToolStripMenuItem_Click);
             // 
@@ -2754,30 +2761,9 @@
             this.قفلالشاشةToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.قفلالشاشةToolStripMenuItem.Name = "قفلالشاشةToolStripMenuItem";
             this.قفلالشاشةToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F2;
-            this.قفلالشاشةToolStripMenuItem.Size = new System.Drawing.Size(191, 36);
+            this.قفلالشاشةToolStripMenuItem.Size = new System.Drawing.Size(194, 36);
             this.قفلالشاشةToolStripMenuItem.Text = "قفل الشاشة";
             this.قفلالشاشةToolStripMenuItem.Click += new System.EventHandler(this.قفلالشاشةToolStripMenuItem_Click);
-            // 
-            // تصغيرToolStripMenuItem1
-            // 
-            this.تصغيرToolStripMenuItem1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
-            this.تصغيرToolStripMenuItem1.Image = global::allN1.Properties.Resources._2minimize_window_30px;
-            this.تصغيرToolStripMenuItem1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.تصغيرToolStripMenuItem1.Name = "تصغيرToolStripMenuItem1";
-            this.تصغيرToolStripMenuItem1.ShortcutKeys = System.Windows.Forms.Keys.F3;
-            this.تصغيرToolStripMenuItem1.Size = new System.Drawing.Size(191, 36);
-            this.تصغيرToolStripMenuItem1.Text = "تصغير";
-            this.تصغيرToolStripMenuItem1.Click += new System.EventHandler(this.تصغيرToolStripMenuItem1_Click);
-            // 
-            // إغلاقToolStripMenuItem
-            // 
-            this.إغلاقToolStripMenuItem.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.إغلاقToolStripMenuItem.Image = global::allN1.Properties.Resources._2shutdown_30px;
-            this.إغلاقToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.إغلاقToolStripMenuItem.Name = "إغلاقToolStripMenuItem";
-            this.إغلاقToolStripMenuItem.Size = new System.Drawing.Size(191, 36);
-            this.إغلاقToolStripMenuItem.Text = "إغلاق";
-            this.إغلاقToolStripMenuItem.Click += new System.EventHandler(this.إغلاقToolStripMenuItem_Click);
             // 
             // toolStripDropDownButton2
             // 
@@ -2790,11 +2776,16 @@
             this.toolStripDropDownButton2.Image = global::allN1.Properties.Resources.browse_folder_30px;
             this.toolStripDropDownButton2.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.toolStripDropDownButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripDropDownButton2.Margin = new System.Windows.Forms.Padding(0);
+            this.toolStripDropDownButton2.MergeAction = System.Windows.Forms.MergeAction.Replace;
             this.toolStripDropDownButton2.Name = "toolStripDropDownButton2";
             this.toolStripDropDownButton2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.toolStripDropDownButton2.ShowDropDownArrow = false;
             this.toolStripDropDownButton2.Size = new System.Drawing.Size(34, 34);
             this.toolStripDropDownButton2.Text = "toolStripDropDownButton2";
+            this.toolStripDropDownButton2.TextDirection = System.Windows.Forms.ToolStripTextDirection.Horizontal;
+            this.toolStripDropDownButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.toolStripDropDownButton2.Click += new System.EventHandler(this.ToolStripDropDownButton2_Click);
             // 
             // فواتيرToolStripMenuItem1
             // 
@@ -2802,7 +2793,7 @@
             this.فواتيرToolStripMenuItem1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.فواتيرToolStripMenuItem1.Name = "فواتيرToolStripMenuItem1";
             this.فواتيرToolStripMenuItem1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.فواتيرToolStripMenuItem1.Size = new System.Drawing.Size(163, 36);
+            this.فواتيرToolStripMenuItem1.Size = new System.Drawing.Size(194, 36);
             this.فواتيرToolStripMenuItem1.Text = "فواتير";
             this.فواتيرToolStripMenuItem1.Click += new System.EventHandler(this.فواتيرToolStripMenuItem1_Click);
             // 
@@ -2811,18 +2802,80 @@
             this.إيصالاتاليومToolStripMenuItem1.Image = global::allN1.Properties.Resources.send_to_printer_30px;
             this.إيصالاتاليومToolStripMenuItem1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.إيصالاتاليومToolStripMenuItem1.Name = "إيصالاتاليومToolStripMenuItem1";
-            this.إيصالاتاليومToolStripMenuItem1.Size = new System.Drawing.Size(163, 36);
+            this.إيصالاتاليومToolStripMenuItem1.Size = new System.Drawing.Size(194, 36);
             this.إيصالاتاليومToolStripMenuItem1.Text = "إيصالات اليوم";
             this.إيصالاتاليومToolStripMenuItem1.Click += new System.EventHandler(this.إيصالاتاليومToolStripMenuItem1_Click);
+            // 
+            // statusStrip1
+            // 
+            this.statusStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.statusStrip1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.statusStrip1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.time_now,
+            this.toolStripDropDownButton1,
+            this.toolStripDropDownButton2});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 0);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
+            this.statusStrip1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.statusStrip1.Size = new System.Drawing.Size(1370, 34);
+            this.statusStrip1.TabIndex = 3;
+            this.statusStrip1.Text = "statusStrip1";
+            this.statusStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.StatusStrip1_ItemClicked);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pictureBox1.Image = global::allN1.Properties.Resources._2shutdown_30px;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(10);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Padding = new System.Windows.Forms.Padding(2);
+            this.pictureBox1.Size = new System.Drawing.Size(34, 34);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox1.TabIndex = 4;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.PictureBox1_Click_1);
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.pictureBox3.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pictureBox3.Image = global::allN1.Properties.Resources._2minimize_window_30px;
+            this.pictureBox3.Location = new System.Drawing.Point(34, 0);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(0);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Padding = new System.Windows.Forms.Padding(2);
+            this.pictureBox3.Size = new System.Drawing.Size(34, 34);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox3.TabIndex = 5;
+            this.pictureBox3.TabStop = false;
+            this.pictureBox3.Click += new System.EventHandler(this.PictureBox3_Click);
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.pictureBox5.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pictureBox5.Image = global::allN1.Properties.Resources.secure_30px;
+            this.pictureBox5.Location = new System.Drawing.Point(68, 0);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Padding = new System.Windows.Forms.Padding(2);
+            this.pictureBox5.Size = new System.Drawing.Size(34, 34);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox5.TabIndex = 7;
+            this.pictureBox5.TabStop = false;
+            this.pictureBox5.Click += new System.EventHandler(this.PictureBox5_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1370, 772);
+            this.ClientSize = new System.Drawing.Size(1370, 406);
             this.ControlBox = false;
             this.Controls.Add(this.new_v);
-            this.Controls.Add(this.statusStrip1);
+            this.Controls.Add(this.panel12);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -2834,8 +2887,6 @@
             this.Text = "معرض أبوسيف";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Form1_Load);
-            this.statusStrip1.ResumeLayout(false);
-            this.statusStrip1.PerformLayout();
             this.vendors.ResumeLayout(false);
             this.new_v_gb.ResumeLayout(false);
             this.groupBox22.ResumeLayout(false);
@@ -2861,6 +2912,7 @@
             this.panel8.ResumeLayout(false);
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.users.ResumeLayout(false);
             this.groupBox20.ResumeLayout(false);
             this.groupBox20.PerformLayout();
@@ -2887,6 +2939,7 @@
             this.panel6.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.new_u)).EndInit();
             this.products.ResumeLayout(false);
             this.gb_sell_info.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
@@ -2910,6 +2963,7 @@
             this.panel1.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.new_p)).EndInit();
             this.home.ResumeLayout(false);
             this.groupBox21.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.usersWanted)).EndInit();
@@ -2929,22 +2983,19 @@
             this.groupBox13.ResumeLayout(false);
             this.groupBox12.ResumeLayout(false);
             this.groupBox29.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.new_p)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.new_u)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.panel12.ResumeLayout(false);
+            this.panel12.PerformLayout();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.StatusStrip statusStrip1;
-        private System.Windows.Forms.ToolStripStatusLabel time_now;
-        private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton1;
-        private System.Windows.Forms.ToolStripMenuItem طباعةإيصالToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem قفلالشاشةToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem تصغيرToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem إغلاقToolStripMenuItem;
         private System.Windows.Forms.TabPage vendors;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.ListBox vendorlist;
@@ -3072,13 +3123,8 @@
         private System.Windows.Forms.TextBox txtvendor_name_new;
         private System.Windows.Forms.GroupBox groupBox24;
         private System.Windows.Forms.TextBox txtvendor_mony_new;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.DataGridView userdata;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
-        private System.Windows.Forms.ToolStripMenuItem المدفوعاتToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem testToolStripMenuItem;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.ToolStripMenuItem الفواتيرToolStripMenuItem;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button7;
@@ -3123,9 +3169,23 @@
         private System.Windows.Forms.GroupBox groupBox21;
         private System.Windows.Forms.DataGridView usersWanted;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.Panel panel12;
+        private System.Windows.Forms.ToolStripStatusLabel time_now;
+        private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton1;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem الفواتيرToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem المدفوعاتToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem testToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem طباعةإيصالToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem قفلالشاشةToolStripMenuItem;
         private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton2;
         private System.Windows.Forms.ToolStripMenuItem فواتيرToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem إيصالاتاليومToolStripMenuItem1;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox pictureBox5;
     }
 }
 

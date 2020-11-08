@@ -5,6 +5,7 @@ using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -128,7 +129,66 @@ namespace allN1
 
         private void Button1_Click(object sender, EventArgs e)
         {
+
+            BackupdatabaseAsync();
             Application.Exit();
+        }
+
+
+
+        private void  BackupdatabaseAsync()
+        {
+            //DateTime t = DateTime.Now;
+            Directory.CreateDirectory("BackUp");
+            // string file = Application.StartupPath + "/BackUp/AppDB"+t.ToString("dd-MM")+".bak";
+            string file = Application.StartupPath + "/BackUp/AppDB.bak";
+            file = file.Replace('\\', '/');
+            // Check if file already exists. If yes, delete it.     
+            if (File.Exists(file))
+            {
+                File.Delete(file);
+            }
+            String quary = "BACKUP DATABASE AppDB TO DISK = @dir";
+            try
+            {
+                using (connection = new SqlConnection(connectionString))
+                using (SqlCommand command = new SqlCommand(quary, connection))
+                {
+                    connection.Open();
+                    command.Parameters.AddWithValue("@dir", file);
+                    command.ExecuteNonQuery();
+                }
+                this.Close();
+            }
+            catch (Exception e)
+            {
+                string fileName = Application.StartupPath + "/error.txt";
+
+                try
+                {
+                    // Check if file already exists. If yes, delete it.     
+                    if (File.Exists(fileName))
+                    {
+                        File.Delete(fileName);
+                    }
+
+                    // Create a new file     
+                    using (FileStream fs = File.Create(fileName))
+                    {
+                        // Add some text to file    
+                        Byte[] title = new UTF8Encoding(true).GetBytes(e.ToString());
+                        fs.Write(title, 0, title.Length);
+                    }
+
+
+                }
+                catch (Exception)
+                {
+ 
+                    this.Close();
+                }
+
+            }
         }
     }
 }

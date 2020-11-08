@@ -29,3 +29,5 @@ D:\A.Abousaif\My Work - A.Abousaif\allN1\obj\Release\allN1.csproj.CoreCompileInp
 D:\A.Abousaif\My Work - A.Abousaif\allN1\bin\Release\معرض أبوسيف.exe.config
 D:\A.Abousaif\My Work - A.Abousaif\allN1\bin\Release\معرض أبوسيف.exe
 D:\A.Abousaif\My Work - A.Abousaif\allN1\obj\Release\معرض أبوسيف.exe
+D:\A.Abousaif\My Work - A.Abousaif\allN1\obj\Release\allN1.addproduct.resources
+D:\A.Abousaif\My Work - A.Abousaif\allN1\obj\Release\allN1.csprojAssemblyReference.cache

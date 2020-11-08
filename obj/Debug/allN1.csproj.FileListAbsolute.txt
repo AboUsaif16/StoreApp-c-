@@ -26,9 +26,6 @@ D:\My Work\allN1\obj\Debug\allN1.csproj.GenerateResource.cache
 D:\My Work\allN1\obj\Debug\allN1.csproj.CoreCompileInputs.cache
 D:\My Work\allN1\obj\Debug\allN1.exe
 D:\My Work\allN1\obj\Debug\allN1.pdb
-D:\A.Abousaif\My Work - A.Abousaif\allN1\bin\Debug\allN1.exe.config
-D:\A.Abousaif\My Work - A.Abousaif\allN1\bin\Debug\allN1.exe
-D:\A.Abousaif\My Work - A.Abousaif\allN1\bin\Debug\allN1.pdb
 D:\A.Abousaif\My Work - A.Abousaif\allN1\obj\Debug\allN1.bill_info.resources
 D:\A.Abousaif\My Work - A.Abousaif\allN1\obj\Debug\allN1.Form1.resources
 D:\A.Abousaif\My Work - A.Abousaif\allN1\obj\Debug\allN1.lock.resources
@@ -37,11 +34,16 @@ D:\A.Abousaif\My Work - A.Abousaif\allN1\obj\Debug\allN1.printpay.resources
 D:\A.Abousaif\My Work - A.Abousaif\allN1\obj\Debug\allN1.Properties.Resources.resources
 D:\A.Abousaif\My Work - A.Abousaif\allN1\obj\Debug\allN1.csproj.GenerateResource.cache
 D:\A.Abousaif\My Work - A.Abousaif\allN1\obj\Debug\allN1.csproj.CoreCompileInputs.cache
-D:\A.Abousaif\My Work - A.Abousaif\allN1\obj\Debug\allN1.exe
-D:\A.Abousaif\My Work - A.Abousaif\allN1\obj\Debug\allN1.pdb
 D:\A.Abousaif\My Work - A.Abousaif\allN1\obj\Debug\allN1.vendor_bill.resources
 D:\A.Abousaif\My Work - A.Abousaif\allN1\obj\Debug\allN1.order.resources
 D:\A.Abousaif\My Work - A.Abousaif\allN1\obj\Debug\allN1.v_order.resources
 D:\A.Abousaif\My Work - A.Abousaif\allN1\obj\Debug\allN1.typeSrch.resources
 D:\A.Abousaif\My Work - A.Abousaif\allN1\obj\Debug\allN1.goodReturn.resources
 D:\A.Abousaif\My Work - A.Abousaif\allN1\obj\Debug\allN1.venGoodRet.resources
+D:\A.Abousaif\My Work - A.Abousaif\allN1\bin\Debug\معرض أبوسيف.exe.config
+D:\A.Abousaif\My Work - A.Abousaif\allN1\bin\Debug\معرض أبوسيف.exe
+D:\A.Abousaif\My Work - A.Abousaif\allN1\bin\Debug\معرض أبوسيف.pdb
+D:\A.Abousaif\My Work - A.Abousaif\allN1\obj\Debug\allN1.csprojAssemblyReference.cache
+D:\A.Abousaif\My Work - A.Abousaif\allN1\obj\Debug\allN1.addproduct.resources
+D:\A.Abousaif\My Work - A.Abousaif\allN1\obj\Debug\معرض أبوسيف.exe
+D:\A.Abousaif\My Work - A.Abousaif\allN1\obj\Debug\معرض أبوسيف.pdb
