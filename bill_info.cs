@@ -330,7 +330,7 @@ namespace allN1
                             }
                         }
                         */
-                    oTemp += "عدد الأصنـــاف : " + (rowcount).ToString() + " صنف" + "\t" + "\t" + "الاجمالي\t" + txttotal.Text;
+                    oTemp += "\t" + "عدد الأصنـــاف : " + (rowcount).ToString() + " صنف" + "\t" + "\t" + "الاجمالي\t" + txttotal.Text;
                     //table format  
                     object Separator = Word.WdTableFieldSeparator.wdSeparateByTabs;
                     object ApplyBorders = true;
@@ -377,6 +377,8 @@ namespace allN1
 
 
                     //table style  
+                    aDoc.Application.Selection.Tables[1].Columns[1].Delete();
+                    aDoc.Application.Selection.Tables[1].Columns[5].Delete();
                     aDoc.Application.Selection.Tables[1].set_Style("Table Grid");
                     aDoc.Application.Selection.Tables[1].Columns[2].Width = 60;
                     aDoc.Application.Selection.Tables[1].Columns[1].Width = 280;
