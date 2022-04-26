@@ -10,20 +10,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SQLite;
 
 namespace allN1
 {
     public partial class @lock : Form
     {
         readonly string connectionString;
-        SqlConnection connection;
+        SQLiteConnection connection;
 
         public string ConnectionString => connectionString;
         public @lock()
         {
 
             InitializeComponent();
-            connectionString = ConfigurationManager.ConnectionStrings["allN1.Properties.Settings.DBConnectionString"].ConnectionString;
+            connectionString = ConfigurationManager.ConnectionStrings["dataB"].ConnectionString;
         }
 
         private void PictureBox1_Click(object sender, EventArgs e)
@@ -51,8 +52,8 @@ namespace allN1
             try
             {
                 String quary = "ALTER TABLE users ADD lastPayment date null; ";
-                using (connection = new SqlConnection(connectionString))
-                using (SqlCommand command = new SqlCommand(quary, connection))
+                using (connection = new SQLiteConnection(connectionString))
+                using (SQLiteCommand command = new SQLiteCommand(quary, connection))
 
                 {
                     connection.Open();
@@ -63,8 +64,8 @@ namespace allN1
                             SET users.lastPayment = s.ss
                             FROM users, (select max(date) as ss, user_id from logs_info  group by user_id)  s
                             WHERE users.Id = s.user_id";
-                using (connection = new SqlConnection(connectionString))
-                using (SqlCommand command = new SqlCommand(quary, connection))
+                using (connection = new SQLiteConnection(connectionString))
+                using (SQLiteCommand command = new SQLiteCommand(quary, connection))
 
                 {
                     connection.Open();
@@ -151,8 +152,8 @@ namespace allN1
             String quary = "BACKUP DATABASE AppDB TO DISK = @dir";
             try
             {
-                using (connection = new SqlConnection(connectionString))
-                using (SqlCommand command = new SqlCommand(quary, connection))
+                using (connection = new SQLiteConnection(connectionString))
+                using (SQLiteCommand command = new SQLiteCommand(quary, connection))
                 {
                     connection.Open();
                     command.Parameters.AddWithValue("@dir", file);

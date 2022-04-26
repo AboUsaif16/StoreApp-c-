@@ -93,6 +93,16 @@ namespace allN1.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap add_48px1 {
+            get {
+                object obj = ResourceManager.GetObject("add_48px1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap add_50px {
             get {
                 object obj = ResourceManager.GetObject("add_50px", resourceCulture);
@@ -123,6 +133,16 @@ namespace allN1.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap add_new_48px {
+            get {
+                object obj = ResourceManager.GetObject("add_new_48px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap add_new_50px {
             get {
                 object obj = ResourceManager.GetObject("add_new_50px", resourceCulture);
@@ -146,6 +166,26 @@ namespace allN1.Properties {
         internal static System.Drawing.Bitmap add_new_52px {
             get {
                 object obj = ResourceManager.GetObject("add_new_52px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap add_user_male_30px {
+            get {
+                object obj = ResourceManager.GetObject("add_user_male_30px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap add_user_male_30px1 {
+            get {
+                object obj = ResourceManager.GetObject("add_user_male_30px1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -263,6 +303,26 @@ namespace allN1.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap close_window_26px {
+            get {
+                object obj = ResourceManager.GetObject("close_window_26px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap close_window_52px {
+            get {
+                object obj = ResourceManager.GetObject("close_window_52px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap combo_chart_30px {
             get {
                 object obj = ResourceManager.GetObject("combo_chart_30px", resourceCulture);
@@ -333,6 +393,16 @@ namespace allN1.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap delete_trash_24px {
+            get {
+                object obj = ResourceManager.GetObject("delete_trash_24px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap deposit_30px {
             get {
                 object obj = ResourceManager.GetObject("deposit_30px", resourceCulture);
@@ -356,6 +426,26 @@ namespace allN1.Properties {
         internal static System.Drawing.Bitmap edit_file_30px {
             get {
                 object obj = ResourceManager.GetObject("edit_file_30px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap forgot_password_26px {
+            get {
+                object obj = ResourceManager.GetObject("forgot_password_26px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap forgot_password_52px {
+            get {
+                object obj = ResourceManager.GetObject("forgot_password_52px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -443,9 +533,39 @@ namespace allN1.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap lock_26px {
+            get {
+                object obj = ResourceManager.GetObject("lock_26px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap lock_30px {
             get {
                 object obj = ResourceManager.GetObject("lock_30px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap lock_30px1 {
+            get {
+                object obj = ResourceManager.GetObject("lock_30px1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap lock_52px {
+            get {
+                object obj = ResourceManager.GetObject("lock_52px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -553,9 +673,29 @@ namespace allN1.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap password_52px {
+            get {
+                object obj = ResourceManager.GetObject("password_52px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap pay_30px {
             get {
                 object obj = ResourceManager.GetObject("pay_30px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pay_64px {
+            get {
+                object obj = ResourceManager.GetObject("pay_64px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -623,6 +763,26 @@ namespace allN1.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap print_30px21 {
+            get {
+                object obj = ResourceManager.GetObject("print_30px21", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap print_30px3 {
+            get {
+                object obj = ResourceManager.GetObject("print_30px3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap print_address_label_30px {
             get {
                 object obj = ResourceManager.GetObject("print_address_label_30px", resourceCulture);
@@ -666,6 +826,16 @@ namespace allN1.Properties {
         internal static System.Drawing.Bitmap return_purchase_60px {
             get {
                 object obj = ResourceManager.GetObject("return_purchase_60px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap search_24px {
+            get {
+                object obj = ResourceManager.GetObject("search_24px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -803,6 +973,26 @@ namespace allN1.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap shutdown_48_2px {
+            get {
+                object obj = ResourceManager.GetObject("shutdown_48_2px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap shutdown_48px {
+            get {
+                object obj = ResourceManager.GetObject("shutdown_48px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap support_30px {
             get {
                 object obj = ResourceManager.GetObject("support_30px", resourceCulture);
@@ -866,6 +1056,16 @@ namespace allN1.Properties {
         internal static System.Drawing.Bitmap update_30px {
             get {
                 object obj = ResourceManager.GetObject("update_30px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap user_24px {
+            get {
+                object obj = ResourceManager.GetObject("user_24px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

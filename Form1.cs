@@ -15,6 +15,7 @@ using Word = Microsoft.Office.Interop.Word;
 using System.Reflection;
 using System.IO;
 using System.Diagnostics;
+using System.Data.SQLite;
 
 
 using System.Drawing.Printing;
@@ -28,6 +29,8 @@ namespace allN1
         float remain;
         float remain_v;
         int inc = 0;
+        string[] mounths = { "يناير", "فبراير", "مارس", "ابريل","مايو", "يونيو", "يوليو","اغسطس","سبتمبر","اكتوبر" ,"نوفمبر","ديسمبر"};
+        string[] last_mounths = { "ديسمبر" , "يناير", "فبراير", "مارس", "ابريل", "مايو", "يونيو", "يوليو", "اغسطس", "سبتمبر", "اكتوبر", "نوفمبر" };
         public static string usernameSelected = "";
         public static string useridSelected = "";
         public static string vendornameSelected = "";
@@ -35,7 +38,7 @@ namespace allN1
         string filename;
         readonly DateTime today = DateTime.Now;
         readonly string connectionString;
-        SqlConnection connection;
+        SQLiteConnection connection;
 
         public string ConnectionString => connectionString;
 
@@ -54,12 +57,12 @@ namespace allN1
 
             time_now.ForeColor = Color.FromArgb(240,240,51);
             time_now.Text = "يتم تحميل الأن بيانات البرنامج";
-            connectionString = ConfigurationManager.ConnectionStrings["allN1.Properties.Settings.DBConnectionString"].ConnectionString;
-            using (SqlConnection con = new SqlConnection(connectionString))
+            connectionString = ConfigurationManager.ConnectionStrings["dataB"].ConnectionString;
+            using (SQLiteConnection con = new SQLiteConnection(connectionString))
             {
-                SqlCommand cmd = new SqlCommand("SELECT name FROM users", con);
+                SQLiteCommand cmd = new SQLiteCommand("SELECT name FROM users", con);
                 con.Open();
-                SqlDataReader reader = cmd.ExecuteReader();
+                SQLiteDataReader reader = cmd.ExecuteReader();
                 AutoCompleteStringCollection MyCollection = new AutoCompleteStringCollection();
                 while (reader.Read())
                 {
@@ -68,11 +71,11 @@ namespace allN1
                 txtuser_new.AutoCompleteCustomSource = MyCollection;
                 con.Close();
             }
-            using (SqlConnection con = new SqlConnection(connectionString))
+            using (SQLiteConnection con = new SQLiteConnection(connectionString))
             {
-                SqlCommand cmd = new SqlCommand("SELECT address FROM users", con);
+                SQLiteCommand cmd = new SQLiteCommand("SELECT address FROM users", con);
                 con.Open();
-                SqlDataReader reader = cmd.ExecuteReader();
+                SQLiteDataReader reader = cmd.ExecuteReader();
                 AutoCompleteStringCollection MyCollection = new AutoCompleteStringCollection();
                 while (reader.Read())
                 {
@@ -88,7 +91,10 @@ namespace allN1
             @lock lck = new @lock();
             lck.ShowDialog(this);
             var d = today.ToString("dd/MM/yyyy");
-
+            int m = int.Parse(d.Split('/')[1]);
+            groupBox12.Text += ": [" + mounths[m-1]+ "]" ;
+            groupBox13.Text += ": [" + last_mounths[m-1] + "]";
+            dateTimePicker1.Value = today;
             //groupBox28.Text = "إجمالى دخل يوم" + " " + today.ToString("dd/MM/yyyy");
             update_info();
             Viewgoods();
@@ -98,12 +104,13 @@ namespace allN1
             Viewvendors();
             time_now.Text = "الحالة : متصل";
             time_now.ForeColor = Color.White;
+
         }
 
         private void update_info()
         {
             paymnts(today);
-            totalToday(today);
+            totalToday();
             totalToday0(today);
             Not_Avalable();
             lastpay();
@@ -123,11 +130,14 @@ namespace allN1
         }
         private void lastpay()
         {
-            String quary = "select name as [إسم العميل] ,mony as [المتبقى عليه] ,lastPayment as [أخر عملية دفع] from users where MONTH(lastPayment) < 10 and mony > 0 order by lastPayment; ";
-            using (connection = new SqlConnection(connectionString))
-            using (SqlCommand command = new SqlCommand(quary, connection))
-            using (SqlDataAdapter adapter = new SqlDataAdapter(command))
+            var d = today.ToString("dd/MM/yyyy");
+            int m = int.Parse(d.Split('/')[1]);
+            String quary = "select name as [إسم العميل] ,mony as [المتبقى عليه] ,lastPayment as [أخر عملية دفع],payment as [المطلوب] from users join logs_info on users.id = user_id where MONTH(lastPayment) < @month and mony > 0 and lastPayment= CONVERT (date, date, 103) order by lastPayment; ";
+            using (connection = new SQLiteConnection(connectionString))
+            using (SQLiteCommand command = new SQLiteCommand(quary, connection))
+            using (SQLiteDataAdapter adapter = new SQLiteDataAdapter(command))
             {
+                command.Parameters.AddWithValue("@month", m.ToString());
                 DataTable goods_info = new DataTable();
                 adapter.Fill(goods_info);
 
@@ -154,9 +164,9 @@ namespace allN1
         private void paymnts(DateTime date)
         {
             string sql = "select users.name as [الإسم] ,payment as [المدفوع] from logs_info join users on logs_info.user_id = users.Id where (CONVERT(VARCHAR(10),date , 103) like @date)";
-            using (connection = new SqlConnection(connectionString))
-            using (SqlCommand command = new SqlCommand(sql, connection))
-            using (SqlDataAdapter adapter = new SqlDataAdapter(command))
+            using (connection = new SQLiteConnection(connectionString))
+            using (SQLiteCommand command = new SQLiteCommand(sql, connection))
+            using (SQLiteDataAdapter adapter = new SQLiteDataAdapter(command))
             {
                 // CONVERT (varchar(10), date, 103) as [الوقت ]
                 command.Parameters.AddWithValue("@date", date.ToString("dd/MM/yyyy"));
@@ -170,30 +180,24 @@ namespace allN1
 
             }
         }
-        private void totalToday(DateTime date)
+        private void totalToday()
         {
             int mm = 0; int m = 0;
+            string sql = @"
+                            select 
+                            (select sum(payment) as s 
+                            from logs_info
+                            where month(date) like month(GETDATE()) and YEAR(date) like YEAR(GETDATE())) as mounth,
+                            (select sum(v_payment) as s  from v_logs where month(v_date) like month(GETDATE()) and YEAR(v_date) like YEAR(GETDATE())) as mm,
+                            (select sum(payment) as t 
+                            from logs_info  
+                            where (CONVERT(VARCHAR(10),date , 103) like (CONVERT(VARCHAR(10),GETDATE(),103)))) as day
+                            ";
 
-            var d = today.ToString("dd/MM/yyyy");
-            string sql = "select sum(payment) as t from logs_info  where (CONVERT(VARCHAR(10),date , 103) like @date)";
-            sql = @"
-                select 
-                    (select sum(payment) as s 
-                        from logs_info
-                        where month(date) like @mounth and YEAR(date) like @year) as mounth,
-(select sum(v_payment) as s  from v_logs where month(v_date) like @mounth and YEAR(v_date) like @year) as mm,
-                    (select sum(payment) as t 
-                        from logs_info  
-                        where (CONVERT(VARCHAR(10),date , 103) like @date)) as day";
-
-                using (connection = new SqlConnection(connectionString))
-                using (SqlCommand command = new SqlCommand(sql, connection))
-                using (SqlDataAdapter adapter = new SqlDataAdapter(command))
+                using (connection = new SQLiteConnection(connectionString))
+                using (SQLiteCommand command = new SQLiteCommand(sql, connection))
+                using (SQLiteDataAdapter adapter = new SQLiteDataAdapter(command))
                 {
-                    // CONVERT (varchar(10), date, 103) as [الوقت ]
-                    command.Parameters.AddWithValue("@date", date.ToString("dd/MM/yyyy"));
-                    command.Parameters.AddWithValue("@year", d.Split('/')[2]);
-                    command.Parameters.AddWithValue("@mounth", d.Split('/')[1]);
                     DataTable goods_info = new DataTable();
                     adapter.Fill(goods_info);
                     DataRow[] rows = goods_info.Select();
@@ -249,16 +253,15 @@ namespace allN1
         }
         private void income(DateTime date)
         {
-            var d = today.ToString("dd/MM/yyyy");
+            
             int temp = 0;
-            string sql = "select cast(sum(payment)/30 as int) as t from logs_info where month(date) like @mounth and YEAR(date) like @year";
+            string sql = "select cast(sum(payment)/30 as int) as t from logs_info where month(date) like month(GETDATE()) and YEAR(date) like YEAR(GETDATE())";
 
-            using (connection = new SqlConnection(connectionString))
-            using (SqlCommand command = new SqlCommand(sql, connection))
-            using (SqlDataAdapter adapter = new SqlDataAdapter(command))
+            using (connection = new SQLiteConnection(connectionString))
+            using (SQLiteCommand command = new SQLiteCommand(sql, connection))
+            using (SQLiteDataAdapter adapter = new SQLiteDataAdapter(command))
             {
-                command.Parameters.AddWithValue("@year", d.Split('/')[2]);
-                command.Parameters.AddWithValue("@mounth", d.Split('/')[1]);
+
                 DataTable goods_info = new DataTable();
                 adapter.Fill(goods_info);
                 DataRow[] rows = goods_info.Select();
@@ -287,14 +290,12 @@ namespace allN1
         {
             var d = today.ToString("dd/MM/yyyy");
            
-            string sql = "select cast(sum(payment)/30 as int) as t from logs_info where month(date) like @mounth and YEAR(date) like @year";
+            string sql = "select cast(sum(payment)/30 as int) as t from logs_info where month(date) like month(DATEADD(month, -1,GETDATE())) and YEAR(date) like YEAR(DATEADD(month, -1,GETDATE()))";
 
-            using (connection = new SqlConnection(connectionString))
-            using (SqlCommand command = new SqlCommand(sql, connection))
-            using (SqlDataAdapter adapter = new SqlDataAdapter(command))
+            using (connection = new SQLiteConnection(connectionString))
+            using (SQLiteCommand command = new SQLiteCommand(sql, connection))
+            using (SQLiteDataAdapter adapter = new SQLiteDataAdapter(command))
             {
-                command.Parameters.AddWithValue("@year", d.Split('/')[2]);
-                command.Parameters.AddWithValue("@mounth", int.Parse(d.Split('/')[1]) - 1);
                 DataTable goods_info = new DataTable();
                 adapter.Fill(goods_info);
                 DataRow[] rows = goods_info.Select();
@@ -313,62 +314,91 @@ namespace allN1
         }
         private void totalToday0(DateTime date)
         {
-            var d = today.ToString("dd/MM/yyyy");
-           
-            string sql = @"
-                select 
-                    (select sum(payment) as s 
-                        from logs_info
-                        where month(date) like @mounth and YEAR(date) like @year) as mounth,
-(select sum(v_payment) as s  from v_logs where month(v_date) like @mounthLast and YEAR(v_date) like @year) as mm";
-
-            using (connection = new SqlConnection(connectionString))
-            using (SqlCommand command = new SqlCommand(sql, connection))
-            using (SqlDataAdapter adapter = new SqlDataAdapter(command))
+            try
             {
-                // CONVERT (varchar(10), date, 103) as [الوقت ]
-                command.Parameters.AddWithValue("@year", d.Split('/')[2]);
-                command.Parameters.AddWithValue("@mounth", int.Parse(d.Split('/')[1])-1);
-                command.Parameters.AddWithValue("@mounthLast", int.Parse(d.Split('/')[1]) - 2);
-                DataTable goods_info = new DataTable();
-                adapter.Fill(goods_info);
-                DataRow[] rows = goods_info.Select();
+                var d = today.ToString("dd/MM/yyyy");
 
-                txttotal_mounth_0.Text = rows[0]["mounth"].ToString() + " " + "جنية ";
-                txttotal_mm_0.Text = rows[0]["mm"].ToString() + " " + "جنية ";
-                int tot = int.Parse(rows[0]["mounth"].ToString()) - int.Parse(rows[0]["mm"].ToString());
-                if (tot >= 0)
+                string sql = @"
+                            select  (select sum(payment) as s 
+                            from logs_info
+                            where month(date) 
+                            like month(DATEADD(month, -1,GETDATE())) 
+                            and 
+                            YEAR(date) like YEAR(DATEADD(month, -1,GETDATE()))) as mounth,
+                            (select sum(v_payment) as s  from v_logs where month(v_date) like month(DATEADD(month, -2,GETDATE())) and YEAR(v_date) like YEAR(DATEADD(month, -1,GETDATE()))) as mm";
+
+                using (connection = new SQLiteConnection(connectionString))
+                using (SQLiteCommand command = new SQLiteCommand(sql, connection))
+                using (SQLiteDataAdapter adapter = new SQLiteDataAdapter(command))
                 {
-                    earn_total_0.Text = tot.ToString() + " " + "جنية "; ;
-                    earn_total_0.ForeColor = Color.ForestGreen;
+                    
+                    DataTable goods_info = new DataTable();
+                    adapter.Fill(goods_info);
+                    DataRow[] rows = goods_info.Select();
+                int m = 0;
+                int mm = 0;
+                ///////////
+                if (rows[0]["mounth"].ToString() == "")
+                {
+                    m = 0;
                 }
                 else
                 {
-                    earn_total_0.Text = (tot * -1).ToString() + " " + "جنية "; ;
-                    earn_total_0.ForeColor = Color.Firebrick;
+                    m = int.Parse(rows[0]["mounth"].ToString());
                 }
-            }
-            income0(today);
+                ////////////
+                if (rows[0]["mm"].ToString() == "")
+                {
+                    mm = 0;
+                }
+                else
+                {
+                    mm = int.Parse(rows[0]["mm"].ToString());
+                }
+                txttotal_mounth_0.Text = m.ToString() + " " + "جنية ";
+                    txttotal_mm_0.Text = mm.ToString() + " " + "جنية ";
+
+                int tot = m - mm;
+                    if (tot >= 0)
+                    {
+                        earn_total_0.Text = tot.ToString() + " " + "جنية "; ;
+                        earn_total_0.ForeColor = Color.ForestGreen;
+                    }
+                    else
+                    {
+                        earn_total_0.Text = (tot * -1).ToString() + " " + "جنية "; ;
+                        earn_total_0.ForeColor = Color.Firebrick;
+                    }
+                }
+                income0(today);
         }
+            catch(Exception ex)
+            {
+                groupBox13.Visible = false;
+                MessageBox.Show(ex.Message);
+            }
+}
         private void Not_Avalable()
         {
             String quary = "select name as [إسم الصنف الناقص] from goods Where amount = 0 ";
-            using (connection = new SqlConnection(connectionString))
-            using (SqlCommand command = new SqlCommand(quary, connection))
-            using (SqlDataAdapter adapter = new SqlDataAdapter(command))
+            using (connection = new SQLiteConnection(connectionString))
+            using (SQLiteCommand command = new SQLiteCommand(quary, connection))
+            using (SQLiteDataAdapter adapter = new SQLiteDataAdapter(command))
             {
                 DataTable goods_info = new DataTable();
                 adapter.Fill(goods_info);
 
                 needsTable.DataSource = goods_info;
             }
+            groupBox26.Text = "النواقص : " + needsTable.Rows.Count.ToString();
+
         }
         private void sqlcmd(string sql, Label o)
         {
 
-            using (connection = new SqlConnection(connectionString))
-            using (SqlCommand command = new SqlCommand(sql, connection))
-            using (SqlDataAdapter adapter = new SqlDataAdapter(command))
+            using (connection = new SQLiteConnection(connectionString))
+            using (SQLiteCommand command = new SQLiteCommand(sql, connection))
+            using (SQLiteDataAdapter adapter = new SQLiteDataAdapter(command))
             {
                 DataTable goods_info = new DataTable();
                 adapter.Fill(goods_info);
@@ -408,9 +438,9 @@ namespace allN1
         private void Viewgoods()
         {
             String quary = "select Id,name from goods";
-            using (connection = new SqlConnection(connectionString))
-            using (SqlCommand command = new SqlCommand(quary, connection))
-            using (SqlDataAdapter adapter = new SqlDataAdapter(command))
+            using (connection = new SQLiteConnection(connectionString))
+            using (SQLiteCommand command = new SQLiteCommand(quary, connection))
+            using (SQLiteDataAdapter adapter = new SQLiteDataAdapter(command))
             {
                 DataTable goods_info = new DataTable();
                 adapter.Fill(goods_info);
@@ -427,8 +457,8 @@ namespace allN1
             try
             {
                 String quary = String.Concat("alter table v_goods nocheck constraint all;delete from sells where good_id =", goodslist.SelectedValue, ";delete  from goods where Id = ", goodslist.SelectedValue, ";alter table v_goods check constraint all");
-                using (connection = new SqlConnection(connectionString))
-                using (SqlCommand command = new SqlCommand(quary, connection))
+                using (connection = new SQLiteConnection(connectionString))
+                using (SQLiteCommand command = new SQLiteCommand(quary, connection))
 
                 {
                     connection.Open();
@@ -460,11 +490,11 @@ namespace allN1
 
         private void AutoComplete(TextBox t, string s)
         {
-            using (SqlConnection con = new SqlConnection(ConnectionString))
+            using (SQLiteConnection con = new SQLiteConnection(ConnectionString))
             {
-                SqlCommand cmd = new SqlCommand(s, con);
+                SQLiteCommand cmd = new SQLiteCommand(s, con);
                 con.Open();
-                SqlDataReader reader = cmd.ExecuteReader();
+                SQLiteDataReader reader = cmd.ExecuteReader();
                 AutoCompleteStringCollection MyCollection = new AutoCompleteStringCollection();
                 while (reader.Read())
                 {
@@ -481,6 +511,7 @@ namespace allN1
             {
                 t.Text = "0";
                 t.SelectAll();
+                
             }
         }
         private void SrchByName()
@@ -488,9 +519,9 @@ namespace allN1
             try
             {
                 String quary = String.Concat("select Id,name  from goods where name like N'", "%", txt_search.Text, "%'");
-                using (connection = new SqlConnection(connectionString))
-                using (SqlCommand command = new SqlCommand(quary, connection))
-                using (SqlDataAdapter adapter = new SqlDataAdapter(command))
+                using (connection = new SQLiteConnection(connectionString))
+                using (SQLiteCommand command = new SQLiteCommand(quary, connection))
+                using (SQLiteDataAdapter adapter = new SQLiteDataAdapter(command))
                 {
                     DataTable goods_info = new DataTable();
                     adapter.Fill(goods_info);
@@ -558,27 +589,27 @@ namespace allN1
         {
             txtBuy_new.Clear();
             txtBuy_new.SelectAll();
-            txtBuy_new.Focus();
+            //txtBuy_new.Focus();
 
-            txtBuy_new.ForeColor = Color.White;
+            txtBuy_new.ForeColor = Color.Black;
         }
 
         private void TxtSell_new_Enter(object sender, EventArgs e)
         {
             txtSell_new.Clear();
             txtSell_new.SelectAll();
-            txtSell_new.Focus();
+            //txtSell_new.Focus();
 
-            txtSell_new.ForeColor = Color.White;
+            txtSell_new.ForeColor = Color.Black;
         }
 
         private void TxtAmount_new_Enter(object sender, EventArgs e)
         {
             txtAmount_new.Clear();
             txtAmount_new.SelectAll();
-            txtAmount_new.Focus();
+            //txtAmount_new.Focus();
 
-            txtAmount_new.ForeColor = Color.White;
+            txtAmount_new.ForeColor = Color.Black;
         }
         private void Txt_search_Enter(object sender, EventArgs e)
         {
@@ -632,8 +663,8 @@ namespace allN1
 
                     int numberOfRecords = 0;
                     String quary = "if not exists  (Select name from goods where name = @name) begin insert into goods VALUES (@name , @type , @sell , @buy , @amount , @kind)  insert into v_goods (vendor_id , good_id,v_price,v_amount) select  TOP 1 1,Id,buy_price,amount from goods ORDER BY id DESC  end";
-                    using (connection = new SqlConnection(ConnectionString))
-                    using (SqlCommand command = new SqlCommand(quary, connection))
+                    using (connection = new SQLiteConnection(ConnectionString))
+                    using (SQLiteCommand command = new SQLiteCommand(quary, connection))
                     {
                         connection.Open();
                         command.Parameters.AddWithValue("@name", txtproduct_new.Text);
@@ -698,8 +729,8 @@ namespace allN1
             try
             {
                 String quary = String.Concat("update goods set name =@name , type = @type ,sell_price = @sell ,buy_price = @buy , amount = @amount  , kind = @kind where Id = ", goodslist.SelectedValue);
-                using (connection = new SqlConnection(connectionString))
-                using (SqlCommand command = new SqlCommand(quary, connection))
+                using (connection = new SQLiteConnection(connectionString))
+                using (SQLiteCommand command = new SQLiteCommand(quary, connection))
 
                 {
                     connection.Open();
@@ -723,8 +754,8 @@ namespace allN1
                 time_now.Text = "الحالة : متصل";
                 time_now.ForeColor = Color.White;
                 /*String g = String.Concat("update vendors set v_name =@vname where good_id = ", goodslist.SelectedValue);
-                using (connection = new SqlConnection(connectionString))
-                using (SqlCommand command = new SqlCommand(g, connection))
+                using (connection = new SQLiteConnection(connectionString))
+                using (SQLiteCommand command = new SQLiteCommand(g, connection))
 
                 {
                     connection.Open();
@@ -777,9 +808,9 @@ namespace allN1
         private void Goodslist_SelectedIndexChanged(object sender, EventArgs e)
         {
             String quary = String.Concat("select *  from goods where goods.id = ", goodslist.SelectedValue);
-            using (connection = new SqlConnection(connectionString))
-            using (SqlCommand command = new SqlCommand(quary, connection))
-            using (SqlDataAdapter adapter = new SqlDataAdapter(command))
+            using (connection = new SQLiteConnection(connectionString))
+            using (SQLiteCommand command = new SQLiteCommand(quary, connection))
+            using (SQLiteDataAdapter adapter = new SQLiteDataAdapter(command))
             {
                 DataTable goods_info = new DataTable();
                 adapter.Fill(goods_info);
@@ -795,9 +826,9 @@ namespace allN1
             }
 
             String q = "select sells.order_id as [الفاتورة]  , amount as [الكمية] , sell_price as [السعر] , name as [اســم العمـيل] from Sells join orders on orders.order_id = Sells.order_id  join users on userId = users.Id where good_id = @ID";
-            using (connection = new SqlConnection(connectionString))
-            using (SqlCommand cmd = new SqlCommand(q, connection))
-            using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
+            using (connection = new SQLiteConnection(connectionString))
+            using (SQLiteCommand cmd = new SQLiteCommand(q, connection))
+            using (SQLiteDataAdapter adapter = new SQLiteDataAdapter(cmd))
             {
                 cmd.Parameters.AddWithValue("@ID", goodslist.SelectedValue);
                 DataTable goods_info = new DataTable();
@@ -976,8 +1007,8 @@ namespace allN1
                                 DELETE FROM cte
                                 WHERE row_num > 1;";
 
-            using (connection = new SqlConnection(connectionString))
-            using (SqlCommand command = new SqlCommand(quary, connection))
+            using (connection = new SQLiteConnection(connectionString))
+            using (SQLiteCommand command = new SQLiteCommand(quary, connection))
             {
                 connection.Open();
                 command.ExecuteNonQuery();
@@ -989,8 +1020,8 @@ namespace allN1
         {
             String quary = "delete from logs_info where user_id = 1431";
 
-            using (connection = new SqlConnection(connectionString))
-            using (SqlCommand command = new SqlCommand(quary, connection))
+            using (connection = new SQLiteConnection(connectionString))
+            using (SQLiteCommand command = new SQLiteCommand(quary, connection))
             {
                 connection.Open();
                 command.ExecuteNonQuery();
@@ -1009,9 +1040,9 @@ namespace allN1
         private void Viewusers()
         {
             String quary = "select mony,name,Id from users order by name";
-            using (connection = new SqlConnection(connectionString))
-            using (SqlCommand command = new SqlCommand(quary, connection))
-            using (SqlDataAdapter adapter = new SqlDataAdapter(command))
+            using (connection = new SQLiteConnection(connectionString))
+            using (SQLiteCommand command = new SQLiteCommand(quary, connection))
+            using (SQLiteDataAdapter adapter = new SQLiteDataAdapter(command))
             {
                 DataTable goods_info = new DataTable();
                 adapter.Fill(goods_info);
@@ -1025,9 +1056,9 @@ namespace allN1
         private void Viewvendors()
         {
             String quary = "select v_money,v_name,vendor_id from vendors order by v_name";
-            using (connection = new SqlConnection(connectionString))
-            using (SqlCommand command = new SqlCommand(quary, connection))
-            using (SqlDataAdapter adapter = new SqlDataAdapter(command))
+            using (connection = new SQLiteConnection(connectionString))
+            using (SQLiteCommand command = new SQLiteCommand(quary, connection))
+            using (SQLiteDataAdapter adapter = new SQLiteDataAdapter(command))
             {
                 DataTable goods_info = new DataTable();
                 adapter.Fill(goods_info);
@@ -1136,8 +1167,8 @@ namespace allN1
         private async Task do_pay_u_Async()
         {
             String quary = String.Concat("update logs set total =@remain  where user_Id = ", int.Parse(txtuser_id.Text), ";insert into logs_info VALUES (@user_Id , @payment , @date)", ";update users set mony = @remain  , lastPayment = @date where Id = ", int.Parse(txtuser_id.Text));
-            using (connection = new SqlConnection(connectionString))
-            using (SqlCommand command = new SqlCommand(quary, connection))
+            using (connection = new SQLiteConnection(connectionString))
+            using (SQLiteCommand command = new SQLiteCommand(quary, connection))
 
             {
                 connection.Open();
@@ -1213,8 +1244,8 @@ namespace allN1
         private async Task do_pay_v_Async()
         {
             String quary = String.Concat("insert into v_logs VALUES (@user_Id , @payment , @date)", ";update vendors set v_money = @remain  where vendor_id = ", txtvendor_id.Text);
-            using (connection = new SqlConnection(connectionString))
-            using (SqlCommand command = new SqlCommand(quary, connection))
+            using (connection = new SQLiteConnection(connectionString))
+            using (SQLiteCommand command = new SQLiteCommand(quary, connection))
 
             {
                 connection.Open();
@@ -1246,8 +1277,8 @@ namespace allN1
             try
             {
                 String quary = String.Concat("update users set name =@name , address = @address ,phone = @phone , mony = @mony  where Id = ", userslist.SelectedValue, ";insert into logs values (", userslist.SelectedValue, ",@mony)");
-                using (connection = new SqlConnection(connectionString))
-                using (SqlCommand command = new SqlCommand(quary, connection))
+                using (connection = new SQLiteConnection(connectionString))
+                using (SQLiteCommand command = new SQLiteCommand(quary, connection))
 
                 {
                     connection.Open();
@@ -1270,8 +1301,8 @@ namespace allN1
             catch
             {
                 String quary = String.Concat("update users set name =@name , address = @address ,phone = @phone , mony = @mony  where Id = ", userslist.SelectedValue, ";update logs set total = @mony where user_Id = ", userslist.SelectedValue);
-                using (connection = new SqlConnection(connectionString))
-                using (SqlCommand command = new SqlCommand(quary, connection))
+                using (connection = new SQLiteConnection(connectionString))
+                using (SQLiteCommand command = new SQLiteCommand(quary, connection))
 
                 {
                     connection.Open();
@@ -1301,8 +1332,8 @@ namespace allN1
                 try
                 {
                     String quary = String.Concat("alter table logs nocheck constraint all ;alter table logs_info nocheck constraint all;delete from  users where id = ", userslist.SelectedValue, ";alter table logs check constraint all;alter table logs_info check constraint all");
-                    using (connection = new SqlConnection(connectionString))
-                    using (SqlCommand command = new SqlCommand(quary, connection))
+                    using (connection = new SQLiteConnection(connectionString))
+                    using (SQLiteCommand command = new SQLiteCommand(quary, connection))
 
                     {
                         connection.Open();
@@ -1344,8 +1375,8 @@ namespace allN1
                 }
                 else
                 {
-                    using (connection = new SqlConnection(connectionString))
-                    using (SqlCommand command = new SqlCommand(quary, connection))
+                    using (connection = new SQLiteConnection(connectionString))
+                    using (SQLiteCommand command = new SQLiteCommand(quary, connection))
                     {
                         connection.Open();
                         command.Parameters.AddWithValue("@name", txtuser_new.Text);
@@ -1395,11 +1426,11 @@ namespace allN1
                 MessageBox.Show(ex.ToString());
 
             }
-            using (SqlConnection con = new SqlConnection(connectionString))
+            using (SQLiteConnection con = new SQLiteConnection(connectionString))
             {
-                SqlCommand cmd = new SqlCommand("SELECT name FROM users", con);
+                SQLiteCommand cmd = new SQLiteCommand("SELECT name FROM users", con);
                 con.Open();
-                SqlDataReader reader = cmd.ExecuteReader();
+                SQLiteDataReader reader = cmd.ExecuteReader();
                 AutoCompleteStringCollection MyCollection = new AutoCompleteStringCollection();
                 while (reader.Read())
                 {
@@ -1408,11 +1439,11 @@ namespace allN1
                 txtuser_new.AutoCompleteCustomSource = MyCollection;
                 con.Close();
             }
-            using (SqlConnection con = new SqlConnection(connectionString))
+            using (SQLiteConnection con = new SQLiteConnection(connectionString))
             {
-                SqlCommand cmd = new SqlCommand("SELECT address FROM users", con);
+                SQLiteCommand cmd = new SQLiteCommand("SELECT address FROM users", con);
                 con.Open();
-                SqlDataReader reader = cmd.ExecuteReader();
+                SQLiteDataReader reader = cmd.ExecuteReader();
                 AutoCompleteStringCollection MyCollection = new AutoCompleteStringCollection();
                 while (reader.Read())
                 {
@@ -1428,9 +1459,9 @@ namespace allN1
         private void Userslist_SelectedIndexChanged(object sender, EventArgs e)
         {
             String quary = String.Concat("select *  from users where id = ", userslist.SelectedValue);
-            using (connection = new SqlConnection(connectionString))
-            using (SqlCommand command = new SqlCommand(quary, connection))
-            using (SqlDataAdapter adapter = new SqlDataAdapter(command))
+            using (connection = new SQLiteConnection(connectionString))
+            using (SQLiteCommand command = new SQLiteCommand(quary, connection))
+            using (SQLiteDataAdapter adapter = new SQLiteDataAdapter(command))
             {
                 DataTable goods_info = new DataTable();
                 adapter.Fill(goods_info);
@@ -1445,16 +1476,14 @@ namespace allN1
 
             }
             String q = "select count(*) as s from orders where userId = " + int.Parse(txtuser_id.Text);
-            using (connection = new SqlConnection(connectionString))
-            using (SqlCommand command = new SqlCommand(q, connection))
-            using (SqlDataAdapter adapter = new SqlDataAdapter(command))
+            using (connection = new SQLiteConnection(connectionString))
+            using (SQLiteCommand command = new SQLiteCommand(q, connection))
+            using (SQLiteDataAdapter adapter = new SQLiteDataAdapter(command))
             {
                 DataTable bills = new DataTable();
                 adapter.Fill(bills);
                 DataRow[] rows = bills.Select();
                 num_bills.Text = rows[0]["s"].ToString();
-
-
             }
 
             groupBox20.Visible = false;
@@ -1495,9 +1524,9 @@ namespace allN1
         {
 
             String sql = String.Concat("select logs_info.id as [رقم الإيصال], payment as [المدفوع], CONVERT (varchar(10), date, 103) as [الوقت ] from logs_info join users on logs_info.user_id = users.Id where users.Id =", userslist.SelectedValue);
-            using (connection = new SqlConnection(connectionString))
-            using (SqlCommand command = new SqlCommand(sql, connection))
-            using (SqlDataAdapter adapter = new SqlDataAdapter(command))
+            using (connection = new SQLiteConnection(connectionString))
+            using (SQLiteCommand command = new SQLiteCommand(sql, connection))
+            using (SQLiteDataAdapter adapter = new SQLiteDataAdapter(command))
             {
                 DataTable info = new DataTable();
                 adapter.Fill(info);
@@ -1511,9 +1540,9 @@ namespace allN1
         {
 
             String sql = String.Concat("select v_logs.v_log_id as [رقم الدفع], v_payment as [المدفوع], CONVERT (varchar(10), v_date, 103) as [الوقت ] from v_logs join vendors on v_logs.vendor_id = vendors.vendor_id where v_logs.vendor_id =", vendorlist.SelectedValue);
-            using (connection = new SqlConnection(connectionString))
-            using (SqlCommand command = new SqlCommand(sql, connection))
-            using (SqlDataAdapter adapter = new SqlDataAdapter(command))
+            using (connection = new SQLiteConnection(connectionString))
+            using (SQLiteCommand command = new SQLiteCommand(sql, connection))
+            using (SQLiteDataAdapter adapter = new SQLiteDataAdapter(command))
             {
                 DataTable info = new DataTable();
                 adapter.Fill(info);
@@ -1536,7 +1565,7 @@ namespace allN1
             txtuser_phone_new.SelectAll();
             txtuser_phone_new.Focus();
 
-            txtuser_phone_new.ForeColor = Color.White;
+            txtuser_phone_new.ForeColor = Color.Black;
         }
 
         private void Txtuser_add_new_Enter(object sender, EventArgs e)
@@ -1545,7 +1574,7 @@ namespace allN1
             txtuser_add_new.SelectAll();
             txtuser_add_new.Focus();
 
-            txtuser_add_new.ForeColor = Color.White;
+            txtuser_add_new.ForeColor = Color.Black;
         }
 
         private void Txtuser_mony_new_TextChanged(object sender, EventArgs e)
@@ -1564,7 +1593,7 @@ namespace allN1
             //print payment
             _ = do_pay_u_Async();
 
-            totalToday(today);
+            totalToday();
             paymnts(today);
 
             
@@ -1628,9 +1657,9 @@ namespace allN1
             try
             {
                 String quary = String.Concat("select Id,name  from users where name like N'", "%", txtuer_search.Text, "%'");
-                using (connection = new SqlConnection(connectionString))
-                using (SqlCommand command = new SqlCommand(quary, connection))
-                using (SqlDataAdapter adapter = new SqlDataAdapter(command))
+                using (connection = new SQLiteConnection(connectionString))
+                using (SQLiteCommand command = new SQLiteCommand(quary, connection))
+                using (SQLiteDataAdapter adapter = new SQLiteDataAdapter(command))
                 {
                     DataTable goods_info = new DataTable();
                     adapter.Fill(goods_info);
@@ -1697,9 +1726,9 @@ namespace allN1
             try
             {
                 String quary = String.Concat("select vendor_id,v_name from vendors where v_name like N'", "%", txtvendor_search.Text, "%'");
-                using (connection = new SqlConnection(connectionString))
-                using (SqlCommand command = new SqlCommand(quary, connection))
-                using (SqlDataAdapter adapter = new SqlDataAdapter(command))
+                using (connection = new SQLiteConnection(connectionString))
+                using (SQLiteCommand command = new SQLiteCommand(quary, connection))
+                using (SQLiteDataAdapter adapter = new SQLiteDataAdapter(command))
                 {
                     DataTable goods_info = new DataTable();
                     adapter.Fill(goods_info);
@@ -1723,9 +1752,9 @@ namespace allN1
         private void Vendorlist_SelectedIndexChanged(object sender, EventArgs e)
         {
             String quary = String.Concat("select *  from vendors where vendor_id = ", vendorlist.SelectedValue);
-            using (connection = new SqlConnection(connectionString))
-            using (SqlCommand command = new SqlCommand(quary, connection))
-            using (SqlDataAdapter adapter = new SqlDataAdapter(command))
+            using (connection = new SQLiteConnection(connectionString))
+            using (SQLiteCommand command = new SQLiteCommand(quary, connection))
+            using (SQLiteDataAdapter adapter = new SQLiteDataAdapter(command))
             {
                 DataTable goods_info = new DataTable();
                 adapter.Fill(goods_info);
@@ -1738,9 +1767,9 @@ namespace allN1
                 vendoridSelected = txtvendor_id.Text;
             }
             String q = "select count(*) as s from v_orders where vendor_id = " + int.Parse(txtvendor_id.Text);
-            using (connection = new SqlConnection(connectionString))
-            using (SqlCommand command = new SqlCommand(q, connection))
-            using (SqlDataAdapter adapter = new SqlDataAdapter(command))
+            using (connection = new SQLiteConnection(connectionString))
+            using (SQLiteCommand command = new SQLiteCommand(q, connection))
+            using (SQLiteDataAdapter adapter = new SQLiteDataAdapter(command))
             {
                 DataTable bills = new DataTable();
                 adapter.Fill(bills);
@@ -1809,8 +1838,8 @@ namespace allN1
             try
             {
                 String quary = String.Concat("update vendors set v_name =@name  ,v_phone = @phone ,v_money = @mony  where vendor_id = ", txtvendor_id.Text);
-                using (connection = new SqlConnection(connectionString))
-                using (SqlCommand command = new SqlCommand(quary, connection))
+                using (connection = new SQLiteConnection(connectionString))
+                using (SQLiteCommand command = new SQLiteCommand(quary, connection))
 
                 {
                     connection.Open();
@@ -1844,8 +1873,8 @@ namespace allN1
                 try
                 {
                     String quary = String.Concat("alter table v_logs nocheck constraint all ;alter table v_goods nocheck constraint all;delete from  vendors where vendor_id = ", txtvendor_id.Text, ";alter table v_logs check constraint all;alter table v_goods check constraint all");
-                    using (connection = new SqlConnection(connectionString))
-                    using (SqlCommand command = new SqlCommand(quary, connection))
+                    using (connection = new SQLiteConnection(connectionString))
+                    using (SQLiteCommand command = new SQLiteCommand(quary, connection))
 
                     {
                         connection.Open();
@@ -1919,8 +1948,8 @@ namespace allN1
                 }
                 else
                 {
-                    using (connection = new SqlConnection(connectionString))
-                    using (SqlCommand command = new SqlCommand(q, connection))
+                    using (connection = new SQLiteConnection(connectionString))
+                    using (SQLiteCommand command = new SQLiteCommand(q, connection))
                     {
                         connection.Open();
                         command.Parameters.AddWithValue("@name", txtvendor_name_new.Text);
@@ -1977,9 +2006,9 @@ namespace allN1
         private void save_users_data()
         {
             String quary = "select *  from users";
-            using (connection = new SqlConnection(connectionString))
-            using (SqlCommand command = new SqlCommand(quary, connection))
-            using (SqlDataAdapter adapter = new SqlDataAdapter(command))
+            using (connection = new SQLiteConnection(connectionString))
+            using (SQLiteCommand command = new SQLiteCommand(quary, connection))
+            using (SQLiteDataAdapter adapter = new SQLiteDataAdapter(command))
             {
                 DataTable info = new DataTable();
                 adapter.Fill(info);
@@ -1991,9 +2020,9 @@ namespace allN1
         private void save_vendors_data()
         {
             String quary = "select *  from vendors";
-            using (connection = new SqlConnection(connectionString))
-            using (SqlCommand command = new SqlCommand(quary, connection))
-            using (SqlDataAdapter adapter = new SqlDataAdapter(command))
+            using (connection = new SQLiteConnection(connectionString))
+            using (SQLiteCommand command = new SQLiteCommand(quary, connection))
+            using (SQLiteDataAdapter adapter = new SQLiteDataAdapter(command))
             {
                 DataTable info = new DataTable();
                 adapter.Fill(info);
@@ -2021,8 +2050,8 @@ namespace allN1
             String quary = "BACKUP DATABASE AppDB TO DISK = @dir";
             try
             {
-                using (connection = new SqlConnection(connectionString))
-                using (SqlCommand command = new SqlCommand(quary, connection))
+                using (connection = new SQLiteConnection(connectionString))
+                using (SQLiteCommand command = new SQLiteCommand(quary, connection))
                 {
                     connection.Open();
                     command.Parameters.AddWithValue("@dir", file);
@@ -2094,8 +2123,8 @@ namespace allN1
         {
             String quary = "alter table Sells nocheck constraint all ;delete from  orders where total_price IS NULL ;alter table Sells check constraint all ";
 
-            using (connection = new SqlConnection(connectionString))
-            using (SqlCommand command = new SqlCommand(quary, connection))
+            using (connection = new SQLiteConnection(connectionString))
+            using (SQLiteCommand command = new SQLiteCommand(quary, connection))
             {
                 connection.Open();
                 command.ExecuteNonQuery();
@@ -2119,8 +2148,8 @@ namespace allN1
         {
             String quary = "alter table Buy nocheck constraint all ;delete from  v_orders where total_buy IS NULL ;alter table Buy check constraint all ";
 
-            using (connection = new SqlConnection(connectionString))
-            using (SqlCommand command = new SqlCommand(quary, connection))
+            using (connection = new SQLiteConnection(connectionString))
+            using (SQLiteCommand command = new SQLiteCommand(quary, connection))
             {
                 connection.Open();
                 command.ExecuteNonQuery();
@@ -2249,6 +2278,16 @@ namespace allN1
         }
 
         private void ToolStripDropDownButton2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Txtuser_add_new_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Txtvendor_name_TextChanged(object sender, EventArgs e)
         {
 
         }

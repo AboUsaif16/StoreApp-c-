@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -27,6 +28,8 @@
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -55,14 +58,30 @@
     <StartupObject>allN1.Program</StartupObject>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Office.Interop.Word, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <EmbedInteropTypes>True</EmbedInteropTypes>
       <HintPath>..\..\Google Drive\App\packages\Microsoft.Office.Interop.Word.15.0.4797.1003\lib\net20\Microsoft.Office.Interop.Word.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.SQLite, Version=1.0.114.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.114.0\lib\net46\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite.EF6, Version=1.0.114.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>packages\System.Data.SQLite.EF6.1.0.114.0\lib\net46\System.Data.SQLite.EF6.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite.Linq, Version=1.0.114.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>packages\System.Data.SQLite.Linq.1.0.114.0\lib\net46\System.Data.SQLite.Linq.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -74,29 +93,103 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="addproduct.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="addproduct.Designer.cs">
-      <DependentUpon>addproduct.cs</DependentUpon>
-    </Compile>
-    <Compile Include="bill_info.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="bill_info.Designer.cs">
-      <DependentUpon>bill_info.cs</DependentUpon>
-    </Compile>
-    <Compile Include="CSVUtlity.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="goodReturn.cs">
+    <Compile Include="fun.cs" />
+    <Compile Include="goodsForms\addNewGood.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="goodReturn.Designer.cs">
+    <Compile Include="goodsForms\addNewGood.Designer.cs">
+      <DependentUpon>addNewGood.cs</DependentUpon>
+    </Compile>
+    <Compile Include="goodsForms\goods.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="goodsForms\goods.Designer.cs">
+      <DependentUpon>goods.cs</DependentUpon>
+    </Compile>
+    <Compile Include="goodsForms\goodSelect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="goodsForms\goodSelect.Designer.cs">
+      <DependentUpon>goodSelect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="goodsForms\GoodSellInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="goodsForms\GoodSellInfo.Designer.cs">
+      <DependentUpon>GoodSellInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="goodsForms\sellNow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="goodsForms\sellNow.Designer.cs">
+      <DependentUpon>sellNow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="oldVer\addproduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="oldVer\addproduct.Designer.cs">
+      <DependentUpon>addproduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="oldVer\modify.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="oldVer\modify.Designer.cs">
+      <DependentUpon>modify.cs</DependentUpon>
+    </Compile>
+    <Compile Include="oldVer\typeSrch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="oldVer\typeSrch.Designer.cs">
+      <DependentUpon>typeSrch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="oldVer\user_order.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="oldVer\user_order.Designer.cs">
+      <DependentUpon>user_order.cs</DependentUpon>
+    </Compile>
+    <Compile Include="oldVer\vendor_bill.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="oldVer\vendor_bill.Designer.cs">
+      <DependentUpon>vendor_bill.cs</DependentUpon>
+    </Compile>
+    <Compile Include="oldVer\venGoodRet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="oldVer\venGoodRet.Designer.cs">
+      <DependentUpon>venGoodRet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="oldVer\v_order.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="oldVer\v_order.Designer.cs">
+      <DependentUpon>v_order.cs</DependentUpon>
+    </Compile>
+    <Compile Include="sqlcmd.cs" />
+    <Compile Include="usersForms\addNewUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="usersForms\addNewUser.Designer.cs">
+      <DependentUpon>addNewUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="usersForms\bill_info.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="usersForms\bill_info.Designer.cs">
+      <DependentUpon>bill_info.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CSVUtlity.cs" />
+    <Compile Include="goodsForms\goodReturn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="goodsForms\goodReturn.Designer.cs">
       <DependentUpon>goodReturn.cs</DependentUpon>
     </Compile>
     <Compile Include="lock.cs">
@@ -105,81 +198,148 @@
     <Compile Include="lock.Designer.cs">
       <DependentUpon>lock.cs</DependentUpon>
     </Compile>
-    <Compile Include="modify.cs">
+    <Compile Include="main.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="modify.Designer.cs">
-      <DependentUpon>modify.cs</DependentUpon>
+    <Compile Include="main.Designer.cs">
+      <DependentUpon>main.cs</DependentUpon>
     </Compile>
-    <Compile Include="typeSrch.cs">
+    <Compile Include="goodsForms\notAvGoods.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="typeSrch.Designer.cs">
-      <DependentUpon>typeSrch.cs</DependentUpon>
+    <Compile Include="goodsForms\notAvGoods.Designer.cs">
+      <DependentUpon>notAvGoods.cs</DependentUpon>
     </Compile>
-    <Compile Include="venGoodRet.cs">
+    <Compile Include="pay.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="venGoodRet.Designer.cs">
-      <DependentUpon>venGoodRet.cs</DependentUpon>
+    <Compile Include="pay.Designer.cs">
+      <DependentUpon>pay.cs</DependentUpon>
     </Compile>
-    <Compile Include="v_order.cs">
+    <Compile Include="printReport.cs" />
+    <Compile Include="report.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="v_order.Designer.cs">
-      <DependentUpon>v_order.cs</DependentUpon>
+    <Compile Include="report.Designer.cs">
+      <DependentUpon>report.cs</DependentUpon>
     </Compile>
-    <Compile Include="user_order.cs">
+    <Compile Include="usersForms\newBill.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="user_order.Designer.cs">
-      <DependentUpon>user_order.cs</DependentUpon>
+    <Compile Include="usersForms\newBill.Designer.cs">
+      <DependentUpon>newBill.cs</DependentUpon>
     </Compile>
-    <Compile Include="printpay.cs">
+    <Compile Include="usersForms\users.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="printpay.Designer.cs">
+    <Compile Include="usersForms\users.Designer.cs">
+      <DependentUpon>users.cs</DependentUpon>
+    </Compile>
+    <Compile Include="usersForms\userSelect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="usersForms\userSelect.Designer.cs">
+      <DependentUpon>userSelect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="usersForms\UsersLateToPay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="usersForms\UsersLateToPay.Designer.cs">
+      <DependentUpon>UsersLateToPay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="vendorOruser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vendorOruser.Designer.cs">
+      <DependentUpon>vendorOruser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="usersForms\printpay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="usersForms\printpay.Designer.cs">
       <DependentUpon>printpay.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="vendor_bill.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="vendor_bill.Designer.cs">
-      <DependentUpon>vendor_bill.cs</DependentUpon>
-    </Compile>
-    <EmbeddedResource Include="addproduct.resx">
-      <DependentUpon>addproduct.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="bill_info.resx">
-      <DependentUpon>bill_info.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="goodReturn.resx">
+    <EmbeddedResource Include="goodsForms\addNewGood.resx">
+      <DependentUpon>addNewGood.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="goodsForms\goods.resx">
+      <DependentUpon>goods.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="goodsForms\goodSelect.resx">
+      <DependentUpon>goodSelect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="goodsForms\GoodSellInfo.resx">
+      <DependentUpon>GoodSellInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="goodsForms\sellNow.resx">
+      <DependentUpon>sellNow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="oldVer\addproduct.resx">
+      <DependentUpon>addproduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="oldVer\modify.resx">
+      <DependentUpon>modify.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="oldVer\typeSrch.resx">
+      <DependentUpon>typeSrch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="oldVer\user_order.resx">
+      <DependentUpon>user_order.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="oldVer\vendor_bill.resx">
+      <DependentUpon>vendor_bill.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="oldVer\venGoodRet.resx">
+      <DependentUpon>venGoodRet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="oldVer\v_order.resx">
+      <DependentUpon>v_order.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="usersForms\addNewUser.resx">
+      <DependentUpon>addNewUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="usersForms\bill_info.resx">
+      <DependentUpon>bill_info.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="goodsForms\goodReturn.resx">
       <DependentUpon>goodReturn.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="lock.resx">
       <DependentUpon>lock.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="modify.resx">
-      <DependentUpon>modify.cs</DependentUpon>
+    <EmbeddedResource Include="main.resx">
+      <DependentUpon>main.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="typeSrch.resx">
-      <DependentUpon>typeSrch.cs</DependentUpon>
+    <EmbeddedResource Include="goodsForms\notAvGoods.resx">
+      <DependentUpon>notAvGoods.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="venGoodRet.resx">
-      <DependentUpon>venGoodRet.cs</DependentUpon>
+    <EmbeddedResource Include="pay.resx">
+      <DependentUpon>pay.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="v_order.resx">
-      <DependentUpon>v_order.cs</DependentUpon>
+    <EmbeddedResource Include="report.resx">
+      <DependentUpon>report.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="user_order.resx">
-      <DependentUpon>user_order.cs</DependentUpon>
+    <EmbeddedResource Include="usersForms\newBill.resx">
+      <DependentUpon>newBill.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="printpay.resx">
+    <EmbeddedResource Include="usersForms\users.resx">
+      <DependentUpon>users.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="usersForms\userSelect.resx">
+      <DependentUpon>userSelect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="usersForms\UsersLateToPay.resx">
+      <DependentUpon>UsersLateToPay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vendorOruser.resx">
+      <DependentUpon>vendorOruser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="usersForms\printpay.resx">
       <DependentUpon>printpay.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -192,9 +352,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="vendor_bill.resx">
-      <DependentUpon>vendor_bill.cs</DependentUpon>
-    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -205,192 +362,26 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Content Include="appData.db">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="img\add_new_50px.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="img\add_50px.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="img\menu_squared_50px.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="img\playlist_30px.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="img\print_30px.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="img\shutdown_30px.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="img\lock_30px.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="img\deposit_30px.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="img\checklist_30px.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="img\pricing_30px.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="img\minimize_window_30px.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="img\sell_30px.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="img\delete_bin_30px.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="img\edit_file_30px.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="img\add_new_30px.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="img\playlist_50px.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="img\unlock_30px.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="img\pay_30px.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="img\print_30px2.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="img\unlock_private_60px.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="img\google_web_search_60px.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="img\increase_60px.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="img\combo_chart_30px.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="img\graph_30px.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="img\send_to_printer_60px.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="img\return_purchase_60px.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="img\return_purchase_50px.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="img\undo_30px.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="img\return_purchase_30px.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\search_64px.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="img\google_web_search_30px.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="img\search_30px.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="img\search_60px.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="img\search_property_24px.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="img\google_web_search_32px.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="img\google_web_search_64px.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="img\google_web_search_50px.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="img\google_web_search_52px.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="img\add_60px.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="img\add_48px.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="img\cancel_48px.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="img\search_in_list_48px.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="img\update_30px.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="img\administrative_tools_50px.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Blurred-Background-23.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="img\male_user_96px.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="img\lock_64px.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\wallpaperflare.com_wallpaper.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="img\login_32px.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="img\login_64px.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="003-windows.ico" />
     <Content Include="database_data_20916 %281%29.ico" />
-    <None Include="img\shutdown_40px.png" />
-    <None Include="img\application_shield_120px.png" />
-    <None Include="img\administrator_male_90px.png" />
-    <None Include="img\toolbox_30px.png" />
-    <None Include="img\2shutdown_30px.png" />
-    <None Include="img\2minimize_window_30px.png" />
-    <None Include="img\secure_30px.png" />
-    <None Include="img\print_address_label_30px.png" />
-    <None Include="img\synchronize_30px.png" />
-    <None Include="img\support_30px.png" />
-    <None Include="img\automatic_30px.png" />
-    <None Include="img\send_to_printer_30px.png" />
-    <None Include="img\documents_folder_30px.png" />
-    <None Include="img\menu1_64px.png" />
-    <None Include="img\customer_128px.png" />
-    <None Include="img\refund_30px.png" />
-    <None Include="img\cheap_2_30px.png" />
-    <None Include="img\new_copy_30px.png" />
-    <None Include="img\delete_bin_60px2.png" />
-    <None Include="img\buy_60px.png" />
-    <None Include="img\add_new_52px.png" />
-    <None Include="img\delete_bin_48px.png" />
-    <None Include="img\delete_bin_30px2.png" />
-    <None Include="img\delete_bin_60px.png" />
-    <None Include="img\search_folder_48px.png" />
-    <None Include="img\maintenance_24px.png" />
-    <None Include="img\male_user_200px.png" />
-    <None Include="img\browse_folder_40px.png" />
-    <None Include="img\browse_folder_30px.png" />
+    <None Include="img\delete_trash_24px.png" />
+    <None Include="img\add_user_male_30px.png" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
@@ -405,4 +396,14 @@
     </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+    <Error Condition="!Exists('packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.114.0\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.114.0\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets'))" />
+  </Target>
+  <Import Project="packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+  <Import Project="packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.114.0\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets" Condition="Exists('packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.114.0\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets')" />
 </Project>

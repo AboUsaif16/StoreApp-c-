@@ -30,3 +30,104 @@ D:\A.Abousaif\My Work - A.Abousaif\allN1\bin\Release\معرض أبوسيف.exe.c
 D:\A.Abousaif\My Work - A.Abousaif\allN1\bin\Release\معرض أبوسيف.exe
 D:\A.Abousaif\My Work - A.Abousaif\allN1\obj\Release\معرض أبوسيف.exe
 D:\A.Abousaif\My Work - A.Abousaif\allN1\obj\Release\allN1.addproduct.resources
+D:\A.Abousaif\My Work - A.Abousaif\allN1\obj\Release\allN1.csprojAssemblyReference.cache
+F:\allN1\bin\Release\معرض أبوسيف.exe.config
+F:\allN1\bin\Release\معرض أبوسيف.exe
+F:\allN1\obj\Release\allN1.addproduct.resources
+F:\allN1\obj\Release\allN1.bill_info.resources
+F:\allN1\obj\Release\allN1.Form1.resources
+F:\allN1\obj\Release\allN1.goodReturn.resources
+F:\allN1\obj\Release\allN1.lock.resources
+F:\allN1\obj\Release\allN1.modify.resources
+F:\allN1\obj\Release\allN1.typeSrch.resources
+F:\allN1\obj\Release\allN1.venGoodRet.resources
+F:\allN1\obj\Release\allN1.v_order.resources
+F:\allN1\obj\Release\allN1.order.resources
+F:\allN1\obj\Release\allN1.printpay.resources
+F:\allN1\obj\Release\allN1.Properties.Resources.resources
+F:\allN1\obj\Release\allN1.vendor_bill.resources
+F:\allN1\obj\Release\allN1.csproj.GenerateResource.cache
+F:\allN1\obj\Release\allN1.csproj.CoreCompileInputs.cache
+F:\allN1\obj\Release\معرض أبوسيف.exe
+F:\allN1\obj\Release\allN1.main.resources
+F:\allN1\obj\Release\allN1.pay.resources
+F:\allN1\obj\Release\allN1.vendorOruser.resources
+F:\allN1\obj\Release\allN1.csprojAssemblyReference.cache
+F:\allN1\obj\Release\allN1.report.resources
+F:\allN1\obj\Release\allN1.notAvGoods.resources
+G:\DELL_lApToP\allN1\obj\Release\allN1.csproj.AssemblyReference.cache
+G:\DELL_lApToP\allN1\obj\Release\allN1.Form1.resources
+G:\DELL_lApToP\allN1\obj\Release\allN1.addNewGood.resources
+G:\DELL_lApToP\allN1\obj\Release\allN1.goods.resources
+G:\DELL_lApToP\allN1\obj\Release\allN1.goodsForms.goodSelect.resources
+G:\DELL_lApToP\allN1\obj\Release\allN1.GoodSellInfo.resources
+G:\DELL_lApToP\allN1\obj\Release\allN1.sellNow.resources
+G:\DELL_lApToP\allN1\obj\Release\allN1.addproduct.resources
+G:\DELL_lApToP\allN1\obj\Release\allN1.modify.resources
+G:\DELL_lApToP\allN1\obj\Release\allN1.typeSrch.resources
+G:\DELL_lApToP\allN1\obj\Release\allN1.order.resources
+G:\DELL_lApToP\allN1\obj\Release\allN1.vendor_bill.resources
+G:\DELL_lApToP\allN1\obj\Release\allN1.venGoodRet.resources
+G:\DELL_lApToP\allN1\obj\Release\allN1.v_order.resources
+G:\DELL_lApToP\allN1\obj\Release\allN1.usersForms.addNewUser.resources
+G:\DELL_lApToP\allN1\obj\Release\allN1.bill_info.resources
+G:\DELL_lApToP\allN1\obj\Release\allN1.goodReturn.resources
+G:\DELL_lApToP\allN1\obj\Release\allN1.lock.resources
+G:\DELL_lApToP\allN1\obj\Release\allN1.main.resources
+G:\DELL_lApToP\allN1\obj\Release\allN1.notAvGoods.resources
+G:\DELL_lApToP\allN1\obj\Release\allN1.pay.resources
+G:\DELL_lApToP\allN1\obj\Release\allN1.report.resources
+G:\DELL_lApToP\allN1\obj\Release\allN1.usersForms.newBill.resources
+G:\DELL_lApToP\allN1\obj\Release\allN1.users.resources
+G:\DELL_lApToP\allN1\obj\Release\allN1.usersForms.userSelect.resources
+G:\DELL_lApToP\allN1\obj\Release\allN1.UsersLateToPay.resources
+G:\DELL_lApToP\allN1\obj\Release\allN1.vendorOruser.resources
+G:\DELL_lApToP\allN1\obj\Release\allN1.printpay.resources
+G:\DELL_lApToP\allN1\obj\Release\allN1.Properties.Resources.resources
+G:\DELL_lApToP\allN1\obj\Release\allN1.csproj.GenerateResource.cache
+G:\DELL_lApToP\allN1\obj\Release\allN1.csproj.CoreCompileInputs.cache
+G:\DELL_lApToP\allN1\obj\Release\معرض أبوسيف.exe
+C:\Users\Ven0m\Documents\allN1\obj\Release\allN1.csprojAssemblyReference.cache
+C:\Users\Ven0m\Documents\allN1\obj\Release\allN1.Form1.resources
+C:\Users\Ven0m\Documents\allN1\obj\Release\allN1.addNewGood.resources
+C:\Users\Ven0m\Documents\allN1\obj\Release\allN1.goods.resources
+C:\Users\Ven0m\Documents\allN1\obj\Release\allN1.goodsForms.goodSelect.resources
+C:\Users\Ven0m\Documents\allN1\obj\Release\allN1.GoodSellInfo.resources
+C:\Users\Ven0m\Documents\allN1\obj\Release\allN1.sellNow.resources
+C:\Users\Ven0m\Documents\allN1\obj\Release\allN1.addproduct.resources
+C:\Users\Ven0m\Documents\allN1\obj\Release\allN1.modify.resources
+C:\Users\Ven0m\Documents\allN1\obj\Release\allN1.typeSrch.resources
+C:\Users\Ven0m\Documents\allN1\obj\Release\allN1.order.resources
+C:\Users\Ven0m\Documents\allN1\obj\Release\allN1.vendor_bill.resources
+C:\Users\Ven0m\Documents\allN1\obj\Release\allN1.venGoodRet.resources
+C:\Users\Ven0m\Documents\allN1\obj\Release\allN1.v_order.resources
+C:\Users\Ven0m\Documents\allN1\obj\Release\allN1.usersForms.addNewUser.resources
+C:\Users\Ven0m\Documents\allN1\obj\Release\allN1.bill_info.resources
+C:\Users\Ven0m\Documents\allN1\obj\Release\allN1.goodReturn.resources
+C:\Users\Ven0m\Documents\allN1\obj\Release\allN1.lock.resources
+C:\Users\Ven0m\Documents\allN1\obj\Release\allN1.main.resources
+C:\Users\Ven0m\Documents\allN1\obj\Release\allN1.notAvGoods.resources
+C:\Users\Ven0m\Documents\allN1\obj\Release\allN1.pay.resources
+C:\Users\Ven0m\Documents\allN1\obj\Release\allN1.report.resources
+C:\Users\Ven0m\Documents\allN1\obj\Release\allN1.usersForms.newBill.resources
+C:\Users\Ven0m\Documents\allN1\obj\Release\allN1.users.resources
+C:\Users\Ven0m\Documents\allN1\obj\Release\allN1.usersForms.userSelect.resources
+C:\Users\Ven0m\Documents\allN1\obj\Release\allN1.UsersLateToPay.resources
+C:\Users\Ven0m\Documents\allN1\obj\Release\allN1.vendorOruser.resources
+C:\Users\Ven0m\Documents\allN1\obj\Release\allN1.printpay.resources
+C:\Users\Ven0m\Documents\allN1\obj\Release\allN1.Properties.Resources.resources
+C:\Users\Ven0m\Documents\allN1\obj\Release\allN1.csproj.GenerateResource.cache
+C:\Users\Ven0m\Documents\allN1\obj\Release\allN1.csproj.CoreCompileInputs.cache
+C:\Users\Ven0m\Documents\allN1\obj\Release\معرض أبوسيف.exe
+C:\Users\Ven0m\Documents\allN1\bin\Release\test.db
+C:\Users\Ven0m\Documents\allN1\bin\Release\معرض أبوسيف.exe.config
+C:\Users\Ven0m\Documents\allN1\bin\Release\معرض أبوسيف.exe
+C:\Users\Ven0m\Documents\allN1\bin\Release\EntityFramework.dll
+C:\Users\Ven0m\Documents\allN1\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\Ven0m\Documents\allN1\bin\Release\System.Data.SQLite.dll
+C:\Users\Ven0m\Documents\allN1\bin\Release\System.Data.SQLite.EF6.dll
+C:\Users\Ven0m\Documents\allN1\bin\Release\System.Data.SQLite.Linq.dll
+C:\Users\Ven0m\Documents\allN1\bin\Release\EntityFramework.xml
+C:\Users\Ven0m\Documents\allN1\bin\Release\EntityFramework.SqlServer.xml
+C:\Users\Ven0m\Documents\allN1\bin\Release\System.Data.SQLite.xml
+C:\Users\Ven0m\Documents\allN1\obj\Release\allN1.csproj.CopyComplete

@@ -211,6 +211,10 @@
             this.prd_av = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.panel12 = new System.Windows.Forms.Panel();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.time_now = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
@@ -223,10 +227,6 @@
             this.toolStripDropDownButton2 = new System.Windows.Forms.ToolStripDropDownButton();
             this.فواتيرToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.إيصالاتاليومToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.vendors.SuspendLayout();
             this.new_v_gb.SuspendLayout();
             this.groupBox22.SuspendLayout();
@@ -296,10 +296,10 @@
             this.groupBox12.SuspendLayout();
             this.groupBox29.SuspendLayout();
             this.panel12.SuspendLayout();
-            this.statusStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // vendors
@@ -311,11 +311,11 @@
             this.vendors.Controls.Add(this.groupBox5);
             this.vendors.Controls.Add(this.panel8);
             this.vendors.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold);
-            this.vendors.Location = new System.Drawing.Point(4, 33);
+            this.vendors.Location = new System.Drawing.Point(4, 39);
             this.vendors.Margin = new System.Windows.Forms.Padding(5, 8, 5, 8);
             this.vendors.Name = "vendors";
             this.vendors.Padding = new System.Windows.Forms.Padding(5, 8, 5, 8);
-            this.vendors.Size = new System.Drawing.Size(1362, 705);
+            this.vendors.Size = new System.Drawing.Size(1404, 720);
             this.vendors.TabIndex = 2;
             this.vendors.Text = "سجــــل المـــورديــــن";
             // 
@@ -367,7 +367,7 @@
             this.txtvendor_phone_new.Location = new System.Drawing.Point(6, 38);
             this.txtvendor_phone_new.MaxLength = 11;
             this.txtvendor_phone_new.Name = "txtvendor_phone_new";
-            this.txtvendor_phone_new.Size = new System.Drawing.Size(534, 32);
+            this.txtvendor_phone_new.Size = new System.Drawing.Size(534, 38);
             this.txtvendor_phone_new.TabIndex = 5;
             this.txtvendor_phone_new.Text = "رقم التليفون";
             this.txtvendor_phone_new.TextChanged += new System.EventHandler(this.Txtvendor_phone_new_TextChanged);
@@ -391,7 +391,7 @@
             this.txtvendor_name_new.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold);
             this.txtvendor_name_new.Location = new System.Drawing.Point(12, 46);
             this.txtvendor_name_new.Name = "txtvendor_name_new";
-            this.txtvendor_name_new.Size = new System.Drawing.Size(329, 32);
+            this.txtvendor_name_new.Size = new System.Drawing.Size(329, 38);
             this.txtvendor_name_new.TabIndex = 0;
             // 
             // groupBox24
@@ -410,7 +410,7 @@
             this.txtvendor_mony_new.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold);
             this.txtvendor_mony_new.Location = new System.Drawing.Point(6, 46);
             this.txtvendor_mony_new.Name = "txtvendor_mony_new";
-            this.txtvendor_mony_new.Size = new System.Drawing.Size(181, 32);
+            this.txtvendor_mony_new.Size = new System.Drawing.Size(181, 38);
             this.txtvendor_mony_new.TabIndex = 2;
             // 
             // pay_ven_info_gb
@@ -438,7 +438,7 @@
             this.txtvendor_remain.Location = new System.Drawing.Point(6, 54);
             this.txtvendor_remain.Name = "txtvendor_remain";
             this.txtvendor_remain.ReadOnly = true;
-            this.txtvendor_remain.Size = new System.Drawing.Size(166, 25);
+            this.txtvendor_remain.Size = new System.Drawing.Size(166, 31);
             this.txtvendor_remain.TabIndex = 10;
             this.txtvendor_remain.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -450,7 +450,7 @@
             this.textBox7.Location = new System.Drawing.Point(6, 20);
             this.textBox7.Name = "textBox7";
             this.textBox7.ReadOnly = true;
-            this.textBox7.Size = new System.Drawing.Size(166, 25);
+            this.textBox7.Size = new System.Drawing.Size(166, 31);
             this.textBox7.TabIndex = 11;
             this.textBox7.Text = "الباقى";
             this.textBox7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -460,7 +460,7 @@
             this.txtvendor_payout.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold);
             this.txtvendor_payout.Location = new System.Drawing.Point(283, 51);
             this.txtvendor_payout.Name = "txtvendor_payout";
-            this.txtvendor_payout.Size = new System.Drawing.Size(154, 32);
+            this.txtvendor_payout.Size = new System.Drawing.Size(154, 38);
             this.txtvendor_payout.TabIndex = 7;
             this.txtvendor_payout.TextChanged += new System.EventHandler(this.TextBox8_TextChanged);
             // 
@@ -503,9 +503,9 @@
             this.panel11.Controls.Add(this.groupBox15);
             this.panel11.Controls.Add(this.groupBox16);
             this.panel11.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel11.Location = new System.Drawing.Point(3, 28);
+            this.panel11.Location = new System.Drawing.Point(3, 34);
             this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(446, 456);
+            this.panel11.Size = new System.Drawing.Size(446, 450);
             this.panel11.TabIndex = 3;
             // 
             // button5
@@ -599,9 +599,9 @@
             this.groupBox14.Controls.Add(this.label19);
             this.groupBox14.Controls.Add(this.txtvendor_phone);
             this.groupBox14.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupBox14.Location = new System.Drawing.Point(0, 217);
+            this.groupBox14.Location = new System.Drawing.Point(0, 241);
             this.groupBox14.Name = "groupBox14";
-            this.groupBox14.Size = new System.Drawing.Size(446, 101);
+            this.groupBox14.Size = new System.Drawing.Size(446, 113);
             this.groupBox14.TabIndex = 3;
             this.groupBox14.TabStop = false;
             this.groupBox14.Text = "بيانات أخرى";
@@ -612,7 +612,7 @@
             this.label19.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold);
             this.label19.Location = new System.Drawing.Point(307, 42);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(93, 24);
+            this.label19.Size = new System.Drawing.Size(121, 32);
             this.label19.TabIndex = 7;
             this.label19.Text = "رقم التليفون";
             // 
@@ -621,7 +621,7 @@
             this.txtvendor_phone.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold);
             this.txtvendor_phone.Location = new System.Drawing.Point(21, 38);
             this.txtvendor_phone.Name = "txtvendor_phone";
-            this.txtvendor_phone.Size = new System.Drawing.Size(280, 32);
+            this.txtvendor_phone.Size = new System.Drawing.Size(280, 38);
             this.txtvendor_phone.TabIndex = 5;
             // 
             // groupBox15
@@ -632,9 +632,9 @@
             this.groupBox15.Controls.Add(this.txtvendor_No_bills);
             this.groupBox15.Controls.Add(this.txtvendor_mony);
             this.groupBox15.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupBox15.Location = new System.Drawing.Point(0, 106);
+            this.groupBox15.Location = new System.Drawing.Point(0, 118);
             this.groupBox15.Name = "groupBox15";
-            this.groupBox15.Size = new System.Drawing.Size(446, 111);
+            this.groupBox15.Size = new System.Drawing.Size(446, 123);
             this.groupBox15.TabIndex = 2;
             this.groupBox15.TabStop = false;
             this.groupBox15.Text = "الرصيد و عدد الفواتير";
@@ -645,7 +645,7 @@
             this.label20.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold);
             this.label20.Location = new System.Drawing.Point(362, 52);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(58, 24);
+            this.label20.Size = new System.Drawing.Size(76, 32);
             this.label20.TabIndex = 14;
             this.label20.Text = "الرصيد";
             // 
@@ -655,7 +655,7 @@
             this.label21.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold);
             this.label21.Location = new System.Drawing.Point(109, 52);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(93, 24);
+            this.label21.Size = new System.Drawing.Size(121, 32);
             this.label21.TabIndex = 13;
             this.label21.Text = "عدد الفواتير";
             // 
@@ -666,7 +666,7 @@
             this.txtvendor_No_bills.Location = new System.Drawing.Point(21, 48);
             this.txtvendor_No_bills.Name = "txtvendor_No_bills";
             this.txtvendor_No_bills.ReadOnly = true;
-            this.txtvendor_No_bills.Size = new System.Drawing.Size(82, 32);
+            this.txtvendor_No_bills.Size = new System.Drawing.Size(82, 38);
             this.txtvendor_No_bills.TabIndex = 12;
             // 
             // txtvendor_mony
@@ -676,7 +676,7 @@
             this.txtvendor_mony.Location = new System.Drawing.Point(231, 48);
             this.txtvendor_mony.Name = "txtvendor_mony";
             this.txtvendor_mony.ReadOnly = true;
-            this.txtvendor_mony.Size = new System.Drawing.Size(123, 32);
+            this.txtvendor_mony.Size = new System.Drawing.Size(123, 38);
             this.txtvendor_mony.TabIndex = 2;
             this.txtvendor_mony.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.Txtvendor_mony_MouseDoubleClick);
             // 
@@ -688,7 +688,7 @@
             this.groupBox16.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox16.Location = new System.Drawing.Point(0, 0);
             this.groupBox16.Name = "groupBox16";
-            this.groupBox16.Size = new System.Drawing.Size(446, 106);
+            this.groupBox16.Size = new System.Drawing.Size(446, 118);
             this.groupBox16.TabIndex = 0;
             this.groupBox16.TabStop = false;
             this.groupBox16.Text = "الإسم والكود";
@@ -700,7 +700,7 @@
             this.txtvendor_id.Location = new System.Drawing.Point(322, 43);
             this.txtvendor_id.Name = "txtvendor_id";
             this.txtvendor_id.ReadOnly = true;
-            this.txtvendor_id.Size = new System.Drawing.Size(112, 32);
+            this.txtvendor_id.Size = new System.Drawing.Size(112, 38);
             this.txtvendor_id.TabIndex = 1;
             this.txtvendor_id.Text = "1234567";
             // 
@@ -710,9 +710,10 @@
             this.txtvendor_name.ForeColor = System.Drawing.Color.DarkRed;
             this.txtvendor_name.Location = new System.Drawing.Point(21, 43);
             this.txtvendor_name.Name = "txtvendor_name";
-            this.txtvendor_name.Size = new System.Drawing.Size(295, 32);
+            this.txtvendor_name.Size = new System.Drawing.Size(295, 38);
             this.txtvendor_name.TabIndex = 0;
             this.txtvendor_name.Text = "أحمد محمد على إبراهيم أبوسيف";
+            this.txtvendor_name.TextChanged += new System.EventHandler(this.Txtvendor_name_TextChanged);
             // 
             // groupBox5
             // 
@@ -729,9 +730,9 @@
             // 
             this.panel14.Controls.Add(this.dgv_vendor);
             this.panel14.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel14.Location = new System.Drawing.Point(3, 28);
+            this.panel14.Location = new System.Drawing.Point(3, 34);
             this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(564, 293);
+            this.panel14.Size = new System.Drawing.Size(564, 287);
             this.panel14.TabIndex = 3;
             // 
             // dgv_vendor
@@ -759,7 +760,7 @@
             this.dgv_vendor.ReadOnly = true;
             this.dgv_vendor.RowHeadersVisible = false;
             this.dgv_vendor.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_vendor.Size = new System.Drawing.Size(564, 293);
+            this.dgv_vendor.Size = new System.Drawing.Size(564, 287);
             this.dgv_vendor.TabIndex = 16;
             // 
             // panel8
@@ -767,19 +768,19 @@
             this.panel8.Controls.Add(this.vendorlist);
             this.panel8.Controls.Add(this.panel9);
             this.panel8.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel8.Location = new System.Drawing.Point(1039, 8);
+            this.panel8.Location = new System.Drawing.Point(1081, 8);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(318, 689);
+            this.panel8.Size = new System.Drawing.Size(318, 704);
             this.panel8.TabIndex = 3;
             // 
             // vendorlist
             // 
             this.vendorlist.Dock = System.Windows.Forms.DockStyle.Fill;
             this.vendorlist.FormattingEnabled = true;
-            this.vendorlist.ItemHeight = 24;
+            this.vendorlist.ItemHeight = 30;
             this.vendorlist.Location = new System.Drawing.Point(0, 49);
             this.vendorlist.Name = "vendorlist";
-            this.vendorlist.Size = new System.Drawing.Size(318, 640);
+            this.vendorlist.Size = new System.Drawing.Size(318, 655);
             this.vendorlist.TabIndex = 0;
             this.vendorlist.SelectedIndexChanged += new System.EventHandler(this.Vendorlist_SelectedIndexChanged);
             this.vendorlist.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.Vendorlist_MouseDoubleClick);
@@ -802,7 +803,7 @@
             this.txtvendor_search.ForeColor = System.Drawing.SystemColors.Control;
             this.txtvendor_search.Location = new System.Drawing.Point(56, 8);
             this.txtvendor_search.Name = "txtvendor_search";
-            this.txtvendor_search.Size = new System.Drawing.Size(259, 32);
+            this.txtvendor_search.Size = new System.Drawing.Size(259, 38);
             this.txtvendor_search.TabIndex = 1;
             this.txtvendor_search.Text = "أكتب اسم المورد هنا ...";
             this.txtvendor_search.TextChanged += new System.EventHandler(this.Txtvendor_search_TextChanged);
@@ -828,11 +829,11 @@
             this.users.Controls.Add(this.new_u_gb);
             this.users.Controls.Add(this.gbuser_info);
             this.users.Controls.Add(this.panel6);
-            this.users.Location = new System.Drawing.Point(4, 33);
+            this.users.Location = new System.Drawing.Point(4, 39);
             this.users.Margin = new System.Windows.Forms.Padding(5, 8, 5, 8);
             this.users.Name = "users";
             this.users.Padding = new System.Windows.Forms.Padding(5, 8, 5, 8);
-            this.users.Size = new System.Drawing.Size(1362, 705);
+            this.users.Size = new System.Drawing.Size(1404, 720);
             this.users.TabIndex = 1;
             this.users.Text = "سجــــل العمـــــــلاء";
             // 
@@ -844,7 +845,7 @@
             this.groupBox20.Controls.Add(this.txtuer_payout);
             this.groupBox20.Controls.Add(this.btn_pay);
             this.groupBox20.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold);
-            this.groupBox20.Location = new System.Drawing.Point(581, 548);
+            this.groupBox20.Location = new System.Drawing.Point(623, 548);
             this.groupBox20.Name = "groupBox20";
             this.groupBox20.Size = new System.Drawing.Size(452, 116);
             this.groupBox20.TabIndex = 9;
@@ -861,7 +862,7 @@
             this.txtuer_remain.Location = new System.Drawing.Point(6, 54);
             this.txtuer_remain.Name = "txtuer_remain";
             this.txtuer_remain.ReadOnly = true;
-            this.txtuer_remain.Size = new System.Drawing.Size(166, 25);
+            this.txtuer_remain.Size = new System.Drawing.Size(166, 31);
             this.txtuer_remain.TabIndex = 10;
             this.txtuer_remain.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtuer_remain.TextChanged += new System.EventHandler(this.Txtuer_remain_TextChanged);
@@ -874,7 +875,7 @@
             this.textBox1.Location = new System.Drawing.Point(6, 20);
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(166, 25);
+            this.textBox1.Size = new System.Drawing.Size(166, 31);
             this.textBox1.TabIndex = 11;
             this.textBox1.Text = "الباقى";
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -885,7 +886,7 @@
             this.txtuer_payout.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold);
             this.txtuer_payout.Location = new System.Drawing.Point(283, 51);
             this.txtuer_payout.Name = "txtuer_payout";
-            this.txtuer_payout.Size = new System.Drawing.Size(154, 32);
+            this.txtuer_payout.Size = new System.Drawing.Size(154, 38);
             this.txtuer_payout.TabIndex = 7;
             this.txtuer_payout.TextChanged += new System.EventHandler(this.Txtuer_payout_TextChanged);
             // 
@@ -910,7 +911,7 @@
             // 
             this.pay_info_gb.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pay_info_gb.Controls.Add(this.panel17);
-            this.pay_info_gb.Location = new System.Drawing.Point(8, 3);
+            this.pay_info_gb.Location = new System.Drawing.Point(50, 3);
             this.pay_info_gb.Name = "pay_info_gb";
             this.pay_info_gb.Size = new System.Drawing.Size(570, 324);
             this.pay_info_gb.TabIndex = 8;
@@ -921,9 +922,9 @@
             // 
             this.panel17.Controls.Add(this.dataGridView1);
             this.panel17.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel17.Location = new System.Drawing.Point(3, 28);
+            this.panel17.Location = new System.Drawing.Point(3, 34);
             this.panel17.Name = "panel17";
-            this.panel17.Size = new System.Drawing.Size(564, 293);
+            this.panel17.Size = new System.Drawing.Size(564, 287);
             this.panel17.TabIndex = 3;
             // 
             // dataGridView1
@@ -951,7 +952,7 @@
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(564, 293);
+            this.dataGridView1.Size = new System.Drawing.Size(564, 287);
             this.dataGridView1.TabIndex = 16;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1_CellContentClick);
             // 
@@ -964,7 +965,7 @@
             this.new_u_gb.Controls.Add(this.groupBox19);
             this.new_u_gb.Controls.Add(this.groupBox18);
             this.new_u_gb.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold);
-            this.new_u_gb.Location = new System.Drawing.Point(8, 333);
+            this.new_u_gb.Location = new System.Drawing.Point(50, 333);
             this.new_u_gb.Name = "new_u_gb";
             this.new_u_gb.Size = new System.Drawing.Size(570, 332);
             this.new_u_gb.TabIndex = 6;
@@ -1033,9 +1034,10 @@
             this.txtuser_add_new.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.txtuser_add_new.Location = new System.Drawing.Point(6, 38);
             this.txtuser_add_new.Name = "txtuser_add_new";
-            this.txtuser_add_new.Size = new System.Drawing.Size(288, 32);
+            this.txtuser_add_new.Size = new System.Drawing.Size(288, 38);
             this.txtuser_add_new.TabIndex = 6;
             this.txtuser_add_new.Text = "العنوان";
+            this.txtuser_add_new.TextChanged += new System.EventHandler(this.Txtuser_add_new_TextChanged);
             this.txtuser_add_new.Enter += new System.EventHandler(this.Txtuser_add_new_Enter);
             // 
             // txtuser_phone_new
@@ -1045,7 +1047,7 @@
             this.txtuser_phone_new.Location = new System.Drawing.Point(300, 38);
             this.txtuser_phone_new.MaxLength = 11;
             this.txtuser_phone_new.Name = "txtuser_phone_new";
-            this.txtuser_phone_new.Size = new System.Drawing.Size(240, 32);
+            this.txtuser_phone_new.Size = new System.Drawing.Size(240, 38);
             this.txtuser_phone_new.TabIndex = 5;
             this.txtuser_phone_new.Text = "رقم التليفون";
             this.txtuser_phone_new.TextChanged += new System.EventHandler(this.Txtuser_phone_new_TextChanged);
@@ -1069,7 +1071,7 @@
             this.txtuser_new.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold);
             this.txtuser_new.Location = new System.Drawing.Point(12, 46);
             this.txtuser_new.Name = "txtuser_new";
-            this.txtuser_new.Size = new System.Drawing.Size(329, 32);
+            this.txtuser_new.Size = new System.Drawing.Size(329, 38);
             this.txtuser_new.TabIndex = 0;
             // 
             // groupBox18
@@ -1088,7 +1090,7 @@
             this.txtuser_mony_new.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold);
             this.txtuser_mony_new.Location = new System.Drawing.Point(6, 46);
             this.txtuser_mony_new.Name = "txtuser_mony_new";
-            this.txtuser_mony_new.Size = new System.Drawing.Size(181, 32);
+            this.txtuser_mony_new.Size = new System.Drawing.Size(181, 38);
             this.txtuser_mony_new.TabIndex = 2;
             this.txtuser_mony_new.TextChanged += new System.EventHandler(this.Txtuser_mony_new_TextChanged);
             // 
@@ -1096,7 +1098,7 @@
             // 
             this.gbuser_info.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.gbuser_info.Controls.Add(this.panel10);
-            this.gbuser_info.Location = new System.Drawing.Point(581, 3);
+            this.gbuser_info.Location = new System.Drawing.Point(623, 3);
             this.gbuser_info.Name = "gbuser_info";
             this.gbuser_info.Size = new System.Drawing.Size(452, 539);
             this.gbuser_info.TabIndex = 5;
@@ -1114,9 +1116,9 @@
             this.panel10.Controls.Add(this.groupBox10);
             this.panel10.Controls.Add(this.groupBox11);
             this.panel10.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel10.Location = new System.Drawing.Point(3, 28);
+            this.panel10.Location = new System.Drawing.Point(3, 34);
             this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(446, 508);
+            this.panel10.Size = new System.Drawing.Size(446, 502);
             this.panel10.TabIndex = 3;
             // 
             // button4
@@ -1212,9 +1214,9 @@
             this.groupBox9.Controls.Add(this.txtuser_add);
             this.groupBox9.Controls.Add(this.txtuser_phone);
             this.groupBox9.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupBox9.Location = new System.Drawing.Point(0, 217);
+            this.groupBox9.Location = new System.Drawing.Point(0, 241);
             this.groupBox9.Name = "groupBox9";
-            this.groupBox9.Size = new System.Drawing.Size(446, 155);
+            this.groupBox9.Size = new System.Drawing.Size(446, 167);
             this.groupBox9.TabIndex = 3;
             this.groupBox9.TabStop = false;
             this.groupBox9.Text = "بيانات أخرى";
@@ -1225,7 +1227,7 @@
             this.label7.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold);
             this.label7.Location = new System.Drawing.Point(307, 96);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(59, 24);
+            this.label7.Size = new System.Drawing.Size(77, 32);
             this.label7.TabIndex = 8;
             this.label7.Text = "العنوان";
             this.label7.Click += new System.EventHandler(this.Label7_Click);
@@ -1236,7 +1238,7 @@
             this.label6.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold);
             this.label6.Location = new System.Drawing.Point(307, 42);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(93, 24);
+            this.label6.Size = new System.Drawing.Size(121, 32);
             this.label6.TabIndex = 7;
             this.label6.Text = "رقم التليفون";
             // 
@@ -1245,7 +1247,7 @@
             this.txtuser_add.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold);
             this.txtuser_add.Location = new System.Drawing.Point(21, 92);
             this.txtuser_add.Name = "txtuser_add";
-            this.txtuser_add.Size = new System.Drawing.Size(280, 32);
+            this.txtuser_add.Size = new System.Drawing.Size(280, 38);
             this.txtuser_add.TabIndex = 6;
             // 
             // txtuser_phone
@@ -1253,7 +1255,7 @@
             this.txtuser_phone.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold);
             this.txtuser_phone.Location = new System.Drawing.Point(21, 38);
             this.txtuser_phone.Name = "txtuser_phone";
-            this.txtuser_phone.Size = new System.Drawing.Size(280, 32);
+            this.txtuser_phone.Size = new System.Drawing.Size(280, 38);
             this.txtuser_phone.TabIndex = 5;
             // 
             // groupBox10
@@ -1264,9 +1266,9 @@
             this.groupBox10.Controls.Add(this.num_bills);
             this.groupBox10.Controls.Add(this.txtuser_mony);
             this.groupBox10.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupBox10.Location = new System.Drawing.Point(0, 106);
+            this.groupBox10.Location = new System.Drawing.Point(0, 118);
             this.groupBox10.Name = "groupBox10";
-            this.groupBox10.Size = new System.Drawing.Size(446, 111);
+            this.groupBox10.Size = new System.Drawing.Size(446, 123);
             this.groupBox10.TabIndex = 2;
             this.groupBox10.TabStop = false;
             this.groupBox10.Text = "الرصيد و عدد الفواتير";
@@ -1277,7 +1279,7 @@
             this.label9.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold);
             this.label9.Location = new System.Drawing.Point(362, 52);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(58, 24);
+            this.label9.Size = new System.Drawing.Size(76, 32);
             this.label9.TabIndex = 14;
             this.label9.Text = "الرصيد";
             // 
@@ -1287,7 +1289,7 @@
             this.label8.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold);
             this.label8.Location = new System.Drawing.Point(109, 52);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(93, 24);
+            this.label8.Size = new System.Drawing.Size(121, 32);
             this.label8.TabIndex = 13;
             this.label8.Text = "عدد الفواتير";
             // 
@@ -1298,7 +1300,7 @@
             this.num_bills.Location = new System.Drawing.Point(21, 48);
             this.num_bills.Name = "num_bills";
             this.num_bills.ReadOnly = true;
-            this.num_bills.Size = new System.Drawing.Size(82, 32);
+            this.num_bills.Size = new System.Drawing.Size(82, 38);
             this.num_bills.TabIndex = 12;
             // 
             // txtuser_mony
@@ -1308,7 +1310,7 @@
             this.txtuser_mony.Location = new System.Drawing.Point(231, 48);
             this.txtuser_mony.Name = "txtuser_mony";
             this.txtuser_mony.ReadOnly = true;
-            this.txtuser_mony.Size = new System.Drawing.Size(123, 32);
+            this.txtuser_mony.Size = new System.Drawing.Size(123, 38);
             this.txtuser_mony.TabIndex = 2;
             this.txtuser_mony.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.TextBox19_MouseDoubleClick);
             // 
@@ -1320,7 +1322,7 @@
             this.groupBox11.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox11.Location = new System.Drawing.Point(0, 0);
             this.groupBox11.Name = "groupBox11";
-            this.groupBox11.Size = new System.Drawing.Size(446, 106);
+            this.groupBox11.Size = new System.Drawing.Size(446, 118);
             this.groupBox11.TabIndex = 0;
             this.groupBox11.TabStop = false;
             this.groupBox11.Text = "الإسم والكود";
@@ -1332,7 +1334,7 @@
             this.txtuser_id.Location = new System.Drawing.Point(322, 43);
             this.txtuser_id.Name = "txtuser_id";
             this.txtuser_id.ReadOnly = true;
-            this.txtuser_id.Size = new System.Drawing.Size(112, 32);
+            this.txtuser_id.Size = new System.Drawing.Size(112, 38);
             this.txtuser_id.TabIndex = 1;
             this.txtuser_id.Text = "1234567";
             this.txtuser_id.Enter += new System.EventHandler(this.TextBox17_Enter);
@@ -1343,7 +1345,7 @@
             this.txtuser.ForeColor = System.Drawing.Color.DarkRed;
             this.txtuser.Location = new System.Drawing.Point(21, 43);
             this.txtuser.Name = "txtuser";
-            this.txtuser.Size = new System.Drawing.Size(295, 32);
+            this.txtuser.Size = new System.Drawing.Size(295, 38);
             this.txtuser.TabIndex = 0;
             this.txtuser.Text = "أحمد محمد على إبراهيم أبوسيف";
             // 
@@ -1352,9 +1354,9 @@
             this.panel6.Controls.Add(this.userslist);
             this.panel6.Controls.Add(this.panel7);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel6.Location = new System.Drawing.Point(1039, 8);
+            this.panel6.Location = new System.Drawing.Point(1081, 8);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(318, 689);
+            this.panel6.Size = new System.Drawing.Size(318, 704);
             this.panel6.TabIndex = 3;
             // 
             // userslist
@@ -1362,10 +1364,10 @@
             this.userslist.Dock = System.Windows.Forms.DockStyle.Fill;
             this.userslist.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold);
             this.userslist.FormattingEnabled = true;
-            this.userslist.ItemHeight = 24;
+            this.userslist.ItemHeight = 30;
             this.userslist.Location = new System.Drawing.Point(0, 49);
             this.userslist.Name = "userslist";
-            this.userslist.Size = new System.Drawing.Size(318, 640);
+            this.userslist.Size = new System.Drawing.Size(318, 655);
             this.userslist.TabIndex = 0;
             this.userslist.SelectedIndexChanged += new System.EventHandler(this.Userslist_SelectedIndexChanged);
             this.userslist.DoubleClick += new System.EventHandler(this.Userslist_DoubleClick);
@@ -1388,7 +1390,7 @@
             this.txtuer_search.ForeColor = System.Drawing.SystemColors.Control;
             this.txtuer_search.Location = new System.Drawing.Point(56, 8);
             this.txtuer_search.Name = "txtuer_search";
-            this.txtuer_search.Size = new System.Drawing.Size(259, 32);
+            this.txtuer_search.Size = new System.Drawing.Size(259, 38);
             this.txtuer_search.TabIndex = 1;
             this.txtuer_search.Text = "أكتب اسم العميل هنا ...";
             this.txtuer_search.TextChanged += new System.EventHandler(this.Txtuer_search_TextChanged);
@@ -1415,11 +1417,11 @@
             this.products.Controls.Add(this.new_p_gb);
             this.products.Controls.Add(this.panel1);
             this.products.ForeColor = System.Drawing.Color.Black;
-            this.products.Location = new System.Drawing.Point(4, 33);
+            this.products.Location = new System.Drawing.Point(4, 39);
             this.products.Margin = new System.Windows.Forms.Padding(5, 8, 5, 8);
             this.products.Name = "products";
             this.products.Padding = new System.Windows.Forms.Padding(5, 8, 5, 8);
-            this.products.Size = new System.Drawing.Size(1362, 705);
+            this.products.Size = new System.Drawing.Size(1404, 720);
             this.products.TabIndex = 0;
             this.products.Text = "سجــــل الأصنــــاف";
             // 
@@ -1446,7 +1448,7 @@
             this.gb_sell_info.Dock = System.Windows.Forms.DockStyle.Left;
             this.gb_sell_info.Location = new System.Drawing.Point(5, 8);
             this.gb_sell_info.Name = "gb_sell_info";
-            this.gb_sell_info.Size = new System.Drawing.Size(601, 689);
+            this.gb_sell_info.Size = new System.Drawing.Size(163, 704);
             this.gb_sell_info.TabIndex = 6;
             this.gb_sell_info.TabStop = false;
             this.gb_sell_info.Text = "سجل شراء: ";
@@ -1457,9 +1459,9 @@
             // 
             this.panel5.Controls.Add(this.dgv_sell_info);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel5.Location = new System.Drawing.Point(3, 28);
+            this.panel5.Location = new System.Drawing.Point(3, 34);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(595, 658);
+            this.panel5.Size = new System.Drawing.Size(157, 667);
             this.panel5.TabIndex = 3;
             // 
             // dgv_sell_info
@@ -1498,7 +1500,7 @@
             this.dgv_sell_info.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgv_sell_info.RowHeadersVisible = false;
             this.dgv_sell_info.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_sell_info.Size = new System.Drawing.Size(595, 658);
+            this.dgv_sell_info.Size = new System.Drawing.Size(157, 667);
             this.dgv_sell_info.TabIndex = 18;
             // 
             // groupBox4
@@ -1521,9 +1523,9 @@
             this.panel2.Controls.Add(this.groupBox2);
             this.panel2.Controls.Add(this.groupBox1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(3, 28);
+            this.panel2.Location = new System.Drawing.Point(3, 34);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(344, 547);
+            this.panel2.Size = new System.Drawing.Size(344, 541);
             this.panel2.TabIndex = 3;
             // 
             // btn_sell_info
@@ -1622,7 +1624,7 @@
             this.label5.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold);
             this.label5.Location = new System.Drawing.Point(200, 161);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(135, 32);
+            this.label5.Size = new System.Drawing.Size(168, 40);
             this.label5.TabIndex = 9;
             this.label5.Text = "الكمية المتاحة";
             // 
@@ -1632,7 +1634,7 @@
             this.label4.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold);
             this.label4.Location = new System.Drawing.Point(215, 45);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(120, 32);
+            this.label4.Size = new System.Drawing.Size(148, 40);
             this.label4.TabIndex = 8;
             this.label4.Text = "سعر الشراء";
             // 
@@ -1642,7 +1644,7 @@
             this.label3.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold);
             this.label3.Location = new System.Drawing.Point(227, 100);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(108, 32);
+            this.label3.Size = new System.Drawing.Size(132, 40);
             this.label3.TabIndex = 7;
             this.label3.Text = "سعر  البيع";
             // 
@@ -1654,7 +1656,7 @@
             this.txtAmount.ForeColor = System.Drawing.Color.DarkRed;
             this.txtAmount.Location = new System.Drawing.Point(6, 159);
             this.txtAmount.Name = "txtAmount";
-            this.txtAmount.Size = new System.Drawing.Size(163, 39);
+            this.txtAmount.Size = new System.Drawing.Size(163, 46);
             this.txtAmount.TabIndex = 6;
             this.txtAmount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -1666,7 +1668,7 @@
             this.txtSell.ForeColor = System.Drawing.Color.DarkRed;
             this.txtSell.Location = new System.Drawing.Point(6, 97);
             this.txtSell.Name = "txtSell";
-            this.txtSell.Size = new System.Drawing.Size(163, 39);
+            this.txtSell.Size = new System.Drawing.Size(163, 46);
             this.txtSell.TabIndex = 5;
             this.txtSell.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -1678,7 +1680,7 @@
             this.txtBuy.ForeColor = System.Drawing.Color.DarkRed;
             this.txtBuy.Location = new System.Drawing.Point(6, 43);
             this.txtBuy.Name = "txtBuy";
-            this.txtBuy.Size = new System.Drawing.Size(163, 39);
+            this.txtBuy.Size = new System.Drawing.Size(163, 46);
             this.txtBuy.TabIndex = 4;
             this.txtBuy.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -1702,7 +1704,7 @@
             this.txtType2.ForeColor = System.Drawing.Color.DarkRed;
             this.txtType2.Location = new System.Drawing.Point(6, 46);
             this.txtType2.Name = "txtType2";
-            this.txtType2.Size = new System.Drawing.Size(130, 39);
+            this.txtType2.Size = new System.Drawing.Size(130, 46);
             this.txtType2.TabIndex = 3;
             // 
             // txtType
@@ -1712,7 +1714,7 @@
             this.txtType.ForeColor = System.Drawing.Color.DarkRed;
             this.txtType.Location = new System.Drawing.Point(142, 46);
             this.txtType.Name = "txtType";
-            this.txtType.Size = new System.Drawing.Size(196, 39);
+            this.txtType.Size = new System.Drawing.Size(196, 46);
             this.txtType.TabIndex = 2;
             // 
             // groupBox1
@@ -1734,7 +1736,7 @@
             this.txtproduct.ForeColor = System.Drawing.Color.DarkRed;
             this.txtproduct.Location = new System.Drawing.Point(6, 43);
             this.txtproduct.Name = "txtproduct";
-            this.txtproduct.Size = new System.Drawing.Size(332, 39);
+            this.txtproduct.Size = new System.Drawing.Size(332, 46);
             this.txtproduct.TabIndex = 0;
             // 
             // new_p_gb
@@ -1756,9 +1758,9 @@
             this.panel3.Controls.Add(this.groupBox7);
             this.panel3.Controls.Add(this.groupBox8);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(3, 28);
+            this.panel3.Location = new System.Drawing.Point(3, 34);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(347, 463);
+            this.panel3.Size = new System.Drawing.Size(347, 457);
             this.panel3.TabIndex = 3;
             // 
             // btnproduct_save
@@ -1793,7 +1795,7 @@
             this.txtAmount_new.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.txtAmount_new.Location = new System.Drawing.Point(12, 103);
             this.txtAmount_new.Name = "txtAmount_new";
-            this.txtAmount_new.Size = new System.Drawing.Size(323, 32);
+            this.txtAmount_new.Size = new System.Drawing.Size(323, 38);
             this.txtAmount_new.TabIndex = 6;
             this.txtAmount_new.Text = "الكمية";
             this.txtAmount_new.TextChanged += new System.EventHandler(this.TxtAmount_new_TextChanged);
@@ -1804,7 +1806,7 @@
             this.txtSell_new.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.txtSell_new.Location = new System.Drawing.Point(12, 43);
             this.txtSell_new.Name = "txtSell_new";
-            this.txtSell_new.Size = new System.Drawing.Size(149, 32);
+            this.txtSell_new.Size = new System.Drawing.Size(149, 38);
             this.txtSell_new.TabIndex = 5;
             this.txtSell_new.Text = "سعر البيع";
             this.txtSell_new.TextChanged += new System.EventHandler(this.TxtSell_new_TextChanged);
@@ -1815,7 +1817,7 @@
             this.txtBuy_new.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.txtBuy_new.Location = new System.Drawing.Point(186, 43);
             this.txtBuy_new.Name = "txtBuy_new";
-            this.txtBuy_new.Size = new System.Drawing.Size(149, 32);
+            this.txtBuy_new.Size = new System.Drawing.Size(149, 38);
             this.txtBuy_new.TabIndex = 4;
             this.txtBuy_new.Text = "سعر الشراء";
             this.txtBuy_new.TextChanged += new System.EventHandler(this.TxtBuy_new_TextChanged);
@@ -1842,7 +1844,7 @@
             "بلاسيتك"});
             this.cb_type.Location = new System.Drawing.Point(147, 46);
             this.cb_type.Name = "cb_type";
-            this.cb_type.Size = new System.Drawing.Size(188, 32);
+            this.cb_type.Size = new System.Drawing.Size(188, 38);
             this.cb_type.TabIndex = 3;
             // 
             // txtType_new
@@ -1851,7 +1853,7 @@
             this.txtType_new.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.txtType_new.Location = new System.Drawing.Point(12, 46);
             this.txtType_new.Name = "txtType_new";
-            this.txtType_new.Size = new System.Drawing.Size(129, 32);
+            this.txtType_new.Size = new System.Drawing.Size(129, 38);
             this.txtType_new.TabIndex = 2;
             // 
             // groupBox8
@@ -1871,7 +1873,7 @@
             this.txtproduct_new.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.txtproduct_new.Location = new System.Drawing.Point(12, 39);
             this.txtproduct_new.Name = "txtproduct_new";
-            this.txtproduct_new.Size = new System.Drawing.Size(323, 32);
+            this.txtproduct_new.Size = new System.Drawing.Size(323, 38);
             this.txtproduct_new.TabIndex = 0;
             this.txtproduct_new.TextChanged += new System.EventHandler(this.Txtproduct_new_TextChanged);
             // 
@@ -1880,9 +1882,9 @@
             this.panel1.Controls.Add(this.goodslist);
             this.panel1.Controls.Add(this.panel4);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel1.Location = new System.Drawing.Point(968, 8);
+            this.panel1.Location = new System.Drawing.Point(1010, 8);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(389, 689);
+            this.panel1.Size = new System.Drawing.Size(389, 704);
             this.panel1.TabIndex = 2;
             // 
             // goodslist
@@ -1892,10 +1894,10 @@
             this.goodslist.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold);
             this.goodslist.ForeColor = System.Drawing.Color.Black;
             this.goodslist.FormattingEnabled = true;
-            this.goodslist.ItemHeight = 24;
+            this.goodslist.ItemHeight = 30;
             this.goodslist.Location = new System.Drawing.Point(0, 49);
             this.goodslist.Name = "goodslist";
-            this.goodslist.Size = new System.Drawing.Size(389, 640);
+            this.goodslist.Size = new System.Drawing.Size(389, 655);
             this.goodslist.TabIndex = 0;
             this.goodslist.SelectedIndexChanged += new System.EventHandler(this.Goodslist_SelectedIndexChanged);
             // 
@@ -1917,7 +1919,7 @@
             this.txt_search.ForeColor = System.Drawing.SystemColors.Control;
             this.txt_search.Location = new System.Drawing.Point(54, 8);
             this.txt_search.Name = "txt_search";
-            this.txt_search.Size = new System.Drawing.Size(330, 32);
+            this.txt_search.Size = new System.Drawing.Size(330, 38);
             this.txt_search.TabIndex = 1;
             this.txt_search.Text = "أكتب اسم الصنف هنا ...";
             this.txt_search.TextChanged += new System.EventHandler(this.Txt_search_TextChanged);
@@ -1943,10 +1945,10 @@
             this.home.Controls.Add(this.groupBox26);
             this.home.Controls.Add(this.groupBox25);
             this.home.ForeColor = System.Drawing.Color.Black;
-            this.home.Location = new System.Drawing.Point(4, 33);
+            this.home.Location = new System.Drawing.Point(4, 39);
             this.home.Margin = new System.Windows.Forms.Padding(5, 8, 5, 8);
             this.home.Name = "home";
-            this.home.Size = new System.Drawing.Size(1362, 335);
+            this.home.Size = new System.Drawing.Size(1404, 720);
             this.home.TabIndex = 3;
             this.home.Text = "الرئيسية";
             // 
@@ -1959,7 +1961,7 @@
             this.groupBox21.Margin = new System.Windows.Forms.Padding(8);
             this.groupBox21.Name = "groupBox21";
             this.groupBox21.Padding = new System.Windows.Forms.Padding(5);
-            this.groupBox21.Size = new System.Drawing.Size(480, 335);
+            this.groupBox21.Size = new System.Drawing.Size(522, 720);
             this.groupBox21.TabIndex = 2;
             this.groupBox21.TabStop = false;
             this.groupBox21.Text = "العملاء المطلوبين";
@@ -1983,11 +1985,11 @@
             this.usersWanted.DefaultCellStyle = dataGridViewCellStyle6;
             this.usersWanted.Dock = System.Windows.Forms.DockStyle.Fill;
             this.usersWanted.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.usersWanted.Location = new System.Drawing.Point(5, 30);
+            this.usersWanted.Location = new System.Drawing.Point(5, 36);
             this.usersWanted.Name = "usersWanted";
             this.usersWanted.ReadOnly = true;
             this.usersWanted.RowHeadersVisible = false;
-            this.usersWanted.Size = new System.Drawing.Size(470, 300);
+            this.usersWanted.Size = new System.Drawing.Size(512, 679);
             this.usersWanted.TabIndex = 2;
             // 
             // groupBox26
@@ -1995,11 +1997,11 @@
             this.groupBox26.Controls.Add(this.needsTable);
             this.groupBox26.Dock = System.Windows.Forms.DockStyle.Right;
             this.groupBox26.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.groupBox26.Location = new System.Drawing.Point(480, 0);
+            this.groupBox26.Location = new System.Drawing.Point(522, 0);
             this.groupBox26.Margin = new System.Windows.Forms.Padding(8);
             this.groupBox26.Name = "groupBox26";
             this.groupBox26.Padding = new System.Windows.Forms.Padding(5);
-            this.groupBox26.Size = new System.Drawing.Size(386, 335);
+            this.groupBox26.Size = new System.Drawing.Size(386, 720);
             this.groupBox26.TabIndex = 1;
             this.groupBox26.TabStop = false;
             this.groupBox26.Text = "النواقص";
@@ -2024,11 +2026,11 @@
             this.needsTable.DefaultCellStyle = dataGridViewCellStyle7;
             this.needsTable.Dock = System.Windows.Forms.DockStyle.Fill;
             this.needsTable.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.needsTable.Location = new System.Drawing.Point(5, 30);
+            this.needsTable.Location = new System.Drawing.Point(5, 36);
             this.needsTable.Name = "needsTable";
             this.needsTable.ReadOnly = true;
             this.needsTable.RowHeadersVisible = false;
-            this.needsTable.Size = new System.Drawing.Size(376, 300);
+            this.needsTable.Size = new System.Drawing.Size(376, 679);
             this.needsTable.TabIndex = 2;
             // 
             // groupBox25
@@ -2038,9 +2040,9 @@
             this.groupBox25.Controls.Add(this.panel18);
             this.groupBox25.Dock = System.Windows.Forms.DockStyle.Right;
             this.groupBox25.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.groupBox25.Location = new System.Drawing.Point(866, 0);
+            this.groupBox25.Location = new System.Drawing.Point(908, 0);
             this.groupBox25.Name = "groupBox25";
-            this.groupBox25.Size = new System.Drawing.Size(496, 335);
+            this.groupBox25.Size = new System.Drawing.Size(496, 720);
             this.groupBox25.TabIndex = 0;
             this.groupBox25.TabStop = false;
             this.groupBox25.Text = "دفتر المدفوعات";
@@ -2062,11 +2064,11 @@
             dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.paymentsTable.DefaultCellStyle = dataGridViewCellStyle8;
             this.paymentsTable.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.paymentsTable.Location = new System.Drawing.Point(3, 87);
+            this.paymentsTable.Location = new System.Drawing.Point(3, 99);
             this.paymentsTable.Name = "paymentsTable";
             this.paymentsTable.ReadOnly = true;
             this.paymentsTable.RowHeadersVisible = false;
-            this.paymentsTable.Size = new System.Drawing.Size(490, 245);
+            this.paymentsTable.Size = new System.Drawing.Size(490, 618);
             this.paymentsTable.TabIndex = 2;
             // 
             // txtselected_date
@@ -2075,10 +2077,10 @@
             this.txtselected_date.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtselected_date.Dock = System.Windows.Forms.DockStyle.Top;
             this.txtselected_date.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.txtselected_date.Location = new System.Drawing.Point(3, 62);
+            this.txtselected_date.Location = new System.Drawing.Point(3, 68);
             this.txtselected_date.Name = "txtselected_date";
             this.txtselected_date.ReadOnly = true;
-            this.txtselected_date.Size = new System.Drawing.Size(490, 25);
+            this.txtselected_date.Size = new System.Drawing.Size(490, 31);
             this.txtselected_date.TabIndex = 3;
             // 
             // panel18
@@ -2086,7 +2088,7 @@
             this.panel18.BackColor = System.Drawing.Color.White;
             this.panel18.Controls.Add(this.dateTimePicker1);
             this.panel18.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel18.Location = new System.Drawing.Point(3, 28);
+            this.panel18.Location = new System.Drawing.Point(3, 34);
             this.panel18.Name = "panel18";
             this.panel18.Size = new System.Drawing.Size(490, 34);
             this.panel18.TabIndex = 1;
@@ -2098,7 +2100,7 @@
             this.dateTimePicker1.MinDate = new System.DateTime(2019, 1, 1, 0, 0, 0, 0);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.RightToLeftLayout = true;
-            this.dateTimePicker1.Size = new System.Drawing.Size(490, 32);
+            this.dateTimePicker1.Size = new System.Drawing.Size(490, 38);
             this.dateTimePicker1.TabIndex = 5;
             this.dateTimePicker1.Value = new System.DateTime(2020, 11, 1, 12, 18, 51, 0);
             this.dateTimePicker1.ValueChanged += new System.EventHandler(this.DateTimePicker1_ValueChanged);
@@ -2117,7 +2119,7 @@
             this.new_v.Name = "new_v";
             this.new_v.RightToLeftLayout = true;
             this.new_v.SelectedIndex = 0;
-            this.new_v.Size = new System.Drawing.Size(1370, 372);
+            this.new_v.Size = new System.Drawing.Size(1412, 763);
             this.new_v.TabIndex = 0;
             this.new_v.SelectedIndexChanged += new System.EventHandler(this.New_v_SelectedIndexChanged);
             // 
@@ -2128,9 +2130,9 @@
             this.report.Controls.Add(this.groupBox30);
             this.report.Controls.Add(this.groupBox28);
             this.report.Controls.Add(this.groupBox29);
-            this.report.Location = new System.Drawing.Point(4, 33);
+            this.report.Location = new System.Drawing.Point(4, 39);
             this.report.Name = "report";
-            this.report.Size = new System.Drawing.Size(1362, 705);
+            this.report.Size = new System.Drawing.Size(1404, 720);
             this.report.TabIndex = 4;
             this.report.Text = "التقــــــــرير";
             // 
@@ -2220,7 +2222,7 @@
             this.groupBox30.ForeColor = System.Drawing.Color.Black;
             this.groupBox30.Location = new System.Drawing.Point(17, 117);
             this.groupBox30.Name = "groupBox30";
-            this.groupBox30.Size = new System.Drawing.Size(668, 108);
+            this.groupBox30.Size = new System.Drawing.Size(668, 114);
             this.groupBox30.TabIndex = 3;
             this.groupBox30.TabStop = false;
             this.groupBox30.Text = "تقـــــرير العمـــلاء";
@@ -2291,7 +2293,7 @@
             this.groupBox28.ForeColor = System.Drawing.Color.Black;
             this.groupBox28.Location = new System.Drawing.Point(691, 3);
             this.groupBox28.Name = "groupBox28";
-            this.groupBox28.Size = new System.Drawing.Size(668, 350);
+            this.groupBox28.Size = new System.Drawing.Size(668, 362);
             this.groupBox28.TabIndex = 0;
             this.groupBox28.TabStop = false;
             this.groupBox28.Text = "تقرير إيرادات ومدفوعات";
@@ -2310,7 +2312,7 @@
             this.groupBox13.Controls.Add(this.label41);
             this.groupBox13.Location = new System.Drawing.Point(12, 71);
             this.groupBox13.Name = "groupBox13";
-            this.groupBox13.Size = new System.Drawing.Size(320, 248);
+            this.groupBox13.Size = new System.Drawing.Size(320, 254);
             this.groupBox13.TabIndex = 26;
             this.groupBox13.TabStop = false;
             this.groupBox13.Text = "الشهر السابق";
@@ -2437,7 +2439,7 @@
             this.groupBox12.Controls.Add(this.label25);
             this.groupBox12.Location = new System.Drawing.Point(338, 71);
             this.groupBox12.Name = "groupBox12";
-            this.groupBox12.Size = new System.Drawing.Size(320, 248);
+            this.groupBox12.Size = new System.Drawing.Size(320, 254);
             this.groupBox12.TabIndex = 25;
             this.groupBox12.TabStop = false;
             this.groupBox12.Text = "الشهر الحالى";
@@ -2589,7 +2591,7 @@
             this.groupBox29.ForeColor = System.Drawing.Color.Black;
             this.groupBox29.Location = new System.Drawing.Point(17, 3);
             this.groupBox29.Name = "groupBox29";
-            this.groupBox29.Size = new System.Drawing.Size(668, 108);
+            this.groupBox29.Size = new System.Drawing.Size(668, 114);
             this.groupBox29.TabIndex = 2;
             this.groupBox29.TabStop = false;
             this.groupBox29.Text = "تقـــرير الأصناف";
@@ -2657,11 +2659,74 @@
             this.panel12.Controls.Add(this.pictureBox1);
             this.panel12.Controls.Add(this.statusStrip1);
             this.panel12.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel12.Location = new System.Drawing.Point(0, 372);
+            this.panel12.Location = new System.Drawing.Point(0, 763);
             this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(1370, 34);
+            this.panel12.Size = new System.Drawing.Size(1412, 34);
             this.panel12.TabIndex = 4;
             this.panel12.Paint += new System.Windows.Forms.PaintEventHandler(this.Panel12_Paint);
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.pictureBox5.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pictureBox5.Image = global::allN1.Properties.Resources.secure_30px;
+            this.pictureBox5.Location = new System.Drawing.Point(68, 0);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Padding = new System.Windows.Forms.Padding(2);
+            this.pictureBox5.Size = new System.Drawing.Size(34, 34);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox5.TabIndex = 7;
+            this.pictureBox5.TabStop = false;
+            this.pictureBox5.Click += new System.EventHandler(this.PictureBox5_Click);
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.pictureBox3.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pictureBox3.Image = global::allN1.Properties.Resources._2minimize_window_30px;
+            this.pictureBox3.Location = new System.Drawing.Point(34, 0);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(0);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Padding = new System.Windows.Forms.Padding(2);
+            this.pictureBox3.Size = new System.Drawing.Size(34, 34);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox3.TabIndex = 5;
+            this.pictureBox3.TabStop = false;
+            this.pictureBox3.Click += new System.EventHandler(this.PictureBox3_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pictureBox1.Image = global::allN1.Properties.Resources._2shutdown_30px;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(10);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Padding = new System.Windows.Forms.Padding(2);
+            this.pictureBox1.Size = new System.Drawing.Size(34, 34);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox1.TabIndex = 4;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.PictureBox1_Click_1);
+            // 
+            // statusStrip1
+            // 
+            this.statusStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.statusStrip1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.statusStrip1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.time_now,
+            this.toolStripDropDownButton1,
+            this.toolStripDropDownButton2});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 0);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
+            this.statusStrip1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.statusStrip1.Size = new System.Drawing.Size(1412, 34);
+            this.statusStrip1.TabIndex = 3;
+            this.statusStrip1.Text = "statusStrip1";
+            this.statusStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.StatusStrip1_ItemClicked);
             // 
             // time_now
             // 
@@ -2670,7 +2735,7 @@
             this.time_now.ForeColor = System.Drawing.Color.White;
             this.time_now.Margin = new System.Windows.Forms.Padding(0, 3, 20, 2);
             this.time_now.Name = "time_now";
-            this.time_now.Size = new System.Drawing.Size(1236, 29);
+            this.time_now.Size = new System.Drawing.Size(1309, 29);
             this.time_now.Spring = true;
             this.time_now.Text = "الحاله : متصل";
             this.time_now.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -2708,27 +2773,27 @@
             this.toolStripMenuItem2.Image = global::allN1.Properties.Resources.support_30px;
             this.toolStripMenuItem2.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(194, 36);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(220, 36);
             this.toolStripMenuItem2.Text = "إصلاح الأخطاء";
             // 
             // الفواتيرToolStripMenuItem
             // 
             this.الفواتيرToolStripMenuItem.Name = "الفواتيرToolStripMenuItem";
-            this.الفواتيرToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.الفواتيرToolStripMenuItem.Size = new System.Drawing.Size(154, 28);
             this.الفواتيرToolStripMenuItem.Text = "الفواتير";
             this.الفواتيرToolStripMenuItem.Click += new System.EventHandler(this.الفواتيرToolStripMenuItem_Click);
             // 
             // المدفوعاتToolStripMenuItem
             // 
             this.المدفوعاتToolStripMenuItem.Name = "المدفوعاتToolStripMenuItem";
-            this.المدفوعاتToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.المدفوعاتToolStripMenuItem.Size = new System.Drawing.Size(154, 28);
             this.المدفوعاتToolStripMenuItem.Text = "المدفوعات";
             this.المدفوعاتToolStripMenuItem.Click += new System.EventHandler(this.المدفوعاتToolStripMenuItem_Click);
             // 
             // testToolStripMenuItem
             // 
             this.testToolStripMenuItem.Name = "testToolStripMenuItem";
-            this.testToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.testToolStripMenuItem.Size = new System.Drawing.Size(154, 28);
             this.testToolStripMenuItem.Text = "test";
             this.testToolStripMenuItem.Click += new System.EventHandler(this.TestToolStripMenuItem_Click);
             // 
@@ -2739,7 +2804,7 @@
             this.toolStripMenuItem1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
             this.toolStripMenuItem1.ShortcutKeys = System.Windows.Forms.Keys.F5;
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(194, 36);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(220, 36);
             this.toolStripMenuItem1.Text = "تحديث التقرير";
             this.toolStripMenuItem1.Click += new System.EventHandler(this.ToolStripMenuItem1_Click);
             // 
@@ -2750,7 +2815,7 @@
             this.طباعةإيصالToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.طباعةإيصالToolStripMenuItem.Name = "طباعةإيصالToolStripMenuItem";
             this.طباعةإيصالToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F6;
-            this.طباعةإيصالToolStripMenuItem.Size = new System.Drawing.Size(194, 36);
+            this.طباعةإيصالToolStripMenuItem.Size = new System.Drawing.Size(220, 36);
             this.طباعةإيصالToolStripMenuItem.Text = "طباعة إيصال";
             this.طباعةإيصالToolStripMenuItem.Click += new System.EventHandler(this.طباعةإيصالToolStripMenuItem_Click);
             // 
@@ -2761,7 +2826,7 @@
             this.قفلالشاشةToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.قفلالشاشةToolStripMenuItem.Name = "قفلالشاشةToolStripMenuItem";
             this.قفلالشاشةToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F2;
-            this.قفلالشاشةToolStripMenuItem.Size = new System.Drawing.Size(194, 36);
+            this.قفلالشاشةToolStripMenuItem.Size = new System.Drawing.Size(220, 36);
             this.قفلالشاشةToolStripMenuItem.Text = "قفل الشاشة";
             this.قفلالشاشةToolStripMenuItem.Click += new System.EventHandler(this.قفلالشاشةToolStripMenuItem_Click);
             // 
@@ -2793,7 +2858,7 @@
             this.فواتيرToolStripMenuItem1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.فواتيرToolStripMenuItem1.Name = "فواتيرToolStripMenuItem1";
             this.فواتيرToolStripMenuItem1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.فواتيرToolStripMenuItem1.Size = new System.Drawing.Size(194, 36);
+            this.فواتيرToolStripMenuItem1.Size = new System.Drawing.Size(184, 36);
             this.فواتيرToolStripMenuItem1.Text = "فواتير";
             this.فواتيرToolStripMenuItem1.Click += new System.EventHandler(this.فواتيرToolStripMenuItem1_Click);
             // 
@@ -2802,77 +2867,15 @@
             this.إيصالاتاليومToolStripMenuItem1.Image = global::allN1.Properties.Resources.send_to_printer_30px;
             this.إيصالاتاليومToolStripMenuItem1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.إيصالاتاليومToolStripMenuItem1.Name = "إيصالاتاليومToolStripMenuItem1";
-            this.إيصالاتاليومToolStripMenuItem1.Size = new System.Drawing.Size(194, 36);
+            this.إيصالاتاليومToolStripMenuItem1.Size = new System.Drawing.Size(184, 36);
             this.إيصالاتاليومToolStripMenuItem1.Text = "إيصالات اليوم";
             this.إيصالاتاليومToolStripMenuItem1.Click += new System.EventHandler(this.إيصالاتاليومToolStripMenuItem1_Click);
             // 
-            // statusStrip1
-            // 
-            this.statusStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.statusStrip1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.statusStrip1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.time_now,
-            this.toolStripDropDownButton1,
-            this.toolStripDropDownButton2});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 0);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.statusStrip1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.statusStrip1.Size = new System.Drawing.Size(1370, 34);
-            this.statusStrip1.TabIndex = 3;
-            this.statusStrip1.Text = "statusStrip1";
-            this.statusStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.StatusStrip1_ItemClicked);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pictureBox1.Image = global::allN1.Properties.Resources._2shutdown_30px;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(10);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Padding = new System.Windows.Forms.Padding(2);
-            this.pictureBox1.Size = new System.Drawing.Size(34, 34);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox1.TabIndex = 4;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.PictureBox1_Click_1);
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.pictureBox3.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pictureBox3.Image = global::allN1.Properties.Resources._2minimize_window_30px;
-            this.pictureBox3.Location = new System.Drawing.Point(34, 0);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(0);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Padding = new System.Windows.Forms.Padding(2);
-            this.pictureBox3.Size = new System.Drawing.Size(34, 34);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox3.TabIndex = 5;
-            this.pictureBox3.TabStop = false;
-            this.pictureBox3.Click += new System.EventHandler(this.PictureBox3_Click);
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.pictureBox5.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pictureBox5.Image = global::allN1.Properties.Resources.secure_30px;
-            this.pictureBox5.Location = new System.Drawing.Point(68, 0);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Padding = new System.Windows.Forms.Padding(2);
-            this.pictureBox5.Size = new System.Drawing.Size(34, 34);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox5.TabIndex = 7;
-            this.pictureBox5.TabStop = false;
-            this.pictureBox5.Click += new System.EventHandler(this.PictureBox5_Click);
-            // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1370, 406);
+            this.ClientSize = new System.Drawing.Size(1412, 797);
             this.ControlBox = false;
             this.Controls.Add(this.new_v);
             this.Controls.Add(this.panel12);
@@ -2985,11 +2988,11 @@
             this.groupBox29.ResumeLayout(false);
             this.panel12.ResumeLayout(false);
             this.panel12.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

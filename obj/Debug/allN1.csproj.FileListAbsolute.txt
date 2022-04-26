@@ -43,7 +43,153 @@ D:\A.Abousaif\My Work - A.Abousaif\allN1\obj\Debug\allN1.venGoodRet.resources
 D:\A.Abousaif\My Work - A.Abousaif\allN1\bin\Debug\معرض أبوسيف.exe.config
 D:\A.Abousaif\My Work - A.Abousaif\allN1\bin\Debug\معرض أبوسيف.exe
 D:\A.Abousaif\My Work - A.Abousaif\allN1\bin\Debug\معرض أبوسيف.pdb
-D:\A.Abousaif\My Work - A.Abousaif\allN1\obj\Debug\allN1.csprojAssemblyReference.cache
 D:\A.Abousaif\My Work - A.Abousaif\allN1\obj\Debug\allN1.addproduct.resources
 D:\A.Abousaif\My Work - A.Abousaif\allN1\obj\Debug\معرض أبوسيف.exe
 D:\A.Abousaif\My Work - A.Abousaif\allN1\obj\Debug\معرض أبوسيف.pdb
+D:\A.Abousaif\My Work - A.Abousaif\allN1\obj\Debug\allN1.csprojAssemblyReference.cache
+F:\allN1\bin\Debug\معرض أبوسيف.exe.config
+F:\allN1\bin\Debug\معرض أبوسيف.exe
+F:\allN1\bin\Debug\معرض أبوسيف.pdb
+F:\allN1\obj\Debug\allN1.csprojAssemblyReference.cache
+F:\allN1\obj\Debug\allN1.addproduct.resources
+F:\allN1\obj\Debug\allN1.bill_info.resources
+F:\allN1\obj\Debug\allN1.Form1.resources
+F:\allN1\obj\Debug\allN1.goodReturn.resources
+F:\allN1\obj\Debug\allN1.lock.resources
+F:\allN1\obj\Debug\allN1.main.resources
+F:\allN1\obj\Debug\allN1.modify.resources
+F:\allN1\obj\Debug\allN1.notAvGoods.resources
+F:\allN1\obj\Debug\allN1.pay.resources
+F:\allN1\obj\Debug\allN1.report.resources
+F:\allN1\obj\Debug\allN1.typeSrch.resources
+F:\allN1\obj\Debug\allN1.vendorOruser.resources
+F:\allN1\obj\Debug\allN1.venGoodRet.resources
+F:\allN1\obj\Debug\allN1.v_order.resources
+F:\allN1\obj\Debug\allN1.order.resources
+F:\allN1\obj\Debug\allN1.printpay.resources
+F:\allN1\obj\Debug\allN1.Properties.Resources.resources
+F:\allN1\obj\Debug\allN1.vendor_bill.resources
+F:\allN1\obj\Debug\allN1.csproj.GenerateResource.cache
+F:\allN1\obj\Debug\allN1.csproj.CoreCompileInputs.cache
+F:\allN1\obj\Debug\معرض أبوسيف.exe
+F:\allN1\obj\Debug\معرض أبوسيف.pdb
+F:\allN1\obj\Debug\allN1.UsersLateToPay.resources
+F:\allN1\obj\Debug\allN1.goods.resources
+F:\allN1\obj\Debug\allN1.GoodSellInfo.resources
+D:\allN1\bin\Debug\معرض أبوسيف.exe.config
+D:\allN1\bin\Debug\معرض أبوسيف.exe
+D:\allN1\bin\Debug\معرض أبوسيف.pdb
+D:\allN1\obj\Debug\allN1.csprojAssemblyReference.cache
+D:\allN1\obj\Debug\allN1.goods.resources
+D:\allN1\obj\Debug\allN1.GoodSellInfo.resources
+D:\allN1\obj\Debug\allN1.bill_info.resources
+D:\allN1\obj\Debug\allN1.goodReturn.resources
+D:\allN1\obj\Debug\allN1.lock.resources
+D:\allN1\obj\Debug\allN1.main.resources
+D:\allN1\obj\Debug\allN1.notAvGoods.resources
+D:\allN1\obj\Debug\allN1.pay.resources
+D:\allN1\obj\Debug\allN1.report.resources
+D:\allN1\obj\Debug\allN1.UsersLateToPay.resources
+D:\allN1\obj\Debug\allN1.vendorOruser.resources
+D:\allN1\obj\Debug\allN1.printpay.resources
+D:\allN1\obj\Debug\allN1.Properties.Resources.resources
+D:\allN1\obj\Debug\allN1.csproj.GenerateResource.cache
+D:\allN1\obj\Debug\allN1.csproj.CoreCompileInputs.cache
+D:\allN1\obj\Debug\معرض أبوسيف.exe
+D:\allN1\obj\Debug\معرض أبوسيف.pdb
+D:\allN1\obj\Debug\allN1.users.resources
+D:\allN1\obj\Debug\allN1.addNewGood.resources
+D:\allN1\obj\Debug\allN1.usersForms.addNewUser.resources
+D:\allN1\obj\Debug\allN1.sellNow.resources
+D:\allN1\obj\Debug\allN1.usersForms.userSelect.resources
+D:\allN1\obj\Debug\allN1.goodsForms.goodSelect.resources
+D:\allN1\obj\Debug\allN1.usersForms.newBill.resources
+D:\allN1\bin\Debug\EntityFramework.dll
+D:\allN1\bin\Debug\EntityFramework.SqlServer.dll
+D:\allN1\bin\Debug\System.Data.SQLite.dll
+D:\allN1\bin\Debug\System.Data.SQLite.EF6.dll
+D:\allN1\bin\Debug\System.Data.SQLite.Linq.dll
+D:\allN1\bin\Debug\EntityFramework.xml
+D:\allN1\bin\Debug\EntityFramework.SqlServer.xml
+D:\allN1\bin\Debug\System.Data.SQLite.xml
+D:\allN1\obj\Debug\allN1.csproj.CopyComplete
+D:\allN1\bin\Debug\2.db
+F:\DELL_lApToP\allN1\obj\Debug\allN1.csprojAssemblyReference.cache
+F:\DELL_lApToP\allN1\obj\Debug\allN1.Form1.resources
+F:\DELL_lApToP\allN1\obj\Debug\allN1.addNewGood.resources
+F:\DELL_lApToP\allN1\obj\Debug\allN1.goods.resources
+F:\DELL_lApToP\allN1\obj\Debug\allN1.goodsForms.goodSelect.resources
+F:\DELL_lApToP\allN1\obj\Debug\allN1.GoodSellInfo.resources
+F:\DELL_lApToP\allN1\obj\Debug\allN1.sellNow.resources
+F:\DELL_lApToP\allN1\obj\Debug\allN1.usersForms.addNewUser.resources
+F:\DELL_lApToP\allN1\obj\Debug\allN1.bill_info.resources
+F:\DELL_lApToP\allN1\obj\Debug\allN1.goodReturn.resources
+F:\DELL_lApToP\allN1\obj\Debug\allN1.lock.resources
+F:\DELL_lApToP\allN1\obj\Debug\allN1.main.resources
+F:\DELL_lApToP\allN1\obj\Debug\allN1.notAvGoods.resources
+F:\DELL_lApToP\allN1\obj\Debug\allN1.pay.resources
+F:\DELL_lApToP\allN1\obj\Debug\allN1.report.resources
+F:\DELL_lApToP\allN1\obj\Debug\allN1.usersForms.newBill.resources
+F:\DELL_lApToP\allN1\obj\Debug\allN1.users.resources
+F:\DELL_lApToP\allN1\obj\Debug\allN1.usersForms.userSelect.resources
+F:\DELL_lApToP\allN1\obj\Debug\allN1.UsersLateToPay.resources
+F:\DELL_lApToP\allN1\obj\Debug\allN1.vendorOruser.resources
+F:\DELL_lApToP\allN1\obj\Debug\allN1.printpay.resources
+F:\DELL_lApToP\allN1\obj\Debug\allN1.Properties.Resources.resources
+F:\DELL_lApToP\allN1\obj\Debug\allN1.csproj.GenerateResource.cache
+F:\DELL_lApToP\allN1\obj\Debug\allN1.csproj.CoreCompileInputs.cache
+F:\DELL_lApToP\allN1\obj\Debug\معرض أبوسيف.exe
+F:\DELL_lApToP\allN1\obj\Debug\معرض أبوسيف.pdb
+F:\DELL_lApToP\allN1\obj\Debug\allN1.addproduct.resources
+F:\DELL_lApToP\allN1\obj\Debug\allN1.modify.resources
+F:\DELL_lApToP\allN1\obj\Debug\allN1.typeSrch.resources
+F:\DELL_lApToP\allN1\obj\Debug\allN1.order.resources
+F:\DELL_lApToP\allN1\obj\Debug\allN1.vendor_bill.resources
+F:\DELL_lApToP\allN1\obj\Debug\allN1.venGoodRet.resources
+F:\DELL_lApToP\allN1\obj\Debug\allN1.v_order.resources
+C:\Users\Ven0m\Documents\allN1\bin\Debug\معرض أبوسيف.exe.config
+C:\Users\Ven0m\Documents\allN1\bin\Debug\معرض أبوسيف.exe
+C:\Users\Ven0m\Documents\allN1\bin\Debug\معرض أبوسيف.pdb
+C:\Users\Ven0m\Documents\allN1\bin\Debug\EntityFramework.dll
+C:\Users\Ven0m\Documents\allN1\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Ven0m\Documents\allN1\bin\Debug\System.Data.SQLite.dll
+C:\Users\Ven0m\Documents\allN1\bin\Debug\System.Data.SQLite.EF6.dll
+C:\Users\Ven0m\Documents\allN1\bin\Debug\System.Data.SQLite.Linq.dll
+C:\Users\Ven0m\Documents\allN1\bin\Debug\EntityFramework.xml
+C:\Users\Ven0m\Documents\allN1\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Ven0m\Documents\allN1\bin\Debug\System.Data.SQLite.xml
+C:\Users\Ven0m\Documents\allN1\obj\Debug\allN1.csprojAssemblyReference.cache
+C:\Users\Ven0m\Documents\allN1\obj\Debug\allN1.Form1.resources
+C:\Users\Ven0m\Documents\allN1\obj\Debug\allN1.addNewGood.resources
+C:\Users\Ven0m\Documents\allN1\obj\Debug\allN1.goods.resources
+C:\Users\Ven0m\Documents\allN1\obj\Debug\allN1.goodsForms.goodSelect.resources
+C:\Users\Ven0m\Documents\allN1\obj\Debug\allN1.GoodSellInfo.resources
+C:\Users\Ven0m\Documents\allN1\obj\Debug\allN1.sellNow.resources
+C:\Users\Ven0m\Documents\allN1\obj\Debug\allN1.addproduct.resources
+C:\Users\Ven0m\Documents\allN1\obj\Debug\allN1.modify.resources
+C:\Users\Ven0m\Documents\allN1\obj\Debug\allN1.typeSrch.resources
+C:\Users\Ven0m\Documents\allN1\obj\Debug\allN1.order.resources
+C:\Users\Ven0m\Documents\allN1\obj\Debug\allN1.vendor_bill.resources
+C:\Users\Ven0m\Documents\allN1\obj\Debug\allN1.venGoodRet.resources
+C:\Users\Ven0m\Documents\allN1\obj\Debug\allN1.v_order.resources
+C:\Users\Ven0m\Documents\allN1\obj\Debug\allN1.usersForms.addNewUser.resources
+C:\Users\Ven0m\Documents\allN1\obj\Debug\allN1.bill_info.resources
+C:\Users\Ven0m\Documents\allN1\obj\Debug\allN1.goodReturn.resources
+C:\Users\Ven0m\Documents\allN1\obj\Debug\allN1.lock.resources
+C:\Users\Ven0m\Documents\allN1\obj\Debug\allN1.main.resources
+C:\Users\Ven0m\Documents\allN1\obj\Debug\allN1.notAvGoods.resources
+C:\Users\Ven0m\Documents\allN1\obj\Debug\allN1.pay.resources
+C:\Users\Ven0m\Documents\allN1\obj\Debug\allN1.report.resources
+C:\Users\Ven0m\Documents\allN1\obj\Debug\allN1.usersForms.newBill.resources
+C:\Users\Ven0m\Documents\allN1\obj\Debug\allN1.users.resources
+C:\Users\Ven0m\Documents\allN1\obj\Debug\allN1.usersForms.userSelect.resources
+C:\Users\Ven0m\Documents\allN1\obj\Debug\allN1.UsersLateToPay.resources
+C:\Users\Ven0m\Documents\allN1\obj\Debug\allN1.vendorOruser.resources
+C:\Users\Ven0m\Documents\allN1\obj\Debug\allN1.printpay.resources
+C:\Users\Ven0m\Documents\allN1\obj\Debug\allN1.Properties.Resources.resources
+C:\Users\Ven0m\Documents\allN1\obj\Debug\allN1.csproj.GenerateResource.cache
+C:\Users\Ven0m\Documents\allN1\obj\Debug\allN1.csproj.CoreCompileInputs.cache
+C:\Users\Ven0m\Documents\allN1\obj\Debug\allN1.csproj.CopyComplete
+C:\Users\Ven0m\Documents\allN1\obj\Debug\معرض أبوسيف.exe
+C:\Users\Ven0m\Documents\allN1\obj\Debug\معرض أبوسيف.pdb
+C:\Users\Ven0m\Documents\allN1\bin\Debug\appData.db
